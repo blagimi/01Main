@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleInput", "ConsoleInpu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathOperations", "MathOperations\MathOperations.csproj", "{873C9D26-1634-4B68-8F17-FB6A6B3A7D2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TryCatch", "TryCatch\TryCatch.csproj", "{B2087A4C-F234-4A3C-B86B-B66EBD622E0E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryCatch", "TryCatch\TryCatch.csproj", "{B2087A4C-F234-4A3C-B86B-B66EBD622E0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ifelseoperations", "Ifelseoperations\Ifelseoperations.csproj", "{B4ACD548-21B3-4153-9AA0-520BDA763EB4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B2087A4C-F234-4A3C-B86B-B66EBD622E0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2087A4C-F234-4A3C-B86B-B66EBD622E0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2087A4C-F234-4A3C-B86B-B66EBD622E0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4ACD548-21B3-4153-9AA0-520BDA763EB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4ACD548-21B3-4153-9AA0-520BDA763EB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4ACD548-21B3-4153-9AA0-520BDA763EB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4ACD548-21B3-4153-9AA0-520BDA763EB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
