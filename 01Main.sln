@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ВыводНаКонсол�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЗаменаЗначенийПеременной", "ЗаменаЗначенийПеременной\ЗаменаЗначенийПеременной.csproj", "{CE3B20AA-DC34-4125-B2A8-4F5713375C84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПреобразованиеТипов", "ПреобразованиеТипов\ПреобразованиеТипов.csproj", "{74040380-76E0-4F2E-AAA6-3B1D19F147CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "АрифметическиеОперации", "АрифметическиеОперации\АрифметическиеОперации.csproj", "{29314E7B-E447-4B60-9C51-348D95E1BE36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{CE3B20AA-DC34-4125-B2A8-4F5713375C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE3B20AA-DC34-4125-B2A8-4F5713375C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE3B20AA-DC34-4125-B2A8-4F5713375C84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74040380-76E0-4F2E-AAA6-3B1D19F147CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74040380-76E0-4F2E-AAA6-3B1D19F147CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74040380-76E0-4F2E-AAA6-3B1D19F147CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74040380-76E0-4F2E-AAA6-3B1D19F147CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29314E7B-E447-4B60-9C51-348D95E1BE36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29314E7B-E447-4B60-9C51-348D95E1BE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29314E7B-E447-4B60-9C51-348D95E1BE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29314E7B-E447-4B60-9C51-348D95E1BE36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
