@@ -7,11 +7,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПриветМир", "Hello
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ВыводНаКонсоль", "ConsoleInput\ВыводНаКонсоль.csproj", "{03BA3369-7987-4915-84FD-DEAA54BAA307}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЗаменаЗначенийПеременной", "ЗаменаЗначенийПеременной\ЗаменаЗначенийПеременной.csproj", "{CE3B20AA-DC34-4125-B2A8-4F5713375C84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ЗаменаЗначенийПеременной", "ЗаменаЗначенийПеременной\ЗаменаЗначенийПеременной.csproj", "{CE3B20AA-DC34-4125-B2A8-4F5713375C84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПреобразованиеТипов", "ПреобразованиеТипов\ПреобразованиеТипов.csproj", "{74040380-76E0-4F2E-AAA6-3B1D19F147CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПреобразованиеТипов", "ПреобразованиеТипов\ПреобразованиеТипов.csproj", "{74040380-76E0-4F2E-AAA6-3B1D19F147CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "АрифметическиеОперации", "АрифметическиеОперации\АрифметическиеОперации.csproj", "{29314E7B-E447-4B60-9C51-348D95E1BE36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "АрифметическиеОперации", "АрифметическиеОперации\АрифметическиеОперации.csproj", "{29314E7B-E447-4B60-9C51-348D95E1BE36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ОперацииПрисваивания", "ОперацииПрисваивания\ОперацииПрисваивания.csproj", "{8B311363-5FF0-4362-89B1-F1E4FDA8DBE2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПреобразованиеБазовыхТиповДанных", "ПреобразованиеБазовыхТиповДанных\ПреобразованиеБазовыхТиповДанных.csproj", "{F361265F-C402-40AD-A4AC-C3B0E299F80D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{29314E7B-E447-4B60-9C51-348D95E1BE36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29314E7B-E447-4B60-9C51-348D95E1BE36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29314E7B-E447-4B60-9C51-348D95E1BE36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B311363-5FF0-4362-89B1-F1E4FDA8DBE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B311363-5FF0-4362-89B1-F1E4FDA8DBE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B311363-5FF0-4362-89B1-F1E4FDA8DBE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B311363-5FF0-4362-89B1-F1E4FDA8DBE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F361265F-C402-40AD-A4AC-C3B0E299F80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F361265F-C402-40AD-A4AC-C3B0E299F80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F361265F-C402-40AD-A4AC-C3B0E299F80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F361265F-C402-40AD-A4AC-C3B0E299F80D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

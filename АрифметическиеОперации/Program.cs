@@ -35,7 +35,7 @@ Console.WriteLine($"{x4} - {y4}");
 
 int a = 3;
 int b = 5;
-int c = 40;
+int c = 40; 
 int d = c---b*a;
 Console.WriteLine($"a: {a} b: {b} c: {c} d: {d}");      // 3 5 39 25
 int a1 = 3;
@@ -43,3 +43,4 @@ int b1 = 5;
 int c1 = 40;
 int f = (c1 - (--b1)) * a1;  // Меняем расстановку с помощью скобок
 Console.WriteLine($"a: {a1} b: {b1} c: {c1} f:{f}");    // 3 4 40 108
+Console.ReadLine();
