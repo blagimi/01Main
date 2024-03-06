@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "УсловныеКонст�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Циклы", "Циклы\Циклы.csproj", "{73258D31-EE6E-4454-94EE-55F56DE75C8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЦиклыУпражнения", "ЦиклыУпражнения\ЦиклыУпражнения.csproj", "{DC011BAB-E361-4AC8-B6B2-F10F8C81126B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{73258D31-EE6E-4454-94EE-55F56DE75C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73258D31-EE6E-4454-94EE-55F56DE75C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73258D31-EE6E-4454-94EE-55F56DE75C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC011BAB-E361-4AC8-B6B2-F10F8C81126B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC011BAB-E361-4AC8-B6B2-F10F8C81126B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC011BAB-E361-4AC8-B6B2-F10F8C81126B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC011BAB-E361-4AC8-B6B2-F10F8C81126B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
