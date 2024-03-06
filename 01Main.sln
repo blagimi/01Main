@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Преобразовани�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "УсловныеВыражения", "УсловныеВыражения\УсловныеВыражения.csproj", "{F677DA1B-0A83-4B13-8512-64566D03FC11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "УсловныеКонструкции", "УсловныеКонструкции\УсловныеКонструкции.csproj", "{F0BFAC80-7BB5-4C02-812E-DA24B95DD512}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "УсловныеКонструкции", "УсловныеКонструкции\УсловныеКонструкции.csproj", "{F0BFAC80-7BB5-4C02-812E-DA24B95DD512}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "УсловныеКонструкцииУпражнения", "УсловныеКонструкцииУпражнения\УсловныеКонструкцииУпражнения.csproj", "{2F95F68F-4C7C-4013-ADC1-F068DF682454}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "УсловныеКонструкцииУпражнения", "УсловныеКонструкцииУпражнения\УсловныеКонструкцииУпражнения.csproj", "{2F95F68F-4C7C-4013-ADC1-F068DF682454}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Циклы", "Циклы\Циклы.csproj", "{73258D31-EE6E-4454-94EE-55F56DE75C8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{2F95F68F-4C7C-4013-ADC1-F068DF682454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F95F68F-4C7C-4013-ADC1-F068DF682454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F95F68F-4C7C-4013-ADC1-F068DF682454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73258D31-EE6E-4454-94EE-55F56DE75C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73258D31-EE6E-4454-94EE-55F56DE75C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73258D31-EE6E-4454-94EE-55F56DE75C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73258D31-EE6E-4454-94EE-55F56DE75C8D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
