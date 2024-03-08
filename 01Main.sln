@@ -27,7 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Циклы", "Циклы\Ц
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ЦиклыУпражнения", "ЦиклыУпражнения\ЦиклыУпражнения.csproj", "{DC011BAB-E361-4AC8-B6B2-F10F8C81126B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Массивы", "Массивы\Массивы.csproj", "{93F67F70-8A58-4F95-B49D-43757ACAD84B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Массивы", "Массивы\Массивы.csproj", "{93F67F70-8A58-4F95-B49D-43757ACAD84B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "МассивыУпражнения", "МассивыУпражнения\МассивыУпражнения.csproj", "{70FA511D-A11D-481F-A8AB-9AC7C91EB81F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЗадачиСМассивами", "ЗадачиСМассивами\ЗадачиСМассивами.csproj", "{62C78720-013F-4D81-847A-C0DDF486D05D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +91,14 @@ Global
 		{93F67F70-8A58-4F95-B49D-43757ACAD84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93F67F70-8A58-4F95-B49D-43757ACAD84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93F67F70-8A58-4F95-B49D-43757ACAD84B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70FA511D-A11D-481F-A8AB-9AC7C91EB81F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70FA511D-A11D-481F-A8AB-9AC7C91EB81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70FA511D-A11D-481F-A8AB-9AC7C91EB81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70FA511D-A11D-481F-A8AB-9AC7C91EB81F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62C78720-013F-4D81-847A-C0DDF486D05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62C78720-013F-4D81-847A-C0DDF486D05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62C78720-013F-4D81-847A-C0DDF486D05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62C78720-013F-4D81-847A-C0DDF486D05D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -79,8 +79,10 @@ Console.WriteLine();
 *можно получить количество строк таблицы, представленной двухмерным массивом. А через numbers.Length / количество_строк
 *можно получить количество элементов в каждой строке
 */
-int rows = numbers3.GetUpperBound(0) + 1; // Количество строк
-int columns = numbers3.Length / rows;     // Количество столбцов
+int rows = numbers3.GetUpperBound(0) + 1;               // Количество строк
+int columns = numbers3.Length / rows;                   // Количество столбцов
+Console.WriteLine($"Количество строк: {rows}");         // 2
+Console.WriteLine($"Количество столбцов: {columns}");   // 3
 for  (int i2 = 0; i2 < rows; i2++)
 {
     for (int j2 = 0; j2 < columns; j2++)
@@ -89,3 +91,42 @@ for  (int i2 = 0; i2 < rows; i2++)
     }
     Console.WriteLine();               // 1 2 3
 }                                      // 4 5 6
+Console.WriteLine();
+// Зубчатый массив или массив массивов
+int[][] mMass =
+[
+    [1,2],                  // Выделение памяти для первого подмассива
+    [1,2,3],                // Выделение памяти для второго подмассива
+    [1,2,3,4,5],            // Выделение памяти для третьего подмассива
+];
+/*
+ * Алтернативная запись 
+ * int[][] nums = new int[3][];
+ * nums[0] = new int[2] { 1, 2 };          
+ * nums[1] = new int[3] { 1, 2, 3 };       
+ * nums[2] = new int[5] { 1, 2, 3, 4, 5 };
+ * или
+ * int[][] mMass = new int[3][];
+ * mMass[0] = [1,2];                
+ * mMass[1] = [1,2,3];          
+ * mMass[2] = [1,2,3,4,5];
+ */
+// Для перебора зубчатых массивов используются вложенные циклы foreach
+foreach (int[] row in mMass)
+{
+    foreach (int number in row)
+    {
+        Console.Write($"{number} \t");
+    }
+    Console.WriteLine();
+}
+// for
+Console.WriteLine();
+for (int i3 = 0; i3<mMass.Length;i3++)
+{
+    for (int j3 = 0; j3 < mMass[i3].Length; j3++)
+    {
+        Console.Write($"{mMass[i3][j3]} \t");
+    }
+    Console.WriteLine();
+}
