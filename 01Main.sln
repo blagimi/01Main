@@ -31,7 +31,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Массивы", "Масс�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "МассивыУпражнения", "МассивыУпражнения\МассивыУпражнения.csproj", "{70FA511D-A11D-481F-A8AB-9AC7C91EB81F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЗадачиСМассивами", "ЗадачиСМассивами\ЗадачиСМассивами.csproj", "{62C78720-013F-4D81-847A-C0DDF486D05D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ЗадачиСМассивами", "ЗадачиСМассивами\ЗадачиСМассивами.csproj", "{62C78720-013F-4D81-847A-C0DDF486D05D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Методы", "Методы\Методы.csproj", "{17F5793E-F91E-4192-8D98-BF9401F189D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПараметрыМетодов", "ПараметрыМетодов\ПараметрыМетодов.csproj", "{37606AE4-724E-47BB-B869-00309A81A5B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +103,14 @@ Global
 		{62C78720-013F-4D81-847A-C0DDF486D05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62C78720-013F-4D81-847A-C0DDF486D05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62C78720-013F-4D81-847A-C0DDF486D05D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17F5793E-F91E-4192-8D98-BF9401F189D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17F5793E-F91E-4192-8D98-BF9401F189D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17F5793E-F91E-4192-8D98-BF9401F189D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17F5793E-F91E-4192-8D98-BF9401F189D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37606AE4-724E-47BB-B869-00309A81A5B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37606AE4-724E-47BB-B869-00309A81A5B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37606AE4-724E-47BB-B869-00309A81A5B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37606AE4-724E-47BB-B869-00309A81A5B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
