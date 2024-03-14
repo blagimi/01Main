@@ -43,6 +43,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПередачаПарам�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ВыходныеПараметры", "ВыходныеПараметры\ВыходныеПараметры.csproj", "{2290E735-E18A-48D2-9CE4-A9E99DD7115C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "МассивПараметровParams", "МассивПараметровParams\МассивПараметровParams.csproj", "{79E18F15-61EB-414D-A6BC-C71508CE3619}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -129,6 +131,10 @@ Global
 		{2290E735-E18A-48D2-9CE4-A9E99DD7115C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2290E735-E18A-48D2-9CE4-A9E99DD7115C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2290E735-E18A-48D2-9CE4-A9E99DD7115C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79E18F15-61EB-414D-A6BC-C71508CE3619}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E18F15-61EB-414D-A6BC-C71508CE3619}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E18F15-61EB-414D-A6BC-C71508CE3619}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E18F15-61EB-414D-A6BC-C71508CE3619}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
