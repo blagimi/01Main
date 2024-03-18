@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "РекурсивныеФу�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЛокальныеФункции", "ЛокальныеФункции\ЛокальныеФункции.csproj", "{DBC336CF-4A86-4C47-AD0A-EDEDCB59FC47}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КонструкцияSwitch", "КонструкцияSwitch\КонструкцияSwitch.csproj", "{A12297F8-181F-4564-AC9C-461BDF4591DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -147,6 +149,10 @@ Global
 		{DBC336CF-4A86-4C47-AD0A-EDEDCB59FC47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBC336CF-4A86-4C47-AD0A-EDEDCB59FC47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBC336CF-4A86-4C47-AD0A-EDEDCB59FC47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12297F8-181F-4564-AC9C-461BDF4591DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12297F8-181F-4564-AC9C-461BDF4591DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12297F8-181F-4564-AC9C-461BDF4591DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12297F8-181F-4564-AC9C-461BDF4591DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
