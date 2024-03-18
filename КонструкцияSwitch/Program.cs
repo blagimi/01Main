@@ -112,4 +112,7 @@ int DoOperation4(int op, int a, int b) => op switch
 /* 
 Такие упрощения касаются только конструкций switch которые возвращают значения
 */
+DoOperation2(1,10,10);
+DoOperation3(1,10,10);
+DoOperation4(1,10,10);
 Console.ReadKey();
