@@ -1,18 +1,10 @@
-﻿Person tom = new Person();
-string personName = tom.name;
-int personAge = tom.age;
-Console.WriteLine($"Имя: {personName}  Возраст {personAge}");
+﻿using КлассыОбъекты;
 
-tom.name = "Tom";
-tom.age = 37;
-tom.Print();
-class Person
+Person tom = new Person
 {
-    public string name = "Undef";
-    public int age;
-    public void Print()
-    {
-        Console.WriteLine($"Имя: {name} Возраст: {age}");
-    }
-}
+    name = "Tom",
+    age = 37
+};
+tom.Print();
+
 
