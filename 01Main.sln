@@ -33,25 +33,31 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "МассивыУпражн�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ЗадачиСМассивами", "ЗадачиСМассивами\ЗадачиСМассивами.csproj", "{62C78720-013F-4D81-847A-C0DDF486D05D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Методы", "Методы\Методы.csproj", "{17F5793E-F91E-4192-8D98-BF9401F189D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Методы", "Методы\Методы.csproj", "{17F5793E-F91E-4192-8D98-BF9401F189D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПараметрыМетодов", "ПараметрыМетодов\ПараметрыМетодов.csproj", "{37606AE4-724E-47BB-B869-00309A81A5B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПараметрыМетодов", "ПараметрыМетодов\ПараметрыМетодов.csproj", "{37606AE4-724E-47BB-B869-00309A81A5B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ВозвращениеЗначения", "ВозвращениеЗначения\ВозвращениеЗначения.csproj", "{505A2BE5-073D-41F7-85B4-09A40303110E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ВозвращениеЗначения", "ВозвращениеЗначения\ВозвращениеЗначения.csproj", "{505A2BE5-073D-41F7-85B4-09A40303110E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПередачаПараметров", "ПередачаПараметров\ПередачаПараметров.csproj", "{340E10A1-F458-4F4D-B750-402AD45D91A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПередачаПараметров", "ПередачаПараметров\ПередачаПараметров.csproj", "{340E10A1-F458-4F4D-B750-402AD45D91A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ВыходныеПараметры", "ВыходныеПараметры\ВыходныеПараметры.csproj", "{2290E735-E18A-48D2-9CE4-A9E99DD7115C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ВыходныеПараметры", "ВыходныеПараметры\ВыходныеПараметры.csproj", "{2290E735-E18A-48D2-9CE4-A9E99DD7115C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "МассивПараметровParams", "МассивПараметровParams\МассивПараметровParams.csproj", "{79E18F15-61EB-414D-A6BC-C71508CE3619}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "МассивПараметровParams", "МассивПараметровParams\МассивПараметровParams.csproj", "{79E18F15-61EB-414D-A6BC-C71508CE3619}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "РекурсивныеФункции", "РекурсивныеФункции\РекурсивныеФункции.csproj", "{D5500699-C3A0-466B-A0B3-FF2C4879E331}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "РекурсивныеФункции", "РекурсивныеФункции\РекурсивныеФункции.csproj", "{D5500699-C3A0-466B-A0B3-FF2C4879E331}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЛокальныеФункции", "ЛокальныеФункции\ЛокальныеФункции.csproj", "{DBC336CF-4A86-4C47-AD0A-EDEDCB59FC47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ЛокальныеФункции", "ЛокальныеФункции\ЛокальныеФункции.csproj", "{DBC336CF-4A86-4C47-AD0A-EDEDCB59FC47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КонструкцияSwitch", "КонструкцияSwitch\КонструкцияSwitch.csproj", "{A12297F8-181F-4564-AC9C-461BDF4591DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "КонструкцияSwitch", "КонструкцияSwitch\КонструкцияSwitch.csproj", "{A12297F8-181F-4564-AC9C-461BDF4591DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПеречисленияEnum", "ПеречисленияEnum\ПеречисленияEnum.csproj", "{781A436A-36C1-48C9-B83D-04C1D6A70EDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПеречисленияEnum", "ПеречисленияEnum\ПеречисленияEnum.csproj", "{781A436A-36C1-48C9-B83D-04C1D6A70EDC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава2", "Глава2", "{465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава3", "Глава3", "{1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КлассыОбъекты", "КлассыОбъекты\КлассыОбъекты.csproj", "{C917ADBE-E6CE-4023-8F44-76800D223784}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,9 +165,41 @@ Global
 		{781A436A-36C1-48C9-B83D-04C1D6A70EDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{781A436A-36C1-48C9-B83D-04C1D6A70EDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{781A436A-36C1-48C9-B83D-04C1D6A70EDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C917ADBE-E6CE-4023-8F44-76800D223784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C917ADBE-E6CE-4023-8F44-76800D223784}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C917ADBE-E6CE-4023-8F44-76800D223784}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C917ADBE-E6CE-4023-8F44-76800D223784}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0E289E8B-408E-4190-9AF7-54699DA68C39} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{03BA3369-7987-4915-84FD-DEAA54BAA307} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{CE3B20AA-DC34-4125-B2A8-4F5713375C84} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{74040380-76E0-4F2E-AAA6-3B1D19F147CE} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{29314E7B-E447-4B60-9C51-348D95E1BE36} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{8B311363-5FF0-4362-89B1-F1E4FDA8DBE2} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{F361265F-C402-40AD-A4AC-C3B0E299F80D} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{F677DA1B-0A83-4B13-8512-64566D03FC11} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{F0BFAC80-7BB5-4C02-812E-DA24B95DD512} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{2F95F68F-4C7C-4013-ADC1-F068DF682454} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{73258D31-EE6E-4454-94EE-55F56DE75C8D} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{DC011BAB-E361-4AC8-B6B2-F10F8C81126B} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{93F67F70-8A58-4F95-B49D-43757ACAD84B} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{70FA511D-A11D-481F-A8AB-9AC7C91EB81F} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{62C78720-013F-4D81-847A-C0DDF486D05D} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{17F5793E-F91E-4192-8D98-BF9401F189D3} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{37606AE4-724E-47BB-B869-00309A81A5B5} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{505A2BE5-073D-41F7-85B4-09A40303110E} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{340E10A1-F458-4F4D-B750-402AD45D91A4} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{2290E735-E18A-48D2-9CE4-A9E99DD7115C} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{79E18F15-61EB-414D-A6BC-C71508CE3619} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{D5500699-C3A0-466B-A0B3-FF2C4879E331} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{DBC336CF-4A86-4C47-AD0A-EDEDCB59FC47} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{A12297F8-181F-4564-AC9C-461BDF4591DE} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{781A436A-36C1-48C9-B83D-04C1D6A70EDC} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
+		{C917ADBE-E6CE-4023-8F44-76800D223784} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
