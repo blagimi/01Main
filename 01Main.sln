@@ -57,7 +57,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава2", "Глава2"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава3", "Глава3", "{1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КлассыОбъекты", "КлассыОбъекты\КлассыОбъекты.csproj", "{C917ADBE-E6CE-4023-8F44-76800D223784}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "КлассыОбъекты", "КлассыОбъекты\КлассыОбъекты.csproj", "{C917ADBE-E6CE-4023-8F44-76800D223784}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КонструкторыИнициализаторыДеконструкторы", "КонструкторыИнициализаторыДеконструкторы\КонструкторыИнициализаторыДеконструкторы.csproj", "{E3525B3B-3202-40AD-B74C-5559D29EBEE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -169,6 +171,10 @@ Global
 		{C917ADBE-E6CE-4023-8F44-76800D223784}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C917ADBE-E6CE-4023-8F44-76800D223784}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C917ADBE-E6CE-4023-8F44-76800D223784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3525B3B-3202-40AD-B74C-5559D29EBEE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3525B3B-3202-40AD-B74C-5559D29EBEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3525B3B-3202-40AD-B74C-5559D29EBEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3525B3B-3202-40AD-B74C-5559D29EBEE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -200,6 +206,7 @@ Global
 		{A12297F8-181F-4564-AC9C-461BDF4591DE} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
 		{781A436A-36C1-48C9-B83D-04C1D6A70EDC} = {465B3AAC-D25F-4D1C-AA9B-7D1D9EC6E86F}
 		{C917ADBE-E6CE-4023-8F44-76800D223784} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
+		{E3525B3B-3202-40AD-B74C-5559D29EBEE2} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}

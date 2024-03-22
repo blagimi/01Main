@@ -1,6 +1,6 @@
 ﻿using КлассыОбъекты;
 
-Person tom = new Person
+Person tom = new()
 {
     name = "Tom",
     age = 37
