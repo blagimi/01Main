@@ -15,7 +15,8 @@
 using ТипыЗначенийСсылочныеТипы;
 
 State state1 = new(); // Структура State
-State state2 = new State
+Console.WriteLine(state1.y);
+State state2 = new()
 {
     x = 1,
     y = 2
@@ -25,7 +26,8 @@ state2.x = 5; // state1.x=1 по-прежнему
 Console.WriteLine(state1.x); // 1
 Console.WriteLine(state2.x); // 5
 
-Country country1 = new(); // Класс Country
+Country country1 = new(); // Класс
+Console.WriteLine(country1.x);
 Country country2 = new()
 {
     x = 1,
@@ -46,8 +48,9 @@ Console.WriteLine(country2.x); // 7
 Теперь рассмотрим более изощренный пример, когда внутри структуры у нас может быть 
 переменная ссылочного типа, например, какого-нибудь класса:
 */
-State state3 = new State();
-State state4 = new State();
+State state3 = new();
+Console.WriteLine(state3.y);
+State state4 = new();
 
 state4.country.x = 5;
 state3 = state4;
@@ -66,13 +69,13 @@ Console.WriteLine(state4.country.x); // 8
  * А другая строка person = new Person { name = "Bill", age = 45 } создаст новый объект в памяти, и person теперь будет указывать на новый объект в памяти. 
  * Даже если после этого мы его изменим, то это никак не повлияет на ссылку p в методе Main, поскольку ссылка p все еще указывает на старый объект в памяти.
  */
-Person p = new Person { name = "Tom", age = 23 };
+Person p = new() { name = "Tom", age = 23 };
 ChangePerson(p);
 
 Console.WriteLine(p.name); // Alice
 Console.WriteLine(p.age); // 23
 
-void ChangePerson(Person person)
+static void ChangePerson(Person person)
 {
     // сработает
     person.name = "Alice";

@@ -63,7 +63,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "КонструкторыИ�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Структуры", "Структуры\Структуры.csproj", "{51E3889B-E87B-4F5A-BCC7-9FE0EEAE9BBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ТипыЗначенийСсылочныеТипы", "ТипыЗначенийСсылочныеТипы\ТипыЗначенийСсылочныеТипы.csproj", "{13D2ACCF-B531-45CE-A7F5-69BD57676281}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ТипыЗначенийСсылочныеТипы", "ТипыЗначенийСсылочныеТипы\ТипыЗначенийСсылочныеТипы.csproj", "{13D2ACCF-B531-45CE-A7F5-69BD57676281}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ОбластьВидимости", "ОбластьВидимости\ОбластьВидимости.csproj", "{E75AA14B-6EDD-4746-9B92-2DA64DCB9D63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -187,6 +189,10 @@ Global
 		{13D2ACCF-B531-45CE-A7F5-69BD57676281}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13D2ACCF-B531-45CE-A7F5-69BD57676281}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13D2ACCF-B531-45CE-A7F5-69BD57676281}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E75AA14B-6EDD-4746-9B92-2DA64DCB9D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E75AA14B-6EDD-4746-9B92-2DA64DCB9D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E75AA14B-6EDD-4746-9B92-2DA64DCB9D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E75AA14B-6EDD-4746-9B92-2DA64DCB9D63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -221,6 +227,7 @@ Global
 		{E3525B3B-3202-40AD-B74C-5559D29EBEE2} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 		{51E3889B-E87B-4F5A-BCC7-9FE0EEAE9BBD} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 		{13D2ACCF-B531-45CE-A7F5-69BD57676281} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
+		{E75AA14B-6EDD-4746-9B92-2DA64DCB9D63} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
