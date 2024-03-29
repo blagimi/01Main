@@ -27,5 +27,5 @@ struct Person
         this.name = name;
         this.age = age;
     }
-    public void Print() => Console.WriteLine($"Имя: {name}  Возраст: {age}");
+    public readonly void Print() => Console.WriteLine($"Имя: {name}  Возраст: {age}");
 }
