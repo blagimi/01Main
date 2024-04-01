@@ -67,7 +67,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ТипыЗначенийС�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ОбластьВидимости", "ОбластьВидимости\ОбластьВидимости.csproj", "{E75AA14B-6EDD-4746-9B92-2DA64DCB9D63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПространстваИмен", "ПространстваИмен\ПространстваИмен.csproj", "{B21D763D-8B6F-48DE-92A7-C558EF40009F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПространстваИмен", "ПространстваИмен\ПространстваИмен.csproj", "{B21D763D-8B6F-48DE-92A7-C558EF40009F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Свойства", "Свойства\Свойства.csproj", "{9065690D-9536-4C4F-9AA1-D11977EB2995}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -199,6 +201,10 @@ Global
 		{B21D763D-8B6F-48DE-92A7-C558EF40009F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B21D763D-8B6F-48DE-92A7-C558EF40009F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B21D763D-8B6F-48DE-92A7-C558EF40009F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9065690D-9536-4C4F-9AA1-D11977EB2995}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9065690D-9536-4C4F-9AA1-D11977EB2995}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9065690D-9536-4C4F-9AA1-D11977EB2995}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9065690D-9536-4C4F-9AA1-D11977EB2995}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -235,6 +241,7 @@ Global
 		{13D2ACCF-B531-45CE-A7F5-69BD57676281} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 		{E75AA14B-6EDD-4746-9B92-2DA64DCB9D63} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 		{B21D763D-8B6F-48DE-92A7-C558EF40009F} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
+		{9065690D-9536-4C4F-9AA1-D11977EB2995} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
