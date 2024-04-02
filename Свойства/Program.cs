@@ -1,4 +1,4 @@
-﻿Person person = new Person();
+﻿Person person = new();
 
 Console.WriteLine(person.Age);  // 1
 // изменяем значение свойства
@@ -8,7 +8,7 @@ Console.WriteLine(person.Age);  // 37
 person.Age = -23;               // Возраст должен быть в диапазоне от 1 до 120
 Console.WriteLine(person.Age);  // 37 - возраст не изменился
 
-Person2 person2 = new Person2();
+Person2 person2 = new();
 
 // свойство для чтения - можно получить значение
 Console.WriteLine(person2.Name);  // Tom
@@ -61,7 +61,7 @@ class Person
 }
 class Person2
 {
-    string name = "Tom";
+    readonly string name = "Tom";
     int age = 1;
     // свойство только для записи
     public int Age
@@ -82,8 +82,8 @@ class Person2
  */
 class Person3
 {
-    string firstName;
-    string lastName;
+    readonly string firstName;
+    readonly string lastName;
     public string Name
     {
         get { return $"{firstName} {lastName}"; }
@@ -144,12 +144,8 @@ class Person7
  * модификатор required
  * Модификатор required (добавлен в C# 11) указывает, что поле или свойства с этим модификатором обязательно должны быть инициализированы.
  */
-public class Person8
+public class Person8(string name)
 {
-    public Person8(string name)
-    {
-        Name = name;
-    }
-    public required string Name { get; set; }
+    public required string Name { get; set; } = name;
     public required int Age { get; set; } = 22;
 }
