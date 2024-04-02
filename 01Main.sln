@@ -73,6 +73,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Свойства", "Сво�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПерегрузкаМетодов", "ПерегрузкаМетодов\ПерегрузкаМетодов.csproj", "{FBF1F3D7-9E14-4D9A-A04A-6F4F823C48C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СтатическиеЧлены", "СтатическиеЧлены\СтатическиеЧлены.csproj", "{F2700FF4-172E-40EC-A2DB-EC98EE98C107}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -211,6 +213,10 @@ Global
 		{FBF1F3D7-9E14-4D9A-A04A-6F4F823C48C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBF1F3D7-9E14-4D9A-A04A-6F4F823C48C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBF1F3D7-9E14-4D9A-A04A-6F4F823C48C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2700FF4-172E-40EC-A2DB-EC98EE98C107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2700FF4-172E-40EC-A2DB-EC98EE98C107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2700FF4-172E-40EC-A2DB-EC98EE98C107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2700FF4-172E-40EC-A2DB-EC98EE98C107}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -249,6 +255,7 @@ Global
 		{B21D763D-8B6F-48DE-92A7-C558EF40009F} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 		{9065690D-9536-4C4F-9AA1-D11977EB2995} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 		{FBF1F3D7-9E14-4D9A-A04A-6F4F823C48C5} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
+		{F2700FF4-172E-40EC-A2DB-EC98EE98C107} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
