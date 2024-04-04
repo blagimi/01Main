@@ -79,6 +79,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "УстановкаПаке�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КонстантыПоляСтруктурыДляЧтения", "КонстантыПоляСтруктурыДляЧтения\КонстантыПоляСтруктурыДляЧтения.csproj", "{C59B48E8-67E7-43F8-BBE8-52FA1D04DF63}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СсылочныеТипыИNull", "СсылочныеТипыИNull\СсылочныеТипыИNull.csproj", "{6E463353-1CDA-474C-A451-21E52167C793}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -229,6 +231,10 @@ Global
 		{C59B48E8-67E7-43F8-BBE8-52FA1D04DF63}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C59B48E8-67E7-43F8-BBE8-52FA1D04DF63}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C59B48E8-67E7-43F8-BBE8-52FA1D04DF63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E463353-1CDA-474C-A451-21E52167C793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E463353-1CDA-474C-A451-21E52167C793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E463353-1CDA-474C-A451-21E52167C793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E463353-1CDA-474C-A451-21E52167C793}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -270,6 +276,7 @@ Global
 		{F2700FF4-172E-40EC-A2DB-EC98EE98C107} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 		{907E7BF6-80A9-42E8-8483-32359A3DC1DD} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 		{C59B48E8-67E7-43F8-BBE8-52FA1D04DF63} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
+		{6E463353-1CDA-474C-A451-21E52167C793} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
