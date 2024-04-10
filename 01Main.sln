@@ -81,7 +81,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "КонстантыПоля�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "СсылочныеТипыИNull", "СсылочныеТипыИNull\СсылочныеТипыИNull.csproj", "{6E463353-1CDA-474C-A451-21E52167C793}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЗначимыеТипыИNull", "ЗначимыеТипыИNull\ЗначимыеТипыИNull.csproj", "{4B186271-5F33-42AF-889B-B4AECD7AEC15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ЗначимыеТипыИNull", "ЗначимыеТипыИNull\ЗначимыеТипыИNull.csproj", "{4B186271-5F33-42AF-889B-B4AECD7AEC15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПроверкаНаNull", "ПроверкаНаNull\ПроверкаНаNull.csproj", "{A92BEFE5-C050-413C-AFD3-CFFF8754BD8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -241,6 +243,10 @@ Global
 		{4B186271-5F33-42AF-889B-B4AECD7AEC15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B186271-5F33-42AF-889B-B4AECD7AEC15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B186271-5F33-42AF-889B-B4AECD7AEC15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A92BEFE5-C050-413C-AFD3-CFFF8754BD8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92BEFE5-C050-413C-AFD3-CFFF8754BD8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92BEFE5-C050-413C-AFD3-CFFF8754BD8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92BEFE5-C050-413C-AFD3-CFFF8754BD8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -284,6 +290,7 @@ Global
 		{C59B48E8-67E7-43F8-BBE8-52FA1D04DF63} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 		{6E463353-1CDA-474C-A451-21E52167C793} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 		{4B186271-5F33-42AF-889B-B4AECD7AEC15} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
+		{A92BEFE5-C050-413C-AFD3-CFFF8754BD8C} = {1F49190F-EF8C-4E52-A1DE-97FF7C38ADEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
