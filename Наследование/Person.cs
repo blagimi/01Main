@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Наследование
 {
-    internal class Person
+    internal class Person(string name)
     {
-        private string name = "";
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
+        public string Name { get; set; } = name;
+
         public void PrintName()
         {
             Console.WriteLine(Name);
