@@ -1,4 +1,6 @@
-﻿using ПреобразованиеОбъектовКлассов;
+﻿using System.ComponentModel.Design;
+using System.Threading.Channels;
+using ПреобразованиеОбъектовКлассов;
 /*
  * В этой иерархии классов мы можем проследить следующую цепь наследования: 
  * Object (все классы неявно наследуются от типа Object) -> Person -> Employee|Client.
@@ -132,6 +134,20 @@ else                                { Console.WriteLine("Преобразова�
  * Оператор is так же можно применять и без преобразования, просто проверяя 
  * на соответсвие типу.
  */
-Person person5 = new("Tom");
-if (person5 is Employee) { Console.WriteLine("Представляет тип Employee"); }
+Employee employee6 = new("Tom", "Subway");
+Person person5 = employee6;
+Person person6 = new("Tom");
+if (person6 is Employee)
+{
+    Console.WriteLine("Представляет тип Employee");
+}
+else { Console.WriteLine("НЕ является объектом типа Employee"); }
+Employee employee7 = (Employee)person6;
+if (employee7 is Employee)
+{
+    Console.WriteLine("Представляет тип Employee");
+}
+else { Console.WriteLine("НЕ является объектом типа Employee"); }
+
+if (employee7 is Employee) { Console.WriteLine("Представляет тип Employee"); }
 else { Console.WriteLine("НЕ является объектом типа Employee"); }
