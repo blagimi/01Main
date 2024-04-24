@@ -148,3 +148,13 @@ class Auto: Car
  * фигуры как таковой. Есть круг, прямоугольник, квадрат, но просто фигуры нет. Однако же и круг, и
  * прямоугольник имеют что-то общее и являются фигурами:
  */
+
+var rectangle = new Rectangle() { Width = 20, Height = 20 };
+var circle = new Circle() { Radius = 200 };
+PrintShape(rectangle);  // Perimetr: 80 Area: 400
+PrintShape(circle);     // Perimetr: 1256 Area: 125600
+
+void PrintShape(Shape shape)
+{
+    Console.WriteLine($"Perimetr: {shape.GetPerimetr()} Area: {shape.GetArea()}");
+}
