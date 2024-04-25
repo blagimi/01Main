@@ -95,11 +95,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Преобразовани�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ВиртуальныеМетодыИСвойства", "ВиртуальныеМетодыИСвойства\ВиртуальныеМетодыИСвойства.csproj", "{835D7F19-C715-4CD3-AEA0-7E4A945E4EE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СкрытиеМетодовИСвойств", "СкрытиеМетодовИСвойств\СкрытиеМетодовИСвойств.csproj", "{20C5805B-7864-46B3-8721-FCAEF7DE1797}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "СкрытиеМетодовИСвойств", "СкрытиеМетодовИСвойств\СкрытиеМетодовИСвойств.csproj", "{20C5805B-7864-46B3-8721-FCAEF7DE1797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "РазличияПереопределенияИСкрытия", "РазличияПереопределенияИСкрытия\РазличияПереопределенияИСкрытия.csproj", "{FD2EA72B-F829-48AB-AC41-97DA4DC6D2D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "РазличияПереопределенияИСкрытия", "РазличияПереопределенияИСкрытия\РазличияПереопределенияИСкрытия.csproj", "{FD2EA72B-F829-48AB-AC41-97DA4DC6D2D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "АбстрактныеКлассы", "АбстрактныеКлассы\АбстрактныеКлассы.csproj", "{46BC48D6-B853-47AE-BEF1-6DDC50E0A6E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "АбстрактныеКлассы", "АбстрактныеКлассы\АбстрактныеКлассы.csproj", "{46BC48D6-B853-47AE-BEF1-6DDC50E0A6E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КлассObjectИЕгоМетоды", "КлассObjectИЕгоМетоды\КлассObjectИЕгоМетоды.csproj", "{BD2608BD-A4A2-49D8-9120-BFE6FF0E859B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -291,6 +293,10 @@ Global
 		{46BC48D6-B853-47AE-BEF1-6DDC50E0A6E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46BC48D6-B853-47AE-BEF1-6DDC50E0A6E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46BC48D6-B853-47AE-BEF1-6DDC50E0A6E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD2608BD-A4A2-49D8-9120-BFE6FF0E859B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD2608BD-A4A2-49D8-9120-BFE6FF0E859B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD2608BD-A4A2-49D8-9120-BFE6FF0E859B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD2608BD-A4A2-49D8-9120-BFE6FF0E859B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -342,6 +348,7 @@ Global
 		{20C5805B-7864-46B3-8721-FCAEF7DE1797} = {0EDDC662-FF64-462D-9ECA-20D09F927A46}
 		{FD2EA72B-F829-48AB-AC41-97DA4DC6D2D2} = {0EDDC662-FF64-462D-9ECA-20D09F927A46}
 		{46BC48D6-B853-47AE-BEF1-6DDC50E0A6E4} = {0EDDC662-FF64-462D-9ECA-20D09F927A46}
+		{BD2608BD-A4A2-49D8-9120-BFE6FF0E859B} = {0EDDC662-FF64-462D-9ECA-20D09F927A46}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
