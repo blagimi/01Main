@@ -9,5 +9,9 @@ namespace КлассObjectИЕгоМетоды
     internal class Person
     {
         public string Name { get; set; } = "";
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode();
+        }
     }
 }
