@@ -84,7 +84,8 @@ Console.WriteLine(person2.GetHashCode());
  * Получение типа объекта и метод GetType.
  * Метод GetType позволяет получить тип данного объекта:
  * Этот метод возвращает объект Type, то есть тип объекта.
- * С помощью ключевого слова typeof мы получаем тип класса и сравниваем его с типом объекта. И если этот объект представляет тип Person, то выполняем определенные действия.
+ * С помощью ключевого слова typeof мы получаем тип класса и сравниваем его с типом объекта.
+ * И если этот объект представляет тип Person, то выполняем определенные действия.
  */
 Console.WriteLine(person.GetType());    // Person
 if (person.GetType() == typeof(Person))
@@ -103,4 +104,24 @@ if (person is Person)
 /*
  * В отличие от методов ToString, Equals, GetHashCode метод GetType() 
  * не переопределяется.
+ */
+
+/* 
+ * Метод Equals.
+ * Позволяет сравнить два объекта на равенство. Он принимает объект для сравнения в виде 
+ * типа object и возвращает true если они равны.
+ * 
+ */
+var persons1 = new Person { Name = "Tom" };
+var persons2 = new Person { Name = "Bob" };
+var persons3 = new Person { Name = "Tom" };
+
+bool person1EqualsPerson2 = persons1.Equals(persons2);  // false
+bool person1EqualsPerson3 = persons1.Equals(persons3);  // true
+
+Console.WriteLine(person1EqualsPerson2);    // false
+Console.WriteLine(person1EqualsPerson3);    // true
+/*
+ * Если требуется сравнить два сложных объекта то лучше использовать метод Equals а не операцию
+ * ==
  */

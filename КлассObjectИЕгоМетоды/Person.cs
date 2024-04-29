@@ -13,5 +13,12 @@ namespace КлассObjectИЕгоМетоды
         {
             return Name.GetHashCode();
         }
+        public override bool Equals(object? obj)
+        {
+            // Если параметр метода представляет тип Person
+            // то возвращаем true, если имена совпадают.
+            if (obj is Person person) return Name == person.Name;
+            return false;
+        }
     }
 }
