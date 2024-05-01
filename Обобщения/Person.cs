@@ -15,14 +15,16 @@ namespace Обобщения
      * Поэтому параметр T в угловых скобках еще называется универсальным
      * параметром, так как вместо него можно подставить любой тип.
      */
-    internal class Person<T>
+    internal class Person<T, K>
     {
         public static T? code;
         public T Id { get; set; }
+        public K Password { get; set; }
         public string Name { get; set; }
-        public Person(T id, string name)
+        public Person(T id, K password, string name)
         {
             Id = id;
+            Password = password;
             Name = name;
         }
     }
