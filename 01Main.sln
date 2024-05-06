@@ -111,7 +111,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "НаследованиеО�
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава5", "Глава5", "{C59FFA50-7EF4-4C20-A340-F71C893CEC3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КонструкцияTryCatchFinally", "КонструкцияTryCatchFinally\КонструкцияTryCatchFinally.csproj", "{736F1A59-9A72-4064-823B-F658712CE261}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "КонструкцияTryCatchFinally", "КонструкцияTryCatchFinally\КонструкцияTryCatchFinally.csproj", "{736F1A59-9A72-4064-823B-F658712CE261}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "БлокCatchИФильтрыИсключений", "БлокCatchИФильтрыИсключений\БлокCatchИФильтрыИсключений.csproj", "{B4446F6A-50EE-45A7-9644-E0C74421B339}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -323,6 +325,10 @@ Global
 		{736F1A59-9A72-4064-823B-F658712CE261}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{736F1A59-9A72-4064-823B-F658712CE261}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{736F1A59-9A72-4064-823B-F658712CE261}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4446F6A-50EE-45A7-9644-E0C74421B339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4446F6A-50EE-45A7-9644-E0C74421B339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4446F6A-50EE-45A7-9644-E0C74421B339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4446F6A-50EE-45A7-9644-E0C74421B339}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -379,6 +385,7 @@ Global
 		{A549BB17-545A-4819-B4F9-8AA6C4C5E04B} = {0EDDC662-FF64-462D-9ECA-20D09F927A46}
 		{644C5E1E-1D0C-490A-BF12-B5240D7CF398} = {0EDDC662-FF64-462D-9ECA-20D09F927A46}
 		{736F1A59-9A72-4064-823B-F658712CE261} = {C59FFA50-7EF4-4C20-A340-F71C893CEC3A}
+		{B4446F6A-50EE-45A7-9644-E0C74421B339} = {C59FFA50-7EF4-4C20-A340-F71C893CEC3A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
