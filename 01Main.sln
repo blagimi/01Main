@@ -113,13 +113,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава5", "Глава5"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "КонструкцияTryCatchFinally", "КонструкцияTryCatchFinally\КонструкцияTryCatchFinally.csproj", "{736F1A59-9A72-4064-823B-F658712CE261}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "БлокCatchИФильтрыИсключений", "БлокCatchИФильтрыИсключений\БлокCatchИФильтрыИсключений.csproj", "{B4446F6A-50EE-45A7-9644-E0C74421B339}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "БлокCatchИФильтрыИсключений", "БлокCatchИФильтрыИсключений\БлокCatchИФильтрыИсключений.csproj", "{B4446F6A-50EE-45A7-9644-E0C74421B339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ТипИсключенийКлассException", "ТипИсключенийКлассException\ТипИсключенийКлассException.csproj", "{CC0593A5-0563-4050-83FD-3352AB66C06E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ТипИсключенийКлассException", "ТипИсключенийКлассException\ТипИсключенийКлассException.csproj", "{CC0593A5-0563-4050-83FD-3352AB66C06E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ГенерацияИсключенийИОператорThrow", "ГенерацияИсключенийИОператорThrow\ГенерацияИсключенийИОператорThrow.csproj", "{BCEFB87B-04B3-4F9F-A806-2DF0735FCC38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ГенерацияИсключенийИОператорThrow", "ГенерацияИсключенийИОператорThrow\ГенерацияИсключенийИОператорThrow.csproj", "{BCEFB87B-04B3-4F9F-A806-2DF0735FCC38}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СозданиеКлассовИсключений", "СозданиеКлассовИсключений\СозданиеКлассовИсключений.csproj", "{55279214-DB17-4D1F-9313-66807F193537}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "СозданиеКлассовИсключений", "СозданиеКлассовИсключений\СозданиеКлассовИсключений.csproj", "{55279214-DB17-4D1F-9313-66807F193537}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПоискБлокаCatchПриОбработкеИсключений", "ПоискБлокаCatchПриОбработкеИсключений\ПоискБлокаCatchПриОбработкеИсключений.csproj", "{54ABC309-2E3F-4409-91AE-0BA7E5E2CC6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -347,6 +349,10 @@ Global
 		{55279214-DB17-4D1F-9313-66807F193537}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55279214-DB17-4D1F-9313-66807F193537}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55279214-DB17-4D1F-9313-66807F193537}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54ABC309-2E3F-4409-91AE-0BA7E5E2CC6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54ABC309-2E3F-4409-91AE-0BA7E5E2CC6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54ABC309-2E3F-4409-91AE-0BA7E5E2CC6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54ABC309-2E3F-4409-91AE-0BA7E5E2CC6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -407,6 +413,7 @@ Global
 		{CC0593A5-0563-4050-83FD-3352AB66C06E} = {C59FFA50-7EF4-4C20-A340-F71C893CEC3A}
 		{BCEFB87B-04B3-4F9F-A806-2DF0735FCC38} = {C59FFA50-7EF4-4C20-A340-F71C893CEC3A}
 		{55279214-DB17-4D1F-9313-66807F193537} = {C59FFA50-7EF4-4C20-A340-F71C893CEC3A}
+		{54ABC309-2E3F-4409-91AE-0BA7E5E2CC6B} = {C59FFA50-7EF4-4C20-A340-F71C893CEC3A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
