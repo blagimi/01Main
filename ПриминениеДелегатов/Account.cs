@@ -18,6 +18,10 @@ namespace ПриминениеДелегатов
         {
             taken = del;
         }
+        public void UnregisterHandler(AccountHandler del)
+        {
+            taken -= del; // удаляем делегат
+        }
         public void Add(int sum) => this.sum += sum;
         public void Take(int sum)
         {
