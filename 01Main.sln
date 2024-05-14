@@ -129,7 +129,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Делегаты", "Дел�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПриминениеДелегатов", "ПриминениеДелегатов\ПриминениеДелегатов.csproj", "{ABC1B772-F420-4DBE-B15B-CAEE3D40B13C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "АнонимныеМетоды", "АнонимныеМетоды\АнонимныеМетоды.csproj", "{38837546-765E-4217-9670-C27A183BBA36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "АнонимныеМетоды", "АнонимныеМетоды\АнонимныеМетоды.csproj", "{38837546-765E-4217-9670-C27A183BBA36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Лямбды", "Лямбды\Лямбды.csproj", "{E0CAF1F1-3D58-4769-9A4F-9B6FD02D0158}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -373,6 +375,10 @@ Global
 		{38837546-765E-4217-9670-C27A183BBA36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{38837546-765E-4217-9670-C27A183BBA36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{38837546-765E-4217-9670-C27A183BBA36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0CAF1F1-3D58-4769-9A4F-9B6FD02D0158}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0CAF1F1-3D58-4769-9A4F-9B6FD02D0158}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0CAF1F1-3D58-4769-9A4F-9B6FD02D0158}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0CAF1F1-3D58-4769-9A4F-9B6FD02D0158}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -437,6 +443,7 @@ Global
 		{0120A023-24F1-4496-8719-7152C0A41474} = {08D1ACEF-041F-4154-97CF-E7628FB5BF57}
 		{ABC1B772-F420-4DBE-B15B-CAEE3D40B13C} = {08D1ACEF-041F-4154-97CF-E7628FB5BF57}
 		{38837546-765E-4217-9670-C27A183BBA36} = {08D1ACEF-041F-4154-97CF-E7628FB5BF57}
+		{E0CAF1F1-3D58-4769-9A4F-9B6FD02D0158} = {08D1ACEF-041F-4154-97CF-E7628FB5BF57}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}

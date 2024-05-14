@@ -16,7 +16,7 @@ namespace ПриминениеДелегатов
         // Регистрируем делегат
         public void RegisterHandler(AccountHandler del)
         {
-            taken = del;
+            taken += del;
         }
         public void UnregisterHandler(AccountHandler del)
         {
