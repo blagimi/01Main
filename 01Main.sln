@@ -153,6 +153,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "РеализацияИнт�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "НаследованиеИнтерфейсов", "НаследованиеИнтерфейсов\НаследованиеИнтерфейсов.csproj", "{C2C559E4-E8C5-4EBA-9882-AF78CD8CE8BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ИнтерфейсыВОбобщениях", "ИнтерфейсыВОбобщениях\ИнтерфейсыВОбобщениях.csproj", "{EF900ABA-2C46-45A7-AEFF-B7BFA39985C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -435,6 +437,10 @@ Global
 		{C2C559E4-E8C5-4EBA-9882-AF78CD8CE8BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2C559E4-E8C5-4EBA-9882-AF78CD8CE8BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2C559E4-E8C5-4EBA-9882-AF78CD8CE8BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF900ABA-2C46-45A7-AEFF-B7BFA39985C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF900ABA-2C46-45A7-AEFF-B7BFA39985C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF900ABA-2C46-45A7-AEFF-B7BFA39985C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF900ABA-2C46-45A7-AEFF-B7BFA39985C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -509,6 +515,7 @@ Global
 		{913AA297-D88D-4EB9-9873-7D350980E5D6} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 		{E5CBD3AA-E57C-49B0-A86C-499EE7F8402B} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 		{C2C559E4-E8C5-4EBA-9882-AF78CD8CE8BF} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
+		{EF900ABA-2C46-45A7-AEFF-B7BFA39985C3} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
