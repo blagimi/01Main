@@ -147,6 +147,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ОпределениеИн�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПриминениеИнтерфейсов", "ПриминениеИнтерфейсов\ПриминениеИнтерфейсов.csproj", "{E7A80C10-4587-45CD-B475-05C19D1E1DC2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЯвнаяРеализацияИнтерфейсов", "ЯвнаяРеализацияИнтерфейсов\ЯвнаяРеализацияИнтерфейсов.csproj", "{913AA297-D88D-4EB9-9873-7D350980E5D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -417,6 +419,10 @@ Global
 		{E7A80C10-4587-45CD-B475-05C19D1E1DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7A80C10-4587-45CD-B475-05C19D1E1DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7A80C10-4587-45CD-B475-05C19D1E1DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{913AA297-D88D-4EB9-9873-7D350980E5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{913AA297-D88D-4EB9-9873-7D350980E5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{913AA297-D88D-4EB9-9873-7D350980E5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{913AA297-D88D-4EB9-9873-7D350980E5D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -488,6 +494,7 @@ Global
 		{7B8F0391-1DA7-471D-AFC7-C8A88FCEC098} = {08D1ACEF-041F-4154-97CF-E7628FB5BF57}
 		{B02C4A03-3427-4058-B668-A0ACEEDBE271} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 		{E7A80C10-4587-45CD-B475-05C19D1E1DC2} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
+		{913AA297-D88D-4EB9-9873-7D350980E5D6} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
