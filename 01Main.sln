@@ -149,13 +149,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПриминениеИнт�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ЯвнаяРеализацияИнтерфейсов", "ЯвнаяРеализацияИнтерфейсов\ЯвнаяРеализацияИнтерфейсов.csproj", "{913AA297-D88D-4EB9-9873-7D350980E5D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "РеализацияИнтерфейсовВБазовыхИПроизводныхКлассах", "РеализацияИнтерфейсовВБазовыхИПроизводныхКлассах\РеализацияИнтерфейсовВБазовыхИПроизводныхКлассах.csproj", "{E5CBD3AA-E57C-49B0-A86C-499EE7F8402B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "РеализацияИнтерфейсовВБазовыхИПроизводныхКлассах", "РеализацияИнтерфейсовВБазовыхИПроизводныхКлассах\РеализацияИнтерфейсовВБазовыхИПроизводныхКлассах.csproj", "{E5CBD3AA-E57C-49B0-A86C-499EE7F8402B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "НаследованиеИнтерфейсов", "НаследованиеИнтерфейсов\НаследованиеИнтерфейсов.csproj", "{C2C559E4-E8C5-4EBA-9882-AF78CD8CE8BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "НаследованиеИнтерфейсов", "НаследованиеИнтерфейсов\НаследованиеИнтерфейсов.csproj", "{C2C559E4-E8C5-4EBA-9882-AF78CD8CE8BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ИнтерфейсыВОбобщениях", "ИнтерфейсыВОбобщениях\ИнтерфейсыВОбобщениях.csproj", "{EF900ABA-2C46-45A7-AEFF-B7BFA39985C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ИнтерфейсыВОбобщениях", "ИнтерфейсыВОбобщениях\ИнтерфейсыВОбобщениях.csproj", "{EF900ABA-2C46-45A7-AEFF-B7BFA39985C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КопированиеОбъектовИнтерфейсICloneable", "КопированиеОбъектовИнтерфейсICloneable\КопированиеОбъектовИнтерфейсICloneable.csproj", "{A8997E76-5748-4AF4-98F9-E960A5F411A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "КопированиеОбъектовИнтерфейсICloneable", "КопированиеОбъектовИнтерфейсICloneable\КопированиеОбъектовИнтерфейсICloneable.csproj", "{A8997E76-5748-4AF4-98F9-E960A5F411A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СортировкаОбъектовИнтерфейсIComparable", "СортировкаОбъектовИнтерфейсIComparable\СортировкаОбъектовИнтерфейсIComparable.csproj", "{D0187A96-D6E1-4160-A1D1-BEDA41793233}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -447,6 +449,10 @@ Global
 		{A8997E76-5748-4AF4-98F9-E960A5F411A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8997E76-5748-4AF4-98F9-E960A5F411A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8997E76-5748-4AF4-98F9-E960A5F411A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0187A96-D6E1-4160-A1D1-BEDA41793233}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0187A96-D6E1-4160-A1D1-BEDA41793233}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0187A96-D6E1-4160-A1D1-BEDA41793233}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0187A96-D6E1-4160-A1D1-BEDA41793233}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -523,6 +529,7 @@ Global
 		{C2C559E4-E8C5-4EBA-9882-AF78CD8CE8BF} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 		{EF900ABA-2C46-45A7-AEFF-B7BFA39985C3} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 		{A8997E76-5748-4AF4-98F9-E960A5F411A0} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
+		{D0187A96-D6E1-4160-A1D1-BEDA41793233} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
