@@ -6,18 +6,17 @@ using System.Threading.Tasks;
 
 namespace КопированиеОбъектовИнтерфейсICloneable
 {
-    internal class Person2
+    internal class Person3: ICloneable
     {
         public string Name { get; set; }
         public int Age { get; set; }
-        public Person2(string name, int age)
+        public Company Work { get; set; }
+        public Person3 (string name, int age, Company company)
         {
             Name = name;
             Age = age;
+            Work = company;
         }
-        public object Clone()
-        {
-            return new Person2(Name, Age);      
-        }
+        public object Clone() => MemberwiseClone();
     }
 }
