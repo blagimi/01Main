@@ -159,6 +159,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "КопированиеОб�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СортировкаОбъектовИнтерфейсIComparable", "СортировкаОбъектовИнтерфейсIComparable\СортировкаОбъектовИнтерфейсIComparable.csproj", "{D0187A96-D6E1-4160-A1D1-BEDA41793233}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КовариантностьИКонтравариантностьОбобщенныхИнтерфейсов", "КовариантностьИКонтравариантностьОбобщенныхИнтерфейсов\КовариантностьИКонтравариантностьОбобщенныхИнтерфейсов.csproj", "{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -453,6 +455,10 @@ Global
 		{D0187A96-D6E1-4160-A1D1-BEDA41793233}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0187A96-D6E1-4160-A1D1-BEDA41793233}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0187A96-D6E1-4160-A1D1-BEDA41793233}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -530,6 +536,7 @@ Global
 		{EF900ABA-2C46-45A7-AEFF-B7BFA39985C3} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 		{A8997E76-5748-4AF4-98F9-E960A5F411A0} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 		{D0187A96-D6E1-4160-A1D1-BEDA41793233} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
+		{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
