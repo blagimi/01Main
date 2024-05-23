@@ -42,6 +42,7 @@
  * ковариативным. Класс EmailMessenger который представляет условную программу для
  * оправки email-сообщений, реализует это интерфейс и возвращает из метода WriteMessage()
  * объект EmailMessage.
+ *                                  | Message,EmailMessage,EmailMessenger,IMessenger
  */
 
 IMessenger<Message> outlook = new EmailMessenger();
@@ -72,7 +73,66 @@ Console.WriteLine(emailMessage.Text);   //  Email: Hi
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* 
- * Контравариантные интерфейсы
+ * Контравариантные интерфейсы.
+ * Для создания контрвариативного интерфейса надо использовать ключевое слово in. 
+ * Например возьмем классы Message и EmailMessage и определим следующие типы.
+ */
+
+/*
+ * Здесь интерфейс IMessenger2 представляет интерфейс мессенджера и определяет метод 
+ * SendMessage() для отправки условного сообщения. Ключевое слово in в определении
+ * интерфейса указывает, что этот интерфейс контрвариативный.
+ * Класс SimpleMessanger представляет уловную программу отправки сообщений и реализует
+ * этот интерфейс. Причем в качестве типа используемого этот класс использует тип Message.
+ * То есть SimpleMessanger фактически представляет тип IMessenger<Message>
+ *                                  | Message,EmailMessage,SimpleMessenger,IMessenger2
+ */
+                                    
+IMessenger2<EmailMessage> outlook2 = new SimpleMessenger();
+                                        //  Отправляется сообщение: Hi
+outlook2.SendMessage(new EmailMessage("Hi"));   
+                                        
+IMessenger2<Message> telegram = new SimpleMessenger();
+IMessenger2<EmailMessage> emailClient2 = telegram;
+                                        //  Отправляется сообщение: Hello
+emailClient2.SendMessage(new EmailMessage("Hello"));    
+
+/*
+ * Так как интерфейс IMessenger использует универсальный параметр с ключевым словом in,
+ * то он является контрвариативным поэтому в коде мы можем переменной типа IMessenger
+ * <EmailMessage> передать объект IMessenger<Message> или SimpleMessenger.
+ * Если бы ключевое слово in не использовалось бы, то этого бы не получилось. Т.е
+ * объект интерфейса с более универсальным типом приводится к объекту интерфейса с
+ * более конкретным типом. При создании контрвариативного интерфейса надо учитывать,
+ * что универсальный параметр конрвариативного типа может применяться только к аргумента
+ * метода, но не может применяться к возвращаемому результату метода.
  */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*
+ * Совмещение ковариантности и контравариантности.
+ * Можно так же совмещать ковариативность и контрвариативность в одном интерфейсе.
+ * Фактически здесь объединены два предыдущих примера. Благодаря ковариативности/
+ * контрвариативности объект класса SimpleMessenger3 может представлять типы
+ * IMessenger<EmailMessage,Message>, IMessenger<Message,EmailMessage>,
+ * IMessenger<Message,Message> и IMessenger<EmailMessage, EmailMessage>
+ *                                  | Message,EmailMessage,SimpleMessenger2,IMessenger3
+ */
+                                        
+IMessenger3<EmailMessage, Message> messenger3 = new SimpleMessenger2();
+Message message3 = messenger3.WriteMessage("Hello World");
+                                        //  Email: Hello World
+Console.WriteLine(message3.Text);
+                                        //  Отправляется сообщение: Test
+messenger3.SendMessage(new EmailMessage("Test"));   
+
+IMessenger3<EmailMessage, EmailMessage> outlook3 = new SimpleMessenger2();
+EmailMessage emailMessage3 = outlook3.WriteMessage("Message from Outlook");
+                                        //  Отправляется сообщение: Email: Message from Outlook
+outlook3.SendMessage(emailMessage3);   
+
+IMessenger3<Message, Message> telegram3 = new SimpleMessenger2();
+Message simpleMessage = telegram3.WriteMessage("Message from Telegram");
+                                        //  Отправляется сообщение: Email: Message from Telegram
+telegram3.SendMessage(simpleMessage);  
