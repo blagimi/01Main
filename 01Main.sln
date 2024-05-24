@@ -157,9 +157,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ИнтерфейсыВОб�
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "КопированиеОбъектовИнтерфейсICloneable", "КопированиеОбъектовИнтерфейсICloneable\КопированиеОбъектовИнтерфейсICloneable.csproj", "{A8997E76-5748-4AF4-98F9-E960A5F411A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СортировкаОбъектовИнтерфейсIComparable", "СортировкаОбъектовИнтерфейсIComparable\СортировкаОбъектовИнтерфейсIComparable.csproj", "{D0187A96-D6E1-4160-A1D1-BEDA41793233}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "СортировкаОбъектовИнтерфейсIComparable", "СортировкаОбъектовИнтерфейсIComparable\СортировкаОбъектовИнтерфейсIComparable.csproj", "{D0187A96-D6E1-4160-A1D1-BEDA41793233}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КовариантностьИКонтравариантностьОбобщенныхИнтерфейсов", "КовариантностьИКонтравариантностьОбобщенныхИнтерфейсов\КовариантностьИКонтравариантностьОбобщенныхИнтерфейсов.csproj", "{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "КовариантностьИКонтравариантностьОбобщенныхИнтерфейсов", "КовариантностьИКонтравариантностьОбобщенныхИнтерфейсов\КовариантностьИКонтравариантностьОбобщенныхИнтерфейсов.csproj", "{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава8", "Глава8", "{1605B197-141D-4271-AA7F-D3B3C8D5F663}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ОпределениеОператоров", "ОпределениеОператоров\ОпределениеОператоров.csproj", "{AA1841EE-9052-41D7-9899-5E24BE96669B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -459,6 +463,10 @@ Global
 		{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA1841EE-9052-41D7-9899-5E24BE96669B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA1841EE-9052-41D7-9899-5E24BE96669B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA1841EE-9052-41D7-9899-5E24BE96669B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA1841EE-9052-41D7-9899-5E24BE96669B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -537,6 +545,7 @@ Global
 		{A8997E76-5748-4AF4-98F9-E960A5F411A0} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 		{D0187A96-D6E1-4160-A1D1-BEDA41793233} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
 		{7BD8283F-D8FF-4945-8D3C-CC9160AECC3C} = {F333C5E7-A8CA-4865-9CE3-9A5E54660D71}
+		{AA1841EE-9052-41D7-9899-5E24BE96669B} = {1605B197-141D-4271-AA7F-D3B3C8D5F663}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
