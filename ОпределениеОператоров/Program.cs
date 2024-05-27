@@ -6,3 +6,4 @@ Console.WriteLine(result); // false
 
 Counter counter3 = counter1 + counter2;
 Console.WriteLine(counter3.Value);  // 23 + 45 = 68
+
