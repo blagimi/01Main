@@ -22,5 +22,15 @@ namespace ОпределениеОператоров
         {
             return counter1.Value < counter2.Value;
         }
+        /// <summary>
+        /// Еще одна версия, перезагрузки перезагруженного оператора
+        /// </summary>
+        /// <param name="counter1">объект Counter</param>
+        /// <param name="val">значение свойства</param>
+        /// <returns>результат сложения 2х переменных</returns>
+        public static int operator + (Counter counter1, int val)
+        {
+            return counter1.Value + val;
+        }
     }
 }

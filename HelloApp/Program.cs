@@ -1,4 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.Write("Введите своё имя: ");
-string name = Console.ReadLine();
-Console.WriteLine($"Привет {name}");
+Console.WriteLine("Введите своё имя: ");
+string? name = Console.ReadLine();
+if(!string.IsNullOrEmpty(name))
+    Console.WriteLine("Значение отсутсвует");
+else
+    Console.WriteLine($"Привет {name}");

@@ -133,7 +133,7 @@ public class Person6
  */
 class Person7
 {
-    string name;
+    string name = " ";
     public string Name
     {
         get => name;

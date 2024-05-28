@@ -27,11 +27,15 @@ namespace Обобщения
         {
             return MassiveItem.Count;
         }
-        public ObjectsHolder()
-        { }
         public ObjectsHolder(List<T> massiveItem)
         {
             MassiveItem = massiveItem;
+        }
+
+#pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        public ObjectsHolder()
+#pragma warning restore CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+        {
         }
     }
 }

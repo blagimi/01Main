@@ -6,12 +6,12 @@
  * Но теперь зададим для класса Console псевдоним:
  */
 
-using printer = System.Console;
+using printer2 = System.Console;
 using User = Person;
 using static Operation;
 using static System.Console;
-printer.WriteLine("Привет мир");
-printer.WriteLine("Добрый день");
+printer2.WriteLine("Привет мир");
+printer2.WriteLine("Добрый день");
 
 /*
  * С помощью выражения using printer = System.Console указываем, что псевдонимом для класса System.Console 
@@ -21,7 +21,7 @@ printer.WriteLine("Добрый день");
 
 /*  Определим класс и для него псевдоним: */
 User tom = new("Tom");
-printer.WriteLine(tom.Name);
+printer2.WriteLine(tom.Name);
 
 
 /*
