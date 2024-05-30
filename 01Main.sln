@@ -169,6 +169,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПерегрузкаОпе�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Индексаторы", "Глава8\Индексаторы\Индексаторы.csproj", "{2B47D7C5-267B-4DDC-B0D5-4798AD2AEC42}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПеременныеСсылкиИВозвращениеСсылки", "Глава8\ПеременныеСсылкиИВозвращениеСсылки\ПеременныеСсылкиИВозвращениеСсылки.csproj", "{4AB87167-3CBB-45A8-9A51-7271FDE5433D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -479,6 +481,10 @@ Global
 		{2B47D7C5-267B-4DDC-B0D5-4798AD2AEC42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B47D7C5-267B-4DDC-B0D5-4798AD2AEC42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B47D7C5-267B-4DDC-B0D5-4798AD2AEC42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB87167-3CBB-45A8-9A51-7271FDE5433D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB87167-3CBB-45A8-9A51-7271FDE5433D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB87167-3CBB-45A8-9A51-7271FDE5433D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB87167-3CBB-45A8-9A51-7271FDE5433D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -560,6 +566,7 @@ Global
 		{AA1841EE-9052-41D7-9899-5E24BE96669B} = {1605B197-141D-4271-AA7F-D3B3C8D5F663}
 		{E8D2FDF7-0C18-49A1-B0B7-71FF2286CC71} = {1605B197-141D-4271-AA7F-D3B3C8D5F663}
 		{2B47D7C5-267B-4DDC-B0D5-4798AD2AEC42} = {1605B197-141D-4271-AA7F-D3B3C8D5F663}
+		{4AB87167-3CBB-45A8-9A51-7271FDE5433D} = {1605B197-141D-4271-AA7F-D3B3C8D5F663}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
