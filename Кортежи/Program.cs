@@ -16,7 +16,15 @@ Console.WriteLine(tuple.Item2);         //  10
 tuple.Item1 += 26;
 Console.WriteLine(tuple.Item1);         //  31
 
+var (name, age) = ("Tom", 23);
+Console.WriteLine(name);    // Tom
+Console.WriteLine(age);     // 23
 
+string main = "Java";
+string second = "C#";
+(main, second) = (second, main);
+Console.WriteLine(main);    // C#
+Console.WriteLine(second);  // Java
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
