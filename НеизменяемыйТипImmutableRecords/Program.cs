@@ -84,14 +84,6 @@ Console.WriteLine(person1.Equals(person2)); // true
 var user1 = new User("Tom");
 var user2 = new User("Tom");
 Console.WriteLine(user1.Equals(user2));     // false
- 
- Console.ReadLine();
-public record Person
-{
-    public string Name { get; init; }
- 
-    public Person(string name) => Name = name;
-}
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -141,3 +133,5 @@ ToString
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
+ 
+ Console.ReadLine();
