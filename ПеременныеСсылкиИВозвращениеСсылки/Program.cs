@@ -19,6 +19,7 @@
 При этом нельзя просто определить переменную-ссылку, нужно обязательно присвоить ей
 какое-то значение.
 */
+
 using System.ComponentModel.DataAnnotations;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
