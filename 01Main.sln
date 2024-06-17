@@ -181,6 +181,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Кортежи", "Корт�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "НеизменяемыйТипImmutableRecords", "НеизменяемыйТипImmutableRecords\НеизменяемыйТипImmutableRecords.csproj", "{DEFE0EF2-AF29-495D-8CFE-07B7F144D0B5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава9", "Глава9", "{0E03090A-A0C4-46E9-93E0-C5B0EAE59002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПаттернТипов", "ПаттернТипов\ПаттернТипов.csproj", "{07DAFBE0-470A-48BA-AA33-B64B3E83DD54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -515,6 +519,10 @@ Global
 		{DEFE0EF2-AF29-495D-8CFE-07B7F144D0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEFE0EF2-AF29-495D-8CFE-07B7F144D0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEFE0EF2-AF29-495D-8CFE-07B7F144D0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07DAFBE0-470A-48BA-AA33-B64B3E83DD54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07DAFBE0-470A-48BA-AA33-B64B3E83DD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07DAFBE0-470A-48BA-AA33-B64B3E83DD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07DAFBE0-470A-48BA-AA33-B64B3E83DD54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -602,6 +610,7 @@ Global
 		{17CC61EF-D733-4DE4-A158-A7A9DAEF5CDD} = {1605B197-141D-4271-AA7F-D3B3C8D5F663}
 		{85B2BFBB-03F7-45FC-9495-9F52D0EE52CB} = {1605B197-141D-4271-AA7F-D3B3C8D5F663}
 		{DEFE0EF2-AF29-495D-8CFE-07B7F144D0B5} = {1605B197-141D-4271-AA7F-D3B3C8D5F663}
+		{07DAFBE0-470A-48BA-AA33-B64B3E83DD54} = {0E03090A-A0C4-46E9-93E0-C5B0EAE59002}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
