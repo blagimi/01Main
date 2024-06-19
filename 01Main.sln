@@ -165,25 +165,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава8", "Глава8"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ОпределениеОператоров", "ОпределениеОператоров\ОпределениеОператоров.csproj", "{AA1841EE-9052-41D7-9899-5E24BE96669B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПерегрузкаОперацийПреобразованияТипов", "ПерегрузкаОперацийПреобразованияТипов\ПерегрузкаОперацийПреобразованияТипов.csproj", "{E8D2FDF7-0C18-49A1-B0B7-71FF2286CC71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПерегрузкаОперацийПреобразованияТипов", "ПерегрузкаОперацийПреобразованияТипов\ПерегрузкаОперацийПреобразованияТипов.csproj", "{E8D2FDF7-0C18-49A1-B0B7-71FF2286CC71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Индексаторы", "Индексаторы\Индексаторы.csproj", "{2B47D7C5-267B-4DDC-B0D5-4798AD2AEC42}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Индексаторы", "Индексаторы\Индексаторы.csproj", "{2B47D7C5-267B-4DDC-B0D5-4798AD2AEC42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПеременныеСсылкиИВозвращениеСсылки", "ПеременныеСсылкиИВозвращениеСсылки\ПеременныеСсылкиИВозвращениеСсылки.csproj", "{4AB87167-3CBB-45A8-9A51-7271FDE5433D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПеременныеСсылкиИВозвращениеСсылки", "ПеременныеСсылкиИВозвращениеСсылки\ПеременныеСсылкиИВозвращениеСсылки.csproj", "{4AB87167-3CBB-45A8-9A51-7271FDE5433D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "МетодыРасширения", "МетодыРасширения\МетодыРасширения.csproj", "{8B07A894-3DD1-4738-ADD9-B2AC380949A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "МетодыРасширения", "МетодыРасширения\МетодыРасширения.csproj", "{8B07A894-3DD1-4738-ADD9-B2AC380949A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЧастичныеКлассыИМетоды", "ЧастичныеКлассыИМетоды\ЧастичныеКлассыИМетоды.csproj", "{BE7600DB-AD04-439B-8784-94C74B109DED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ЧастичныеКлассыИМетоды", "ЧастичныеКлассыИМетоды\ЧастичныеКлассыИМетоды.csproj", "{BE7600DB-AD04-439B-8784-94C74B109DED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "АнонимныеТипы", "АнонимныеТипы\АнонимныеТипы.csproj", "{17CC61EF-D733-4DE4-A158-A7A9DAEF5CDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "АнонимныеТипы", "АнонимныеТипы\АнонимныеТипы.csproj", "{17CC61EF-D733-4DE4-A158-A7A9DAEF5CDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Кортежи", "Кортежи\Кортежи.csproj", "{85B2BFBB-03F7-45FC-9495-9F52D0EE52CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Кортежи", "Кортежи\Кортежи.csproj", "{85B2BFBB-03F7-45FC-9495-9F52D0EE52CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "НеизменяемыйТипImmutableRecords", "НеизменяемыйТипImmutableRecords\НеизменяемыйТипImmutableRecords.csproj", "{DEFE0EF2-AF29-495D-8CFE-07B7F144D0B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "НеизменяемыйТипImmutableRecords", "НеизменяемыйТипImmutableRecords\НеизменяемыйТипImmutableRecords.csproj", "{DEFE0EF2-AF29-495D-8CFE-07B7F144D0B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава9", "Глава9", "{0E03090A-A0C4-46E9-93E0-C5B0EAE59002}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПаттернТипов", "ПаттернТипов\ПаттернТипов.csproj", "{07DAFBE0-470A-48BA-AA33-B64B3E83DD54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПаттернТипов", "ПаттернТипов\ПаттернТипов.csproj", "{07DAFBE0-470A-48BA-AA33-B64B3E83DD54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПаттернСвойств", "ПаттернСвойств\ПаттернСвойств.csproj", "{5D5C655B-39BF-42C0-9017-2DA96A3C9908}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -523,6 +525,10 @@ Global
 		{07DAFBE0-470A-48BA-AA33-B64B3E83DD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07DAFBE0-470A-48BA-AA33-B64B3E83DD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07DAFBE0-470A-48BA-AA33-B64B3E83DD54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D5C655B-39BF-42C0-9017-2DA96A3C9908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D5C655B-39BF-42C0-9017-2DA96A3C9908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D5C655B-39BF-42C0-9017-2DA96A3C9908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D5C655B-39BF-42C0-9017-2DA96A3C9908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -611,6 +617,7 @@ Global
 		{85B2BFBB-03F7-45FC-9495-9F52D0EE52CB} = {1605B197-141D-4271-AA7F-D3B3C8D5F663}
 		{DEFE0EF2-AF29-495D-8CFE-07B7F144D0B5} = {1605B197-141D-4271-AA7F-D3B3C8D5F663}
 		{07DAFBE0-470A-48BA-AA33-B64B3E83DD54} = {0E03090A-A0C4-46E9-93E0-C5B0EAE59002}
+		{5D5C655B-39BF-42C0-9017-2DA96A3C9908} = {0E03090A-A0C4-46E9-93E0-C5B0EAE59002}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
