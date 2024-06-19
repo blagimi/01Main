@@ -90,5 +90,32 @@ void UseEmployee3(Employee? employee)
             break;
     }
 }
+/*
+ * С помощью выражения when можно вводить дополнительные условия в конструкцию case.
+ * Преобразовываем объект employee в объект типа Manager и в случае удачного
+ * преобразования смотрим на значение свойства IsOnVacation, если оно равно false
+ * то выполняется данный блок case.
+ */
+
+Employee bob3 = new Manager() { IsOnVacation = true };
+Employee tom3 = new Manager() { IsOnVacation = false };
+UseEmployee4(bob3);
+UseEmployee4(tom3);
+
+void UseEmployee4 (Employee? employee)
+{
+    switch (employee)
+    {
+        case Manager manager when !manager.IsOnVacation:
+            manager.Work();
+            break;
+        case null:
+            Console.WriteLine("Employee is null");
+            break;
+        default:
+            Console.WriteLine("Employee does not work");
+            break;
+    }
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
