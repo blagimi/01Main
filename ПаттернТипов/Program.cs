@@ -1,4 +1,5 @@
-﻿using ПаттернТипов;
+﻿using System.Diagnostics;
+using ПаттернТипов;
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -34,6 +35,60 @@ void UseEmployee(Employee employee)
         manager.Work();
     }
     else { Console.WriteLine("Преобразование недопустимо");  }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*
+ * Так же можно использовать constant pattern - сопоставление с некоторой константой.
+ */
+
+var message = "hello";
+if (message is "hello")
+{
+    Console.WriteLine("Hello");
+}
+
+/*
+ * Подобным образом можно проверить значение на null
+ */
+
+Employee? bob = new();
+Employee? tim = null;
+
+UseEmployee2(bob);
+UseEmployee2(tim);
+
+void UseEmployee2(Employee? employee)
+{
+    if (employee is not null)
+        employee.Work();
+
+}
+
+/*
+ * Кроме конструкций if сопоставление паттернов может применяться в конструкции switch
+ */
+
+Employee bob2 = new();
+Employee tom2 = new Manager();
+UseEmployee3(bob2);
+UseEmployee3(tom2);
+
+void UseEmployee3(Employee? employee)
+{
+    switch (employee)
+    {
+        case Manager manager:
+            manager.Work();
+            break;
+        case null:
+            Console.WriteLine("Object is null");
+            break;
+        default:
+            Console.WriteLine("Object is not manager");
+            break;
+    }
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
