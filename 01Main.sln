@@ -187,7 +187,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПаттернТипов", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПаттернСвойств", "ПаттернСвойств\ПаттернСвойств.csproj", "{5D5C655B-39BF-42C0-9017-2DA96A3C9908}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПаттерныКортежей", "ПаттерныКортежей\ПаттерныКортежей.csproj", "{7D17B32D-D605-4A64-8AE8-E1E541748B74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ПаттерныКортежей", "ПаттерныКортежей\ПаттерныКортежей.csproj", "{7D17B32D-D605-4A64-8AE8-E1E541748B74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПозиционныйПаттерн", "ПозиционныйПаттерн\ПозиционныйПаттерн.csproj", "{04023D08-5ABC-4CF8-928D-1816BC373122}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -535,6 +537,10 @@ Global
 		{7D17B32D-D605-4A64-8AE8-E1E541748B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D17B32D-D605-4A64-8AE8-E1E541748B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D17B32D-D605-4A64-8AE8-E1E541748B74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04023D08-5ABC-4CF8-928D-1816BC373122}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04023D08-5ABC-4CF8-928D-1816BC373122}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04023D08-5ABC-4CF8-928D-1816BC373122}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04023D08-5ABC-4CF8-928D-1816BC373122}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -625,6 +631,7 @@ Global
 		{07DAFBE0-470A-48BA-AA33-B64B3E83DD54} = {0E03090A-A0C4-46E9-93E0-C5B0EAE59002}
 		{5D5C655B-39BF-42C0-9017-2DA96A3C9908} = {0E03090A-A0C4-46E9-93E0-C5B0EAE59002}
 		{7D17B32D-D605-4A64-8AE8-E1E541748B74} = {0E03090A-A0C4-46E9-93E0-C5B0EAE59002}
+		{04023D08-5ABC-4CF8-928D-1816BC373122} = {0E03090A-A0C4-46E9-93E0-C5B0EAE59002}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
