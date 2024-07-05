@@ -118,4 +118,31 @@ int GetNumber4(int[] values) => values switch
 [..] => 4          // произвольное количество элементов
 };
 
+/*
+ * slice-паттерн можно сочетать с символов подстановки _, например:
+ * int GetNumber(int[] values) => values switch
+{
+    [_, .., _] => 1,
+    [..] => 2
+};
+ */
+
+/*
+ * В данном случае паттерн [_, .., _] предполагает массив, который состоит как минимум
+ * из двух произвольных элементов, и между первым и последним элементром может 
+ * находиться произвольное количество других элементов: 
+ */
+
+Console.WriteLine(GetNumber5(new[] { 1, 2, 3, 4 }));   // 1
+Console.WriteLine(GetNumber5(new[] { 1, 2, 3 }));     // 1
+Console.WriteLine(GetNumber5(new[] { 1, 2 }));        // 1
+Console.WriteLine(GetNumber5(new[] { 1 }));          // 2
+Console.WriteLine(GetNumber5(new int[] { }));       // 2
+
+int GetNumber5(int[] values) => values switch
+{
+[_, .., _] => 1,
+[..] => 2
+};
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
