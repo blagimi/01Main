@@ -146,3 +146,13 @@ int GetNumber5(int[] values) => values switch
 };
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*
+ * Получение элементов в переменные
+ */
+
+int[] numbers3 = { 2, 3, 5 };
+if (numbers3 is [var first, var second, .., var last])
+{
+    Console.WriteLine($"first: {first}, second: {second}  last: {last}");
+}
