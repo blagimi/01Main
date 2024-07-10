@@ -206,8 +206,8 @@ string GetSlice(int[] values) => values switch
  * три переменных:
  */
 
-int[] numbers = { 2, 3, 5 };
-if (numbers is { Length: 3 } and [var first, var second, var third])
+int[] numbers6 = { 2, 3, 5 };
+if (numbers6 is { Length: 3 } and [var first5, var second5, var third5])
 {
-    Console.WriteLine($"first: {first}, second: {second}  third: {third}");
+    Console.WriteLine($"first: {first5}, second: {second5}  third: {third5}");
 }
