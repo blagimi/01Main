@@ -172,3 +172,42 @@ string GetData(int[] values) => values switch
 [var first, var second, .., var last] => $"First: {first}  Second: {second}  Last: {last}",
 [..] => "Array has less than 3 elements"
 };
+
+/*
+ * В данном случае получаем первый элемент массива в переменную first, второй элемент 
+ * в переменную second, а последний элемент - в переменную last.При этом значения, 
+ * которые проектируются на паттерн .., также можно получить в переменную. Например,
+ * в паттерне [2, .. var middle, 5] элементы, которые проектируются на .., можно 
+ * передаются в переменную middle. Несколько примеров:
+ */
+
+Console.WriteLine(GetSlice(new[] { 2, 3, 4, 5 }));       // Middle: 3, 4
+Console.WriteLine(GetSlice(new[] { 2, 4, 6, 8 }));      // End: 4, 6, 8
+Console.WriteLine(GetSlice(new[] { 1, 2, 3, 5 }));      // Start: 1, 2, 3
+Console.WriteLine(GetSlice(new[] { 1, 2, 3, 4 }));      // All: 1, 2, 3, 4
+Console.WriteLine(GetSlice(new int[] { }));             // All: 
+
+string GetSlice(int[] values) => values switch
+{
+[2, .. var middle, 5] => $"Middle: {string.Join(", ", middle)}",
+[2, .. var end] => $"End: {string.Join(", ", end)}",
+[.. var start, 5] => $"Start: {string.Join(", ", start)}",
+[.. var all] => $"All: {string.Join(", ", all)}"
+};
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/*
+ * Свойства коллекций.
+ * Стоит отметить, что, поскольку массивы и списки - обычные классы C#, которые 
+ * имеют свойства, то для них мы также можем применять паттерн свойств. Объединение 
+ * паттерна свойств и паттерна списков позволяет упростить решение некоторых задач. 
+ * Например, у нас есть задача: если массив имеет три элемента, то разложить его на 
+ * три переменных:
+ */
+
+int[] numbers = { 2, 3, 5 };
+if (numbers is { Length: 3 } and [var first, var second, var third])
+{
+    Console.WriteLine($"first: {first}, second: {second}  third: {third}");
+}
