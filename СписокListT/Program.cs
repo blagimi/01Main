@@ -21,3 +21,11 @@ List<string> people = new List<string>();
  */
 
 List<string> people2 = new List<string>() { "Tom", "Bob", "Sam" };
+
+/*
+ * В данном случае в список помещаются три строки Также можно при создании списка
+ * инициализировать его элементами из другой коллекции, например, другого списка:
+ */
+
+var people3 = new List<string>() { "Tom", "Bob", "Sam" };
+var employees = new List<string>(people3);
