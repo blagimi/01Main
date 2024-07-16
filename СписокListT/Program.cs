@@ -29,3 +29,12 @@ List<string> people2 = new List<string>() { "Tom", "Bob", "Sam" };
 
 var people3 = new List<string>() { "Tom", "Bob", "Sam" };
 var employees = new List<string>(people3);
+
+
+/* 
+ * Можно совместить оба способа:
+ */
+
+
+var people4 = new List<string>() { "Tom", "Bob", "Sam" };
+var employees2 = new List<string>(people) { "Mike" };
