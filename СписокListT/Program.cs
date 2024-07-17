@@ -38,3 +38,14 @@ var employees = new List<string>(people3);
 
 var people4 = new List<string>() { "Tom", "Bob", "Sam" };
 var employees2 = new List<string>(people) { "Mike" };
+
+/*
+ *  В данном случае в списке employees будет четыре элемента 
+ *  ({ "Tom", "Bob", "Sam", "Mike" }) - три добавляются из списка people и один
+ *  элемент задается при инициализации. Начиная с версии C# 12 для определения 
+ *  списков можно использовать выражения коллекций, которые предполагают 
+ *  заключение элементов коллекции в квадратные скобки:
+ */
+
+List<string> people5 = ["Tom", "Bob", "Sam"];
+List<string> employees3 = [];// пустой список
