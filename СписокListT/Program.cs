@@ -49,3 +49,18 @@ var employees2 = new List<string>(people) { "Mike" };
 
 List<string> people5 = ["Tom", "Bob", "Sam"];
 List<string> employees3 = [];// пустой список
+
+/* Подобным образом можно работать со списками других типов, например: */
+
+List<Person> people7 = new List<Person>()
+{
+    new Person("Tom"),
+    new Person("Bob"),
+    new Person("Sam")
+};
+
+class Person
+{
+    public string Name { get; }
+    public Person(string name) => Name = name;
+}
