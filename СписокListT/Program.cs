@@ -90,3 +90,11 @@ string firstPerson = people8[0]; // получаем первый элемент
 Console.WriteLine(firstPerson); // Tom
 people8[0] = "Mike";     // изменяем первый элемент
 Console.WriteLine(people8[0]); // Mike
+
+/*
+ * Длина списка.
+ * С помощью свойства Count можно получить длину списка:
+ */
+
+var people9 = new List<string>() { "Tom", "Bob", "Sam" };
+Console.WriteLine(people9.Count);    // 3
