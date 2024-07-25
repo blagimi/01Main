@@ -91,6 +91,8 @@ Console.WriteLine(firstPerson); // Tom
 people8[0] = "Mike";     // изменяем первый элемент
 Console.WriteLine(people8[0]); // Mike
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 /*
  * Длина списка.
  * С помощью свойства Count можно получить длину списка:
@@ -98,3 +100,32 @@ Console.WriteLine(people8[0]); // Mike
 
 var people9 = new List<string>() { "Tom", "Bob", "Sam" };
 Console.WriteLine(people9.Count);    // 3
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Перебор списка.
+ * C# позволяет осуществить перебор списка с помощью стандартного цикла foreach 
+ */
+
+var people10 = new List<string>() { "Tom", "Bob", "Sam" };
+
+foreach (var person in people10)
+{
+    Console.WriteLine(person);
+}
+// Вывод программы:
+// Tom
+// Bob
+// Sam
+
+/* Также можно использовать другие типы циклов и в комбинации с индексами перебирать списки */
+
+var people11 = new List<string>() { "Tom", "Bob", "Sam" };
+
+for (int i = 0; i < people11.Count; i++)
+{
+    Console.WriteLine(people11[i]);
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
