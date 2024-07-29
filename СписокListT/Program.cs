@@ -177,4 +177,22 @@ void Sort(IComparer<T>? comparer): сортировка списка с помо
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-
+/* Добавление в список*/
+List<string> people12 = new List<string> () { "Tom" };
+ 
+people12.Add("Bob"); // добавление элемента
+// people = { "Tom", "Bob" };
+ 
+people12.AddRange(new[] { "Sam", "Alice" });   // добавляем массив
+// people = { "Tom", "Bob", "Sam", "Alice" };
+// также можно было бы добавить другой список
+// people.AddRange(new List<string>(){ "Sam", "Alice" });
+ 
+people12.Insert(0, "Eugene"); // вставляем на первое место
+// people = { "Eugene", "Tom", "Bob", "Sam", "Alice" };
+ 
+people12.InsertRange(1, new string[] {"Mike", "Kate"}); // вставляем массив с индекса 1
+// people = { "Eugene", "Mike", "Kate", "Tom", "Bob", "Sam", "Alice" };
+ 
+// также можно было бы добавить другой список
+// people.InsertRange(1, new List<string>(){ "Mike", "Kate" });
