@@ -196,3 +196,25 @@ people12.InsertRange(1, new string[] {"Mike", "Kate"}); // вставляем м
  
 // также можно было бы добавить другой список
 // people.InsertRange(1, new List<string>(){ "Mike", "Kate" });
+
+/* Удаление из списка */
+
+var people13 = new List<string> () { "Eugene", "Mike", "Kate", "Tom", "Bob", "Sam", "Tom", "Alice" };
+ 
+people13.RemoveAt(1); //  удаляем второй элемент
+// people = { "Eugene", "Kate", "Tom", "Bob", "Sam", "Tom", "Alice" };
+ 
+people13.Remove("Tom"); //  удаляем элемент "Tom"
+// people = { "Eugene", "Kate", "Bob", "Sam", "Tom", "Alice" };
+ 
+// удаляем из списка все элементы, длина строки которых равна 3
+people13.RemoveAll(person => person.Length == 3);
+// people = { "Eugene", "Kate", "Alice" };
+ 
+// удаляем из списка 2 элемента начиная с индекса 1
+people13.RemoveRange(1, 2);
+// people = { "Eugene"};
+ 
+// полностью очищаем список
+people13.Clear();
+// people = {  };
