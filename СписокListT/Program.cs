@@ -197,6 +197,9 @@ people12.InsertRange(1, new string[] {"Mike", "Kate"}); // вставляем м
 // также можно было бы добавить другой список
 // people.InsertRange(1, new List<string>(){ "Mike", "Kate" });
 
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 /* Удаление из списка */
 
 var people13 = new List<string> () { "Eugene", "Mike", "Kate", "Tom", "Bob", "Sam", "Tom", "Alice" };
@@ -220,6 +223,8 @@ people13.Clear();
 // people = {  };
 
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 /* Поиск и проверка элемента */
 
 var people14 = new List<string> () { "Eugene", "Mike", "Kate", "Tom", "Bob", "Sam" };
@@ -242,3 +247,19 @@ var lastWithLength3 = people14.FindLast(p => p.Length == 3);  // Sam
 // получаем все элементы с длиной в 3 символа в виде списка
 List<string> peopleWithLength3 = people14.FindAll(p => p.Length == 3);
 // peopleWithLength3 { "Tom", "Bob", "Sam"}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Получение диапазона и копирование в массив */
+
+List<string> people15 = new List<string>() {"Eugene", "Tom", "Mike", "Sam", "Bob" };
+ 
+// получаем диапазон со второго по четвертый элемент
+var range = people15.GetRange(1, 3);
+// range = { "Tom", "Mike", "Sam"};
+ 
+// копируем в массив первые три элемента
+string[] partOfPeople = new string[3];
+people15.CopyTo(0, partOfPeople, 0, 3);
+// partOfPeople = { "Eugene", "Tom", "Mike"};
