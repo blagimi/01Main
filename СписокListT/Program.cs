@@ -263,3 +263,18 @@ var range = people15.GetRange(1, 3);
 string[] partOfPeople = new string[3];
 people15.CopyTo(0, partOfPeople, 0, 3);
 // partOfPeople = { "Eugene", "Tom", "Mike"};
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Расположение элементов в обратном порядке */
+
+var people16 = new List<string> () { "Eugene", "Tom", "Mike", "Sam", "Bob" };
+ 
+// переворачиваем весь список
+people16.Reverse();
+// people = { "Bob","Sam", "Mike", "Tom", "Eugene"};
+ 
+var people17 = new List<string>() { "Eugene", "Tom", "Mike", "Sam", "Bob" };
+// переворачиваем часть только 3 элемента с индекса 1
+people17.Reverse(1, 3);
+// people2 = { "Eugene","Sam", "Mike", "Tom", "Bob" };
