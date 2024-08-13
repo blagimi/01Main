@@ -43,6 +43,23 @@ Previous: возвращает ссылку предыдущий элемент 
  
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */ 
 
+/*Свойства LinkedList
+Класс LinkedList определяет следующие свойства:
 
+Count: количество элементов в связанном списке
+
+First: первый узел в списке в виде объекта LinkedListNode<T>
+
+Last: последний узел в списке в виде объекта LinkedListNode<T>
+
+Используем эти свойства */
+var employees2 = new List<string> { "Tom", "Sam", "Bob" };
+ 
+LinkedList<string> people2 = new LinkedList<string>(employees2);
+Console.WriteLine(people2.Count);            // 3
+Console.WriteLine(people2.First?.Value);    // Tom
+Console.WriteLine(people2.Last?.Value);    // Bob
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */ 
 
 Console.ReadKey();
