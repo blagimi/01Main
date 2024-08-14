@@ -60,6 +60,28 @@ Console.WriteLine(people2.Count);            // 3
 Console.WriteLine(people2.First?.Value);    // Tom
 Console.WriteLine(people2.Last?.Value);    // Bob
 
+/* Используя свойства LinkedList и LinkedListNode, можно пройтись по всем элементам списка в прямом или обратном порядке: */
+
+LinkedList<string> people3 = new LinkedList<string>(new[] { "Tom", "Sam", "Bob" });
+ 
+// от начала до конца списка
+var currentNode = people3.First;
+while(currentNode != null)
+{
+    Console.WriteLine(currentNode.Value);
+    currentNode = currentNode.Next;
+}
+ 
+// с конца до начала списка
+currentNode = people3.Last;
+while (currentNode != null)
+{
+    Console.WriteLine(currentNode.Value);
+    currentNode = currentNode.Previous;
+}
+
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */ 
 
 Console.ReadKey();
