@@ -80,6 +80,32 @@ while (currentNode != null)
     currentNode = currentNode.Previous;
 }
 
+/*
+Методы LinkedList
+Используя методы класса LinkedList<T>, можно обращаться к различным элементам, как в конце, так и в начале списка:
+AddAfter(LinkedListNode<T> node, LinkedListNode<T> newNode): вставляет узел newNode в список после узла node.
+AddAfter(LinkedListNode<T> node, T value): вставляет в список новый узел со значением value после узла node.
+AddBefore(LinkedListNode<T> node, LinkedListNode<T> newNode): вставляет в список узел newNode перед узлом node.
+AddBefore(LinkedListNode<T> node, T value): вставляет в список новый узел со значением value перед узлом node.
+AddFirst(LinkedListNode<T> node): вставляет новый узел в начало списка
+AddFirst(T value): вставляет новый узел со значением value в начало списка
+AddLast(LinkedListNode<T> node): вставляет новый узел в конец списка
+AddLast(T value): вставляет новый узел со значением value в конец списка
+RemoveFirst(): удаляет первый узел из списка. После этого новым первым узлом становится узел, следующий за удаленным
+RemoveLast(): удаляет последний узел из списка
+Приминение некоторых
+*/
+
+var people4 = new LinkedList<string>();
+people4.AddLast("Tom"); // вставляем узел со значением Tom на последнее место
+                        //так как в списке нет узлов, то последнее будет также и первым
+people4.AddFirst("Bob"); // вставляем узел со значением Bob на первое место
+ 
+// вставляем после первого узла новый узел со значением Mike
+if (people4.First != null) people.AddAfter(people4.First, "Mike");
+ 
+// теперь у нас список имеет следующую последовательность: Bob Mike Tom
+foreach (var person in people4) Console.WriteLine(person);
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */ 
