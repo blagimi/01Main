@@ -38,7 +38,24 @@ void Enqueue(T item): добавляет элемент в конец очере
 T Peek(): просто возвращает первый элемент из начала очереди без его удаления
 Посмотрим применение очереди на практике: */
 
-
+var people4 = new Queue<string>();
+ 
+// добавляем элементы
+people4.Enqueue("Tom");  // people = { Tom }
+people4.Enqueue("Bob");  // people = { Tom, Bob }
+people4.Enqueue("Sam");  // people = { Tom, Bob, Sam }
+ 
+// получаем элемент из самого начала очереди 
+var firstPerson = people4.Peek();
+Console.WriteLine(firstPerson); // Tom
+ 
+// удаляем элементы
+var person1 = people4.Dequeue();  // people = { Bob, Sam  }
+Console.WriteLine(person1); // Tom
+var person2 = people4.Dequeue();  // people = { Sam  }
+Console.WriteLine(person2); // Bob
+var person3 = people4.Dequeue();  // people = {  }
+Console.WriteLine(person3); // Sam
 
 
 
