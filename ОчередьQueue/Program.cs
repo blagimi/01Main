@@ -57,7 +57,38 @@ Console.WriteLine(person2); // Bob
 var person3 = people4.Dequeue();  // people = {  }
 Console.WriteLine(person3); // Sam
 
+/* Стоит отметить, что если с помощью методов Peek или Dequeue мы попытаемся 
+получить первый элемент очереди, которая пуста, то программа выдаст исключение.
+Соответственно перед получением элемента мы можем проверять количество элементов
+в очереди: */
 
+if(people4.Count > 0)
+{
+    var person = people4.Peek();
+    people4.Dequeue();
+}
+
+/*
+Либо можно использовать пару методов:
+bool TryDequeue(out T result): передает в переменную result первый элемент очереди
+с его удалением из очереди, возвращает true, если очередь не пуста и элемент 
+успешно получен.
+bool TryPeek(out T result): передает в переменную result первый элемент очереди без
+его извлечения из очереди, возвращает true, если очередь не пуста и элемент успешно 
+получен.
+*/
+
+var people5 = new Queue<string>();
+ 
+// добавляем элементы
+people5.Enqueue("Tom");  // people = { Tom }
+ 
+// удаляем элементы
+var success1 = people5.TryDequeue(out var person5);  // success1 = true
+if (success1) Console.WriteLine(person5); // Tom
+ 
+var success2 = people5.TryPeek(out var person6);  // success2 = false
+if (success2) Console.WriteLine(person6); 
 
 
 
