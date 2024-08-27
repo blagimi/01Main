@@ -90,6 +90,44 @@ if (success1) Console.WriteLine(person5); // Tom
 var success2 = people5.TryPeek(out var person6);  // success2 = false
 if (success2) Console.WriteLine(person6); 
 
+/*
+Очереди - довольно часто встречаемая стуктура в реальной жизни. 
+Например, очередь пациентов на прием к врачу. Реализуем данную ситуацию:
+Здесь класс врача - класс Doctor в методе TakePatients принимает очередь пациентов в 
+виде объектов Person. И пока в очереди есть объекты извлекает по одному объекту.
+Консольный вывод:
+Осмотр пациента Tom
+Осмотр пациента Bob
+Осмотр пациента Sam
+Доктор закончил осматривать пациентов
+*/
+
+var patients = new Queue<Person>();
+patients.Enqueue(new Person("Tom"));
+patients.Enqueue(new Person("Bob"));
+patients.Enqueue(new Person("Sam"));
+ 
+var practitioner = new Doctor();
+practitioner.TakePatients(patients);
+ 
+class Person
+{
+    public string Name { get; }
+    public Person(string name) => Name = name;
+}
+ 
+class Doctor
+{
+    public void TakePatients(Queue<Person> patients)
+    {
+        while(patients.Count > 0)
+        {
+            var patient = patients.Dequeue();
+            Console.WriteLine($"Осмотр пациента {patient.Name}");
+        }
+        Console.WriteLine("Доктор закончил осматривать пациентов");
+    }
+}
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
