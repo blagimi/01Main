@@ -203,6 +203,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ДвухсвязныйСп�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ОчередьQueue", "ОчередьQueue\ОчередьQueue.csproj", "{45BF5C92-8C12-4EE0-AF48-C1FF7DA9060F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КоллекцияStackT", "КоллекцияStackT\КоллекцияStackT.csproj", "{0A41A566-4A93-4839-B6AC-F0CDC2252C64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -573,6 +575,10 @@ Global
 		{45BF5C92-8C12-4EE0-AF48-C1FF7DA9060F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45BF5C92-8C12-4EE0-AF48-C1FF7DA9060F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45BF5C92-8C12-4EE0-AF48-C1FF7DA9060F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A41A566-4A93-4839-B6AC-F0CDC2252C64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A41A566-4A93-4839-B6AC-F0CDC2252C64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A41A566-4A93-4839-B6AC-F0CDC2252C64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A41A566-4A93-4839-B6AC-F0CDC2252C64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -669,6 +675,7 @@ Global
 		{A0775C40-B727-4E43-9080-98938FC69972} = {49FD5A07-16C6-4243-B66F-C203C2518596}
 		{7D1A6E58-E2A0-4970-8395-117865FE2C13} = {49FD5A07-16C6-4243-B66F-C203C2518596}
 		{45BF5C92-8C12-4EE0-AF48-C1FF7DA9060F} = {49FD5A07-16C6-4243-B66F-C203C2518596}
+		{0A41A566-4A93-4839-B6AC-F0CDC2252C64} = {49FD5A07-16C6-4243-B66F-C203C2518596}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
