@@ -27,6 +27,24 @@ Stack<string> people = new Stack<string>();
 
 Stack<string> people2 = new Stack<string>(16);
 
+/* Также можно инициализировать стек элементами из другой коллекции или массивом: */
+
+var employees = new List<string> { "Tom", "Sam", "Bob" };
+Stack<string> people3 = new Stack<string>(employees);
+foreach (var person in people3) Console.WriteLine(person);
+ 
+Console.WriteLine(people3.Count); // 3
+
+/* Для перебора стека можно использовать стандартный цикл foreach. Причем в цикле в 
+соответствии с аалгоритмом стека LIFO данные извлекаются в порядке, обратном их 
+добавлению. Консольный вывод в данном случае:
+
+Bob
+Sam
+Tom
+3
+
+Для получения количества элементов стека применяется свойство Count. */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
