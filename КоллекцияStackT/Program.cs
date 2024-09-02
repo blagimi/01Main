@@ -56,6 +56,31 @@ Push: добавляет элемент в стек в верхушку стек
 Pop: извлекает и возвращает первый элемент из стека
 Peek: просто возвращает первый элемент из стека без его удаления */
 
+var people4 = new Stack<string>();
+people4.Push("Tom");
+// people = { Tom }
+people4.Push("Sam");
+// people = { Sam, Tom }
+people4.Push("Bob");
+// people = { Bob, Sam, Tom }
+ 
+// получаем первый элемент стека без его удаления 
+string headPerson = people.Peek();
+Console.WriteLine(headPerson);  // Bob
+ 
+string person1 = people.Pop();
+// people = { Sam, Tom }
+Console.WriteLine(person1);  // Bob
+ 
+string person2 = people.Pop();
+// people = { Tom }
+Console.WriteLine(person2);  // Sam
+ 
+string person3 = people.Pop();
+// people = { }
+Console.WriteLine(person3);  // Tom
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
