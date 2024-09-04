@@ -96,9 +96,19 @@ bool TryPop(out T result): удаляет из стека первый элем�
 bool TryPeek(out T result): передает в переменную result первый элемент стека
 без его извлечения, возвращает true, если элемент успешно получен.
 */
-
+var people5 = new Stack<string>();
+people5.Push("Tom");
+// people = { Tom }
+ 
+// удаляем элементы
+var success1 = people5.TryPop(out var person6);  // success1 = true
+if (success1) Console.WriteLine(person6); // Tom
+ 
+var success2 = people5.TryPeek(out var person7);  // success2 = false
+if (success2) Console.WriteLine(person7);
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+Console.ReadLine();
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
