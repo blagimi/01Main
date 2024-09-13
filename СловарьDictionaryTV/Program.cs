@@ -66,6 +66,23 @@ var mike = new KeyValuePair<int, string>(56, "Mike");
 var employees = new List<KeyValuePair<int, string>>() { mike};
 var people4 = new Dictionary<int, string>(employees);
 
+/* Конструктор типа KeyValuePair принимает два параметра - ключ элемента и его
+значения. То есть в данном случае создается один такой элемент - mike с 
+ключом 56 и значением "Mike". И этот элемент добавляется в список employees,
+которым затем инициализируется словарь.
+Можно совместить оба способа инициализации: */
+
+var mike2 = new KeyValuePair<int, string>(56, "Mike");
+var employees2 = new List<KeyValuePair<int, string>>() { mike };
+var people5 = new Dictionary<int, string>(employees)
+{
+    [5] = "Tom",
+    [6] = "Sam",
+    [7] = "Bob",
+};
+
+/* В данном случае в словаре people будет четыре элемента.*/
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
