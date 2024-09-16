@@ -85,8 +85,28 @@ var people5 = new Dictionary<int, string>(employees)
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/* Перебор словаря 
+Для перебора словаря можно применять цикл foreach: */
 
+var people6 = new Dictionary<int, string>()
+{
+    [5] = "Tom",
+    [6] = "Sam",
+    [7] = "Bob"
+};
+foreach(var person in people6)
+{
+    Console.WriteLine($"key: {person.Key}  value: {person.Value}");
+}
 
+/*
+При переборе каждый элемент будет помещаться в переменную, которая представляет тип 
+KeyValuePair, соответственно с помощью свойств Key и Value мы сможем получить ключ
+и значение элемента. Консольный вывод программы:
+key: 5  value: Tom
+key: 6  value: Sam
+key: 7  value: Bob
+*/
 
 
 Console.ReadLine();
