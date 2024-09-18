@@ -131,9 +131,58 @@ Console.WriteLine(people7[6]);  // Mike
 people7[22] = "Eugene";
 Console.WriteLine(people7[22]);  // Eugene
 
+/* Более того, таким образом мы можем также добавить новый элемент в словарь.
+При установке значения по ключу, если элемент с таким ключом уже есть в
+словаре, то значение переустанавливается. Если же элемента с подобным 
+ключом нет в словаре, то элемент добавляется.: */
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Методы и свойства Dictionary
+Среди методов класса Dictionary можно выделить следующие:
+void Add(K key, V value): добавляет новый элемент в словарь
+void Clear(): очищает словарь
+bool ContainsKey(K key): проверяет наличие элемента с определенным ключом и возвращает
+ true при его наличии в словаре
+bool ContainsValue(V value): проверяет наличие элемента с определенным значением и 
+возвращает true при его наличии в словаре
+bool Remove(K key): удаляет по ключу элемент из словаря
+Другая версия этого метода позволяет получить удленный элемент в выходной параметр: 
+bool Remove(K key, out V value)
+bool TryGetValue(K key, out V value): получает из словаря элемент по ключу key. 
+При успешном получении передает значение элемента в выходной параметр value и
+ возвращает true
+bool TryAdd(K key, V value): добавляет в словарь элемент с ключом key и значением
+ value. При успешном добавлении возвращает true
+Из свойств следует отметить свойство Count, которое возвращает количество элементов
+ в словаре.
+Применение методов: */
+
+// условная телефонная книга
+var phoneBook = new Dictionary<string, string>();
+ 
+// добавляем элемент: ключ - номер телефона, значение - имя абонента
+phoneBook.Add("+123456", "Tom");
+// альтернативное добавление
+// phoneBook["+123456"] = "Tom";
+ 
+// Проверка наличия
+var phoneExists1 = phoneBook.ContainsKey("+123456");    // true
+Console.WriteLine($"+123456: {phoneExists1}");
+var phoneExists2 = phoneBook.ContainsKey("+567456");    // false
+Console.WriteLine($"+567456: {phoneExists2}");
+var abonentExists1 = phoneBook.ContainsValue("Tom");      // true
+Console.WriteLine($"Tom: {abonentExists1}");
+var abonentExists2 = phoneBook.ContainsValue("Bob");      // false
+Console.WriteLine($"Bob: {abonentExists2}");
+ 
+// удаление элемента
+phoneBook.Remove("+123456");
+ 
+// проверяем количество элементов после удаления
+Console.WriteLine($"Count: {phoneBook.Count}"); // Count: 0
+
 
 
 Console.ReadLine();
