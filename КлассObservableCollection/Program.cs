@@ -102,6 +102,24 @@ void Move(int oldIndex, int newIndex): перемещает элемент с и
 позицию по индексу newIndex
 */
 
+var people7 = new ObservableCollection<string>();
+ 
+// добавляем элемент
+people7.Add("Bob");
+// вставляем элемент по индексу 0
+people7.Insert(0, "Tom");
+ 
+// проверка наличия элемента 
+bool bobExists = people7.Contains("Bob");     // true
+Console.WriteLine($"Bob exists: {bobExists}");
+bool mikeExists = people7.Contains("Mike");   // false
+Console.WriteLine($"Mike exists: {mikeExists}");
+ 
+// удаляем элемент
+people7.Remove("Tom");
+// удаляем элемент по индексу 0
+people7.RemoveAt(0);
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
