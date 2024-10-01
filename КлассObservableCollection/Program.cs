@@ -123,6 +123,26 @@ people7.RemoveAt(0);
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/* Уведомление об измении коллекции 
+Класс ObservableCollection определяет событие CollectionChanged, подписавшись на 
+которое, мы можем обработать любые изменения коллекции. Данное событие представляет 
+делегат NotifyCollectionChangedEventHandler: 
+void NotifyCollectionChangedEventHandler(object? sender, NotifyCollectionChangedEventArgs e);
+Второй параметр делегата - объект NotifyCollectionChangedEventArgs хранит всю 
+информацию о событии. В частности, его свойство Action позволяет узнать характер 
+изменений. Оно хранит одно из значений из перечисления NotifyCollectionChangedAction:
+NotifyCollectionChangedAction.Add: добавление
+NotifyCollectionChangedAction.Remove: удаление
+NotifyCollectionChangedAction.Replace: замена
+NotifyCollectionChangedAction.Move: перемещение объекта внутри коллекции на новую
+ позицию
+NotifyCollectionChangedAction.Reset: сброс содержимого коллекции (например, при ее 
+очистке с помощью метода Clear())
+Кроме того, свойства NewItems и OldItems позволяют получить соответственно
+ добавленные и удаленные объекты. Таким образом, мы получаем полный контроль
+  над обработкой добавления, удаления и замены объектов в коллекции.
+Допустим, у нас будет следующий класс Person, который представляет пользователя:*/
+
 
 Console.ReadLine();
 
