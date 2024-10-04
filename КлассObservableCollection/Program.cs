@@ -14,7 +14,9 @@ System.Collections.ObjectModel. По функциональности колле
 Для создания объекта класс ObservableCollection предоставляет ряд конструкторов.
  Прежде всего мы можем создать пустую коллекцию:*/
 
- using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using КлассObservableCollection;
 
 ObservableCollection<string> people = new ObservableCollection<string>();
 
@@ -143,23 +145,23 @@ NotifyCollectionChangedAction.Reset: сброс содержимого колл�
   над обработкой добавления, удаления и замены объектов в коллекции.
 Допустим, у нас будет следующий класс Person, который представляет пользователя:*/
 
-var people8 = new ObservableCollection<Person>() 
+var people8 = new ObservableCollection<Person2>() 
 { 
-    new Person("Tom"), 
-    new Person("Sam") 
+    new Person2("Tom"), 
+    new Person2("Sam") 
 };
 // подписываемся на событие изменения коллекции
-people.CollectionChanged += People_CollectionChanged;
+people8.CollectionChanged += People_CollectionChanged;
  
-people.Add(new Person("Bob"));  // добавляем новый элемент
+people8.Add(new Person2("Bob"));  // добавляем новый элемент
  
-people.RemoveAt(1);                 // удаляем элемент
-people[0] = new Person("Eugene");   // заменяем элемент
+people8.RemoveAt(1);                 // удаляем элемент
+people8[0] = new Person2("Eugene");   // заменяем элемент
  
 Console.WriteLine("\nСписок пользователей:");
-foreach (var person in people)
+foreach (var person2 in people8)
 {
-    Console.WriteLine(person.Name);
+    Console.WriteLine(person2.Name);
 }
 // обработчик изменения коллекции
 void People_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
@@ -167,16 +169,16 @@ void People_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e
     switch (e.Action)
     {
         case NotifyCollectionChangedAction.Add: // если добавление
-            if(e.NewItems?[0] is Person newPerson)
+            if(e.NewItems?[0] is Person2 newPerson)
                 Console.WriteLine($"Добавлен новый объект: {newPerson.Name}");
             break;
         case NotifyCollectionChangedAction.Remove: // если удаление
-            if (e.OldItems?[0] is Person oldPerson)
+            if (e.OldItems?[0] is Person2 oldPerson)
                 Console.WriteLine($"Удален объект: {oldPerson.Name}");
             break;
         case NotifyCollectionChangedAction.Replace: // если замена
-            if ((e.NewItems?[0] is Person replacingPerson)  && 
-                (e.OldItems?[0] is Person replacedPerson))
+            if ((e.NewItems?[0] is Person2 replacingPerson)  && 
+                (e.OldItems?[0] is Person2 replacedPerson))
                 Console.WriteLine($"Объект {replacedPerson.Name} заменен объектом {replacingPerson.Name}");
             break;
     }
