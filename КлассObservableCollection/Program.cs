@@ -184,6 +184,20 @@ void People_CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e
     }
 }
 
+/*
+Здесь в качестве обработчика изменений коллекции выступает метод People_CollectionChanged, 
+в котором с помощью параметра NotifyCollectionChangedEventArgs получаем информацию об 
+изменении. Консольный вывод программы:
+
+Добавлен новый объект: Bob
+Удален объект: Sam
+Объект Tom заменен объектом Eugene
+
+Список пользователей:
+Eugeneы
+Bob
+
+*/
 
 Console.ReadLine();
 
