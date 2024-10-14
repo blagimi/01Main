@@ -1,5 +1,6 @@
 ﻿/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 using System.Collections;
+using ИнтерфейсыIEnumerableИIEnumerator;
 
 /*
 Интерфейсы IEnumerable и IEnumerator
@@ -15,10 +16,6 @@ IEnumerable и IEnumerator. Благодаря такой реализации �
 
 Интерфейс IEnumerable имеет метод, возвращающий ссылку на другой интерфейс - перечислитель:
 
-1
-2
-3
-4
 public interface IEnumerable
 {
     IEnumerator GetEnumerator();
@@ -47,7 +44,7 @@ public interface IEnumerable
 
 string[] people = {"Tom", "Sam", "Bob"};
  
-IEnumerator peopleEnumerator = people.GetEnumerator(); // получаем IEnumerator
+System.Collections.IEnumerator peopleEnumerator = people.GetEnumerator(); // получаем IEnumerator
 while (peopleEnumerator.MoveNext())   // пока не будет возвращено false
 {
     string item = (string)peopleEnumerator.Current; // получаем элемент на текущей позиции
@@ -56,6 +53,17 @@ while (peopleEnumerator.MoveNext())   // пока не будет возвращ
 peopleEnumerator.Reset(); // сбрасываем указатель в начало массива
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Реализация IEnumerable и IEnumerator
+Рассмотрим простешую реализацию IEnumerable на примере: */
+
+
+Week week = new Week();
+foreach (var day in week)
+{
+    Console.WriteLine(day);
+}
+ 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
