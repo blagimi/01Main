@@ -27,4 +27,5 @@ public class WeekEnumerator : IEnumerator
             return false;
     }
     public void Reset() => position = -1;
+    
 }
