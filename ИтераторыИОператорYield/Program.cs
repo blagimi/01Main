@@ -93,6 +93,24 @@ public IEnumerator<Person> GetEnumerator()
 
 Применение итератора:*/
 
+var people2 = new Person[]
+{
+    new Person("Tom"), 
+    new Person("Bob"),
+    new Person("Sam")
+};
+var microsoft2 = new Company2(people);
+ 
+foreach(Person employee in microsoft2.GetPersonnel(5))
+{
+    Console.WriteLine(employee.Name);
+}
+
+/*
+    Вызов microsoft.GetPersonnel(5) будет возвращать набор из не более чем 5 объектов
+     Person. Но так как у нас всего три таких объекта, то в методе GetPersonnel после 
+     трех операций сработает оператор yield break.
+ */
 
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
