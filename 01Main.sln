@@ -215,6 +215,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ИнтерфейсыIEnumer
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ИтераторыИОператорYield", "ИтераторыИОператорYield\ИтераторыИОператорYield.csproj", "{D69173CC-3E28-4AA4-A74E-2C3DD8090484}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КлассArrayИМассивы", "КлассArrayИМассивы\КлассArrayИМассивы.csproj", "{825545AA-4E65-42AC-9805-C3C4D9BC22A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -605,6 +607,10 @@ Global
 		{D69173CC-3E28-4AA4-A74E-2C3DD8090484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D69173CC-3E28-4AA4-A74E-2C3DD8090484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D69173CC-3E28-4AA4-A74E-2C3DD8090484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{825545AA-4E65-42AC-9805-C3C4D9BC22A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{825545AA-4E65-42AC-9805-C3C4D9BC22A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{825545AA-4E65-42AC-9805-C3C4D9BC22A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{825545AA-4E65-42AC-9805-C3C4D9BC22A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -706,6 +712,7 @@ Global
 		{13D379D8-338D-4F30-9C29-8B1C2E00F6F2} = {49FD5A07-16C6-4243-B66F-C203C2518596}
 		{8CFA03D7-18E2-4BCA-83DF-894FC1FE1F87} = {E7B3F8B3-6D4C-4601-9DAB-E86E4D2468E2}
 		{D69173CC-3E28-4AA4-A74E-2C3DD8090484} = {E7B3F8B3-6D4C-4601-9DAB-E86E4D2468E2}
+		{825545AA-4E65-42AC-9805-C3C4D9BC22A3} = {49FD5A07-16C6-4243-B66F-C203C2518596}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
