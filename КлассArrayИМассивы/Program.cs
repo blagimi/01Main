@@ -69,6 +69,20 @@ foreach (var person in people)
      
 // Alice Bob Kate Sam Tom Tom
 
+/* Этот метод имеет много перегрузок. Например, одна из версий позволяет отсортировать
+ только часть массива: */
+
+
+string[] people2 =  { "Tom", "Sam", "Bob", "Kate", "Tom", "Alice" };
+ 
+// сортируем с 1 индекса 3 элемента
+Array.Sort(people2, 1, 3);
+ 
+foreach (var person in people2) 
+    Console.Write($"{person} ");
+     
+// Tom Bob Kate Sam Tom Alice
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
