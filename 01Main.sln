@@ -209,13 +209,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СловарьDictionaryTV"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КлассObservableCollection", "КлассObservableCollection\КлассObservableCollection.csproj", "{13D379D8-338D-4F30-9C29-8B1C2E00F6F2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава11", "Глава11", "{E7B3F8B3-6D4C-4601-9DAB-E86E4D2468E2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ИнтерфейсыIEnumerableИIEnumerator", "ИнтерфейсыIEnumerableИIEnumerator\ИнтерфейсыIEnumerableИIEnumerator.csproj", "{8CFA03D7-18E2-4BCA-83DF-894FC1FE1F87}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ИтераторыИОператорYield", "ИтераторыИОператорYield\ИтераторыИОператорYield.csproj", "{D69173CC-3E28-4AA4-A74E-2C3DD8090484}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КлассArrayИМассивы", "КлассArrayИМассивы\КлассArrayИМассивы.csproj", "{825545AA-4E65-42AC-9805-C3C4D9BC22A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава11", "Глава11", "{E7B3F8B3-6D4C-4601-9DAB-E86E4D2468E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
