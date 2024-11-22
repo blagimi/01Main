@@ -86,6 +86,30 @@ foreach (var person in people2)
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/* Поиск индекса элемента 
+*/
+string[] people3 = { "Tom", "Sam", "Bob", "Kate", "Tom", "Alice" };
+ 
+// находим индекс первого элемента "Tom"
+int tomFirstIndex = Array.IndexOf(people3, "Tom");
+// находим индекс последнего элемента "Tom"
+int tomLastIndex = Array.LastIndexOf(people3, "Tom");
+// находим индекс первого элемента, у которого длина строки больше 3
+int lengthFirstIndex = Array.FindIndex(people3, person => person.Length > 3);
+// находим индекс последнего элемента, у которого длина строки больше 3
+int lengthLastIndex = Array.FindLastIndex(people3, person => person.Length > 3);
+ 
+Console.WriteLine($"tomFirstIndex: {tomFirstIndex}");       // 0
+Console.WriteLine($"tomLastIndex: {tomLastIndex}");         // 4
+Console.WriteLine($"lengthFirstIndex: {lengthFirstIndex}"); // 3
+Console.WriteLine($"lengthLastIndex: {lengthLastIndex}");   // 5
+ 
+ 
+// находим индекс элемента "Bob"
+// для бинарного поиска коллекцию нужно отсортировать
+Array.Sort(people3); // Alice Bob Kate Sam Tom Tom
+int bobIndex = Array.BinarySearch(people3, "Bob");
+Console.WriteLine($"bobIndex: {bobIndex}");                 // 1
 
 
 
