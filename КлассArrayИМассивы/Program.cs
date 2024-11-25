@@ -111,6 +111,26 @@ Array.Sort(people3); // Alice Bob Kate Sam Tom Tom
 int bobIndex = Array.BinarySearch(people3, "Bob");
 Console.WriteLine($"bobIndex: {bobIndex}");                 // 1
 
+//Если элемент не найден в массиве, то методы возвращают -1.
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Поиск элемента по условию */
+
+string[] people4 =  { "Tom", "Sam", "Bob", "Kate", "Tom", "Alice" };
+ 
+// находим первый и последний элементы
+// где длина строки больше 3 символов
+string? first = Array.Find(people4, person => person.Length > 3);
+Console.WriteLine(first); // Kate
+string? last = Array.FindLast(people4, person => person.Length > 3);
+Console.WriteLine(last); // Alice
+ 
+// находим элементы, у которых длина строки равна 3
+string[] group = Array.FindAll(people4, person => person.Length == 3);
+foreach (var person in group) Console.WriteLine(person);
+// Tom Sam Bob Tom
+
 
 
 Console.ReadLine();
