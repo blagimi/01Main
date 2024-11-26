@@ -131,7 +131,19 @@ string[] group = Array.FindAll(people4, person => person.Length == 3);
 foreach (var person in group) Console.WriteLine(person);
 // Tom Sam Bob Tom
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/* Изменение порядка элементов массива
+Например, изменим порядок элементов: */
+string[] people5 =  { "Tom", "Sam", "Bob", "Kate", "Tom", "Alice" };
+ 
+Array.Reverse(people5);
+ 
+foreach (var person in people5) 
+    Console.Write($"{person} ");
+// "Alice", "Tom", "Kate", "Bob", "Sam", "Tom"
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
 
