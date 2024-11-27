@@ -143,6 +143,18 @@ foreach (var person in people5)
     Console.Write($"{person} ");
 // "Alice", "Tom", "Kate", "Bob", "Sam", "Tom"
 
+/* Также можно изменить порядок только части элементов: */
+string[] people6 =  { "Tom", "Sam", "Bob", "Kate", "Tom", "Alice" };
+ 
+// изменяем порядок 3 элементов начиная c индекса 1  
+Array.Reverse(people6, 1, 3);
+ 
+foreach (var person in people) 
+    Console.Write($"{person} ");
+// "Tom", "Kate", "Bob", "Sam", "Tom", "Alice"
+
+//В данном случае изменяем порядок только 3 элементов начиная c индекса 1.
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
