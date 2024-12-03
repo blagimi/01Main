@@ -194,6 +194,6 @@ foreach (var person in employees)
 вставляем их в массив employees начиная с индекса 0. */
 
 Console.ReadLine();
-
+Console.WriteLine("ggg");              
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
