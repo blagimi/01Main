@@ -178,13 +178,13 @@ foreach (var person in people7)
 /* Копирование массива
 Метод Copy копирует часть одного массива в другой: */
 
-string[] people9 =  { "Tom", "Sam", "Bob", "Kate", "Tom", "Alice" };
+string[] people10 =  { "Tom", "Sam", "Bob", "Kate", "Tom", "Alice" };
  
 var employees = new string[3];
  
 // копируем 3 элемента из массива people c индекса 1  
 // и вставляем их в массив employees начиная с индекса 0
-Array.Copy(people9,1, employees,0, 3);
+Array.Copy(people10,1, employees,0, 3);
  
 foreach (var person in employees) 
     Console.Write($"{person} ");
