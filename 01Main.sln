@@ -219,6 +219,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава11", "Глава1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Span", "Span\Span.csproj", "{2B092B4C-9CE3-4C70-AA7D-9AFCE940E64B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ИндексыИДиапазоны", "ИндексыИДиапазоны\ИндексыИДиапазоны.csproj", "{EC9D6B0F-2439-4FDA-A52B-930EB244D5AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -617,6 +619,10 @@ Global
 		{2B092B4C-9CE3-4C70-AA7D-9AFCE940E64B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B092B4C-9CE3-4C70-AA7D-9AFCE940E64B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B092B4C-9CE3-4C70-AA7D-9AFCE940E64B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC9D6B0F-2439-4FDA-A52B-930EB244D5AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC9D6B0F-2439-4FDA-A52B-930EB244D5AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC9D6B0F-2439-4FDA-A52B-930EB244D5AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC9D6B0F-2439-4FDA-A52B-930EB244D5AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -720,6 +726,7 @@ Global
 		{D69173CC-3E28-4AA4-A74E-2C3DD8090484} = {49FD5A07-16C6-4243-B66F-C203C2518596}
 		{825545AA-4E65-42AC-9805-C3C4D9BC22A3} = {49FD5A07-16C6-4243-B66F-C203C2518596}
 		{2B092B4C-9CE3-4C70-AA7D-9AFCE940E64B} = {49FD5A07-16C6-4243-B66F-C203C2518596}
+		{EC9D6B0F-2439-4FDA-A52B-930EB244D5AE} = {49FD5A07-16C6-4243-B66F-C203C2518596}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
