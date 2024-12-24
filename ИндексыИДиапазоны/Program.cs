@@ -86,7 +86,36 @@ Bob
 Sam
 Kate
 
+Мы можем задать для диапазона только конечный индекс. В этом случае начальным индексом 
+по умолчанию будет 0.
 */
+
+string[] people4 = { "Tom", "Bob", "Sam", "Kate", "Alice" };
+string[] peopleRange2 = people4[..4];     // Tom, Bob, Sam, Kate
+
+/* Либо, наоборот, задать только начальный индекс, тогда конечным индексом будет 
+последний индекс последовательности: */
+
+string[] people5 = { "Tom", "Bob", "Sam", "Kate", "Alice" };
+string[] peopleRange3 = people5[1..];     // Bob, Sam, Kate, Alice
+
+/* Используя индексы относительно конца последовательности, можно получать диапазон
+ относительно конца последовательности: */
+string[] people6 = { "Tom", "Bob", "Sam", "Kate", "Alice" };
+string[] peopleRange4 = people6[^2..];       // два последних - Kate, Alice
+string[] peopleRange5 = people6[..^1];       // начиная с предпоследнего - Tom, Bob, Sam, Kate
+string[] peopleRange6 = people6[^3..^1];     // два начиная с предпоследнего - Sam, Kate
+
+/* Кроме массивов индексы и диапазоны также применяются к объектам Span и ReadOnlySpan: */
+
+string[] people7 = { "Tom", "Bob", "Sam", "Kate", "Alice" };
+Span<string> peopleSpan7 = people7;
+Span<string> selectedPeopleSpan = peopleSpan7[1..4];
+foreach (var person in selectedPeopleSpan)
+{
+    Console.WriteLine(person);
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
