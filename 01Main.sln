@@ -223,6 +223,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ИндексыИДиапа�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СтрокиИКлассString", "СтрокиИКлассString\СтрокиИКлассString.csproj", "{580C2B3F-83E8-42B4-B586-D3D75A82EFC3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ОперацииCоCтроками", "ОперацииCоCтроками\ОперацииCоCтроками.csproj", "{0474B11C-AE94-4191-A77C-D6BCEBFA87E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -629,6 +631,10 @@ Global
 		{580C2B3F-83E8-42B4-B586-D3D75A82EFC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{580C2B3F-83E8-42B4-B586-D3D75A82EFC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{580C2B3F-83E8-42B4-B586-D3D75A82EFC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0474B11C-AE94-4191-A77C-D6BCEBFA87E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0474B11C-AE94-4191-A77C-D6BCEBFA87E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0474B11C-AE94-4191-A77C-D6BCEBFA87E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0474B11C-AE94-4191-A77C-D6BCEBFA87E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -734,6 +740,7 @@ Global
 		{2B092B4C-9CE3-4C70-AA7D-9AFCE940E64B} = {49FD5A07-16C6-4243-B66F-C203C2518596}
 		{EC9D6B0F-2439-4FDA-A52B-930EB244D5AE} = {49FD5A07-16C6-4243-B66F-C203C2518596}
 		{580C2B3F-83E8-42B4-B586-D3D75A82EFC3} = {E7B3F8B3-6D4C-4601-9DAB-E86E4D2468E2}
+		{0474B11C-AE94-4191-A77C-D6BCEBFA87E6} = {E7B3F8B3-6D4C-4601-9DAB-E86E4D2468E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
