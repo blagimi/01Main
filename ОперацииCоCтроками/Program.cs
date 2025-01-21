@@ -241,6 +241,20 @@ Console.WriteLine(text5);    // роший ден
 
 #region Замена
 
+/* 
+Чтобы заменить один символ или подстроку на другую, применяется метод Replace:
+*/
+string text6 = "хороший день";
+ 
+text6 = text6.Replace("хороший", "плохой");
+Console.WriteLine(text6);    // плохой день
+ 
+text = text.Replace("о", "");
+Console.WriteLine(text6);    // плхй день
+/* Во втором случае применения функции Replace строка из одного символа "о" 
+заменяется на пустую строку, то есть фактически удаляется из текста. Подобным 
+способом легко удалять какой-то определенный текст в строках.
+*/
 
 #endregion
 
@@ -248,6 +262,14 @@ Console.WriteLine(text5);    // роший ден
 
 #region Смена регистра
 
+/* Для приведения строки к верхнему и нижнему регистру используются соответственно 
+функции ToUpper() и ToLower():
+*/
+
+string hello = "Hello world!";
+ 
+Console.WriteLine(hello.ToLower()); // hello world!
+Console.WriteLine(hello.ToUpper()); // HELLO WORLD!
 
 #endregion
 
