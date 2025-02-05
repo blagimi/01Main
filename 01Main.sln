@@ -235,6 +235,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава12", "Глава1
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "РаботаCДатамиИВременем", "РаботаCДатамиИВременем\РаботаCДатамиИВременем.csproj", "{3B863A41-5F9D-4695-9061-B8B1A8DDBE51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ФорматированиеДатИВремени", "ФорматированиеДатИВремени\ФорматированиеДатИВремени.csproj", "{4741D007-983B-4D7D-B696-AE6DA401F31E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -661,6 +663,10 @@ Global
 		{3B863A41-5F9D-4695-9061-B8B1A8DDBE51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B863A41-5F9D-4695-9061-B8B1A8DDBE51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B863A41-5F9D-4695-9061-B8B1A8DDBE51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4741D007-983B-4D7D-B696-AE6DA401F31E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4741D007-983B-4D7D-B696-AE6DA401F31E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4741D007-983B-4D7D-B696-AE6DA401F31E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4741D007-983B-4D7D-B696-AE6DA401F31E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -771,6 +777,7 @@ Global
 		{B0E7E9A5-4548-4A8A-BAD3-FA05956A73E8} = {E7B3F8B3-6D4C-4601-9DAB-E86E4D2468E2}
 		{C1EC6E4F-6B7B-4323-96EB-FB6A00C48D40} = {E7B3F8B3-6D4C-4601-9DAB-E86E4D2468E2}
 		{3B863A41-5F9D-4695-9061-B8B1A8DDBE51} = {4E84EBA9-0757-4DE6-99F8-F810F89394CE}
+		{4741D007-983B-4D7D-B696-AE6DA401F31E} = {4E84EBA9-0757-4DE6-99F8-F810F89394CE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
