@@ -116,7 +116,83 @@ Console.WriteLine(now2.ToLongDateString());   // 7 мая 2021 г.
 
 #region TimeOnly
 
+/*
+Структура TimeOnly представляет время в диапазоне от 00:00:00 до 23:59:59.9999999. 
+Для создания структуры можно использовать ряд ее конструкторов.
 
+TimeOnly()
+TimeOnly(long ticks)
+TimeOnly(int hour, int minute)
+TimeOnly(int hour, int minute, int second)
+TimeOnly(int hour, int minute, int second, int millisecond)
+При использовании конструктора без параметров структура инициализируется временем 0.00:
+*/
+TimeOnly time = new TimeOnly();
+Console.WriteLine(time); // 0:00
+/*
+Дополнительно с помощью других версий конструктора можно установить количество часов, 
+минут, секунд и миллисекунд:
+*/
+TimeOnly time1 = new TimeOnly(4, 30);
+Console.WriteLine(time1);   // 4: 30
+ 
+TimeOnly time2 = new TimeOnly(14, 23, 30);
+Console.WriteLine(time2);   // 14: 23
+
+
+/*
+Свойства TimeOnly
+С помощью свойств структуры можно получить отдельные составляющие времени:
+
+Hour: возвращает количество часов
+Minute: возвращает количество минут
+Second: возвращает количество секунд
+Millisecond: возвращает количество миллисекунд
+Ticks: возвращает количество тиков
+MaxValue: возвращает максимально возможное время (статическое свойство)
+MinValue: возвращает минимально возможное время (статическое свойство)
+Применение свойств:
+*/
+
+TimeOnly time3 = new TimeOnly(14, 23, 30);
+Console.WriteLine(time3.Hour);       // 14
+Console.WriteLine(time3.Minute);     // 23
+Console.WriteLine(time3.Second);     // 30
+
+/*
+Методы TimeOnly
+С помощью методов TimeOnly можно производить некоторые операции с временем. 
+Некоторые из них:
+AddHours(double hours): добавляет к времени некоторое количество часов
+AddMinutes(double minutes): добавляет к времени некоторое количество минут
+Add(TimeSpan value): добавляет время из объекта TimeSpan
+ToLongTimeString(): выводит текущий объект TimeOnly в виде подробного времени
+ToShortTimeString(): выводит текущий объект TimeOnly в виде сжатого времени
+Также в классе есть ряд статических методов. Некоторые из них:
+FromDateTime(DateTime dateTime): на основе значения DateTime, переданного через 
+параметр, создает и возвращает объект TimeOnly
+FromTimeSpan(TimeSpan value): на основе объекта TimeSpan создает и возвращает 
+объект TimeOnly
+Parse(string time): конвертирует строковое представление времени в объект TimeOnly
+ParseExact(string timee, string format): конвертирует строковое представление
+времени в объект TimeOnly, применяя определенный формат
+TryParse(string time, TimeOnly result): конвертирует строковое представление времени в 
+объект TimeOnly. При успешной конвертации возвращает true, а параметр типа TimeOnly 
+содержит сконвертированное время
+TryParseExact(string time, string format, TimeOnly result): конвертирует строковое 
+представление времени в объект TimeOnly, применяя определенный формат. При успешной 
+конвертации возвращает true, а параметр типа TimeOnly содержит сконвертированное время
+
+Пример некоторых операций:
+*/
+
+TimeOnly time4 = TimeOnly.Parse("06:33:22");
+Console.WriteLine(time4);        // 6:33
+time4 = time4.AddHours(1);        // 7:33
+time4 = time4.AddMinutes(-23);   // 7:10
+ 
+Console.WriteLine(time4.ToShortTimeString());  // 7:10
+Console.WriteLine(time4.ToLongTimeString());   // 7:10:22
 
 #endregion
 
