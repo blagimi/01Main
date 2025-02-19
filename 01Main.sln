@@ -245,6 +245,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ОтложеннаяИни�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "МатематическиеВычисленияИКласс Math", "МатематическиеВычисленияИКласс Math\МатематическиеВычисленияИКласс Math.csproj", "{ECF764F7-90C0-4D3D-8DD1-8B3F1E1DC600}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПреобразованиеТиповИКлассConvert", "ПреобразованиеТиповИКлассConvert\ПреобразованиеТиповИКлассConvert.csproj", "{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -687,6 +689,10 @@ Global
 		{ECF764F7-90C0-4D3D-8DD1-8B3F1E1DC600}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECF764F7-90C0-4D3D-8DD1-8B3F1E1DC600}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECF764F7-90C0-4D3D-8DD1-8B3F1E1DC600}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -801,6 +807,7 @@ Global
 		{E2A25C6E-7E41-474F-B3E7-10F53FC6F3F8} = {4E84EBA9-0757-4DE6-99F8-F810F89394CE}
 		{414DCC91-611C-47F0-B4A2-819A12A59248} = {77AB068A-CC90-4963-8FAD-D8158AC997A8}
 		{ECF764F7-90C0-4D3D-8DD1-8B3F1E1DC600} = {77AB068A-CC90-4963-8FAD-D8158AC997A8}
+		{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA} = {77AB068A-CC90-4963-8FAD-D8158AC997A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
