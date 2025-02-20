@@ -48,15 +48,15 @@ Console.WriteLine(number);   // 23,56
 Console.WriteLine("Введите строку:");
 string? input = Console.ReadLine();
  
-bool result = int.TryParse(input, out var number);
+bool result = int.TryParse(input, out var number2);
 if (result == true)
-    Console.WriteLine($"Преобразование прошло успешно. Число: {number}");
+    Console.WriteLine($"Преобразование прошло успешно. Число: {number2}");
 else
     Console.WriteLine("Преобразование завершилось неудачно");
 /*
 Если преобразование пройдет неудачно, то исключения никакого не будет выброшено,
- просто метод TryParse возвратит false, а переменная number будет содержать
-  значение по умолчанию.
+просто метод TryParse возвратит false, а переменная number будет содержать
+значение по умолчанию.
 
 */
 
@@ -66,6 +66,40 @@ else
 
 #region Convert
 
+/*
+Класс Convert представляет еще один способ для преобразования значений. Для этого в 
+нем определены следующие статические методы:
+    ToBoolean(value)
+    ToByte(value)
+    ToChar(value)
+    ToDateTime(value)
+    ToDecimal(value)
+    ToDouble(value)
+    ToInt16(value)
+    ToInt32(value)
+    ToInt64(value)
+    ToSByte(value)
+    ToSingle(value)
+    ToUInt16(value)
+    ToUInt32(value)
+    ToUInt64(value)
+
+В качестве параметра в эти методы может передаваться значение различных примитивных 
+типов, необязательно строки:
+
+*/
+
+int n = Convert.ToInt32("23");
+bool b1 = true;
+double d1 = Convert.ToDouble(b1);
+Console.WriteLine($"n={n}  d={d1}");
+
+/*
+
+Однако опять же, как и в случае с методом Parse, если методу не удастся преобразовать 
+значение к нужному типу, то он выбрасывает исключение FormatException.
+
+*/
 
 
 #endregion
