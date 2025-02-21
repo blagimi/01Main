@@ -247,6 +247,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Математически�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПреобразованиеТиповИКлассConvert", "ПреобразованиеТиповИКлассConvert\ПреобразованиеТиповИКлассConvert.csproj", "{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава14", "Глава14", "{4D5319B5-0B06-493C-9D69-147339757CCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "МногопоточностьКлассThread", "МногопоточностьКлассThread\МногопоточностьКлассThread.csproj", "{EF021C19-6A0A-4280-881D-6B4C4EE3C436}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -693,6 +697,10 @@ Global
 		{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF021C19-6A0A-4280-881D-6B4C4EE3C436}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF021C19-6A0A-4280-881D-6B4C4EE3C436}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF021C19-6A0A-4280-881D-6B4C4EE3C436}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF021C19-6A0A-4280-881D-6B4C4EE3C436}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -808,6 +816,7 @@ Global
 		{414DCC91-611C-47F0-B4A2-819A12A59248} = {77AB068A-CC90-4963-8FAD-D8158AC997A8}
 		{ECF764F7-90C0-4D3D-8DD1-8B3F1E1DC600} = {77AB068A-CC90-4963-8FAD-D8158AC997A8}
 		{6749E4EF-B5FE-42B8-A5F4-F0F5557E2EBA} = {77AB068A-CC90-4963-8FAD-D8158AC997A8}
+		{EF021C19-6A0A-4280-881D-6B4C4EE3C436} = {4D5319B5-0B06-493C-9D69-147339757CCF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
