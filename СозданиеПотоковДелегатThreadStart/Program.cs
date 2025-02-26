@@ -29,10 +29,26 @@ Thread(ParameterizedThreadStart, Int32): вместе с делегатом Para
 
 
 Thread myThread1 = new Thread(Print); 
-//Thread myThread2 = new Thread(new ThreadStart(Print));
+Thread myThread2 = new Thread(new ThreadStart(Print));
 Thread myThread3 = new Thread(()=>Console.WriteLine("Hello Threads"));
  
 void Print() => Console.WriteLine("Hello Threads");
+
+/*
+Для запуска нового потока применяется метод Start класса Thread:
+*/
+ 
+// создаем новый поток
+Thread myThread4 = new Thread(Print); 
+Thread myThread5 = new Thread(new ThreadStart(Print));
+Thread myThread6 = new Thread(()=>Console.WriteLine("Hello Threads"));
+ 
+myThread4.Start();  // запускаем поток myThread1
+myThread5.Start();  // запускаем поток myThread2
+myThread6.Start();  // запускаем поток myThread3
+ 
+void Print2() => Console.WriteLine("Hello Threads");
+/*Преимуществом потоком является то, что они могут выполняться одновременно. Например:*/
 
 public delegate void ThreadStart();
 
