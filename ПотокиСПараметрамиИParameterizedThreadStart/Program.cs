@@ -67,8 +67,38 @@ void Print2(object? obj)
     }
 }
 
+
+/*
+
+в данном случае нам надо дополнительно привести переданное значение к типу int, 
+чтобы его использовать в вычислениях.
+
+Но что делать, если нам надо передать не один, а несколько параметров различного 
+типа? В этом случае можно определить свои типы:
+
+*/
+
+Person tom = new Person("Tom", 37);
+// создаем новый поток
+Thread myThread4 = new Thread(Print3);
+myThread4.Start(tom);
+ 
+void Print3(object? obj)
+{
+    // здесь мы ожидаем получить объект Person
+    if (obj is Person person)
+    {
+        Console.WriteLine($"Name = {person.Name}");
+        Console.WriteLine($"Age = {person.Age}");
+    }
+}
+ 
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+record class Person(string Name, int Age);
