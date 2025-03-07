@@ -255,6 +255,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СозданиеПоток�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПотокиСПараметрамиИParameterizedThreadStart", "ПотокиСПараметрамиИParameterizedThreadStart\ПотокиСПараметрамиИParameterizedThreadStart.csproj", "{AFC92266-957A-4140-A874-BCFF97D07E09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СинхронизацияПотоков", "СинхронизацияПотоков\СинхронизацияПотоков.csproj", "{02527D40-3E17-4E2E-9336-3C57C3AACFF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -713,6 +715,10 @@ Global
 		{AFC92266-957A-4140-A874-BCFF97D07E09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFC92266-957A-4140-A874-BCFF97D07E09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFC92266-957A-4140-A874-BCFF97D07E09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02527D40-3E17-4E2E-9336-3C57C3AACFF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02527D40-3E17-4E2E-9336-3C57C3AACFF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02527D40-3E17-4E2E-9336-3C57C3AACFF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02527D40-3E17-4E2E-9336-3C57C3AACFF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -831,6 +837,7 @@ Global
 		{EF021C19-6A0A-4280-881D-6B4C4EE3C436} = {4D5319B5-0B06-493C-9D69-147339757CCF}
 		{4D478013-7DDF-4368-A82E-51B46C39517A} = {4D5319B5-0B06-493C-9D69-147339757CCF}
 		{AFC92266-957A-4140-A874-BCFF97D07E09} = {4D5319B5-0B06-493C-9D69-147339757CCF}
+		{02527D40-3E17-4E2E-9336-3C57C3AACFF5} = {4D5319B5-0B06-493C-9D69-147339757CCF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
