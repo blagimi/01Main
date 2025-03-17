@@ -261,6 +261,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Мониторы", "Мон�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КлассLockИСинхронизация", "КлассLockИСинхронизация\КлассLockИСинхронизация.csproj", "{7B6C714B-8A05-4ECF-A3D0-511DC60F7145}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КлассAutoResetEvent", "КлассAutoResetEvent\КлассAutoResetEvent.csproj", "{8962132F-D580-4F10-8B8E-4A3B1F45EAB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -731,6 +733,10 @@ Global
 		{7B6C714B-8A05-4ECF-A3D0-511DC60F7145}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B6C714B-8A05-4ECF-A3D0-511DC60F7145}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B6C714B-8A05-4ECF-A3D0-511DC60F7145}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8962132F-D580-4F10-8B8E-4A3B1F45EAB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8962132F-D580-4F10-8B8E-4A3B1F45EAB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8962132F-D580-4F10-8B8E-4A3B1F45EAB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8962132F-D580-4F10-8B8E-4A3B1F45EAB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -852,6 +858,7 @@ Global
 		{02527D40-3E17-4E2E-9336-3C57C3AACFF5} = {4D5319B5-0B06-493C-9D69-147339757CCF}
 		{E41C34F7-D993-45B0-88FC-FD10F0DCE818} = {4D5319B5-0B06-493C-9D69-147339757CCF}
 		{7B6C714B-8A05-4ECF-A3D0-511DC60F7145} = {4D5319B5-0B06-493C-9D69-147339757CCF}
+		{8962132F-D580-4F10-8B8E-4A3B1F45EAB3} = {4D5319B5-0B06-493C-9D69-147339757CCF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
