@@ -267,6 +267,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Мьютексы", "Мью�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Семафоры", "Семафоры\Семафоры.csproj", "{EEAD5FED-0F47-4E5E-9313-861E8A26FD23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава15", "Глава15", "{3129AC60-0758-483A-9B0F-E368EDF90731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЗадачиИКлассTask", "ЗадачиИКлассTask\ЗадачиИКлассTask.csproj", "{12EF6EC3-E2BE-439B-8D7A-351193921F17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -749,6 +753,10 @@ Global
 		{EEAD5FED-0F47-4E5E-9313-861E8A26FD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEAD5FED-0F47-4E5E-9313-861E8A26FD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEAD5FED-0F47-4E5E-9313-861E8A26FD23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12EF6EC3-E2BE-439B-8D7A-351193921F17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12EF6EC3-E2BE-439B-8D7A-351193921F17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12EF6EC3-E2BE-439B-8D7A-351193921F17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12EF6EC3-E2BE-439B-8D7A-351193921F17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -873,6 +881,7 @@ Global
 		{8962132F-D580-4F10-8B8E-4A3B1F45EAB3} = {4D5319B5-0B06-493C-9D69-147339757CCF}
 		{C2411D87-09EE-4216-BB30-42772892CBAA} = {4D5319B5-0B06-493C-9D69-147339757CCF}
 		{EEAD5FED-0F47-4E5E-9313-861E8A26FD23} = {4D5319B5-0B06-493C-9D69-147339757CCF}
+		{12EF6EC3-E2BE-439B-8D7A-351193921F17} = {3129AC60-0758-483A-9B0F-E368EDF90731}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
