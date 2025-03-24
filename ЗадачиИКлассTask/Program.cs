@@ -54,12 +54,17 @@ Thread по-прежнему находят широкое применение.
 
 */
 
-Task task1 = new Task(() => Console.WriteLine("Task1 is executed"));
-task1.Start();
- 
-Task task2 = Task.Factory.StartNew(() => Console.WriteLine("Task2 is executed"));
- 
-Task task3 = Task.Run(() => Console.WriteLine("Task3 is executed"));
+static void firstEx()
+{
+    Task task1 = new Task(() => Console.WriteLine("Task1 is executed"));
+    task1.Start();
+    
+    Task task2 = Task.Factory.StartNew(() => Console.WriteLine("Task2 is executed"));
+    
+    Task task3 = Task.Run(() => Console.WriteLine("Task3 is executed"));
+} 
+
+
 
 /*
 
@@ -70,6 +75,8 @@ Task task3 = Task.Run(() => Console.WriteLine("Task3 is executed"));
 
 */
 
+firstEx();
+
 #endregion
 
 #region Ожидание завершения задачи
@@ -78,16 +85,20 @@ Task task3 = Task.Run(() => Console.WriteLine("Task3 is executed"));
 Чтобы приложение ожидало завершения задачи, можно использовать метод Wait() объекта Task:
 */
 
-Task task4 = new Task(() => Console.WriteLine("Task1 is executed"));
-task1.Start();
- 
-Task task5 = Task.Factory.StartNew(() => Console.WriteLine("Task2 is executed"));
- 
-Task task6 = Task.Run(() => Console.WriteLine("Task3 is executed"));
- 
-task4.Wait();   // ожидаем завершения задачи task1
-task5.Wait();   // ожидаем завершения задачи task2
-task6.Wait();   // ожидаем завершения задачи task3
+static void SecondEx()
+{
+    Task task4 = new Task(() => Console.WriteLine("Task1 is executed"));
+    task4.Start();
+    
+    Task task5 = Task.Factory.StartNew(() => Console.WriteLine("Task2 is executed"));
+    
+    Task task6 = Task.Run(() => Console.WriteLine("Task3 is executed"));
+    
+    task4.Wait();   // ожидаем завершения задачи task1
+    task5.Wait();   // ожидаем завершения задачи task2
+    task6.Wait();   // ожидаем завершения задачи task3
+}
+
 
 /*
 
@@ -105,17 +116,22 @@ Task1 is executed
 
 */
 
-Console.WriteLine("Main Starts");
-// создаем задачу
-Task task7 = new Task(() =>
+static void SecondEx2()
 {
-    Console.WriteLine("Task Starts");
-    Thread.Sleep(1000);     // задержка на 1 секунду - имитация долгой работы
-    Console.WriteLine("Task Ends");
- });
-task7.Start();  // запускаем задачу
-task7.Wait();   // ожидаем выполнения задачи
-Console.WriteLine("Main Ends");
+    Console.WriteLine("Main Starts");
+    // создаем задачу
+    Task task7 = new Task(() =>
+    {
+        Console.WriteLine("Task Starts");
+        Thread.Sleep(1000);     // задержка на 1 секунду - имитация долгой работы
+        Console.WriteLine("Task Ends");
+    });
+    task7.Start();  // запускаем задачу
+    task7.Wait();   // ожидаем выполнения задачи
+    Console.WriteLine("Main Ends");
+
+}
+
 
 /*
 
@@ -132,17 +148,21 @@ Main Ends
 
 */
 
-Console.WriteLine("Main Starts");
-// создаем задачу
-Task task8 = new Task(() =>
+static void SecondEx3()
 {
-    Console.WriteLine("Task Starts");
-    Thread.Sleep(1000);     // задержка на 1 секунду - имитация долгой работы
-    Console.WriteLine("Task Ends");
- });
-task8.Start();  // запускаем задачу
-Console.WriteLine("Main Ends");
-task8.Wait();   // ожидаем выполнения задачи
+    Console.WriteLine("Main Starts");
+    // создаем задачу
+    Task task8 = new Task(() =>
+    {
+        Console.WriteLine("Task Starts");
+        Thread.Sleep(1000);     // задержка на 1 секунду - имитация долгой работы
+        Console.WriteLine("Task Ends");
+    });
+    task8.Start();  // запускаем задачу
+    Console.WriteLine("Main Ends");
+    task8.Wait();   // ожидаем выполнения задачи
+}
+
 
 /*
 
@@ -150,6 +170,36 @@ task8.Wait();   // ожидаем выполнения задачи
 потоке не будут блокироваться и ожидать завершения задачи.
 
 */
+
+SecondEx();
+SecondEx2();
+SecondEx3();
+
+#endregion
+
+#region Синхронный запуск задачи
+
+/*
+
+По умолчанию задачи запускаются асинхронно. Однако с помощью метода RunSynchronously() можно запускать синхронно:
+
+*/
+
+static void ThirdEx()
+{
+    Console.WriteLine("Main Starts ~");
+    // создаем задачу
+    Task task9 = new Task(() =>
+    {
+        Console.WriteLine("Task Starts");
+        Thread.Sleep(1000); 
+        Console.WriteLine("Task Ends");
+    });
+    task9.RunSynchronously(); // запускаем задачу синхронно
+    Console.WriteLine("Main Ends"); // этот вызов ждет завершения задачи task1 
+}
+
+ThirdEx();
 
 #endregion
 
