@@ -203,6 +203,85 @@ ThirdEx();
 
 #endregion
 
+#region Свойства класса Task
+
+/*
+
+Класс Task имеет ряд свойств, с помощью которых мы можем получить информацию об объекте. Некоторые из них:
+
+    AsyncState: возвращает объект состояния задачи
+
+    CurrentId: возвращает идентификатор текущей задачи (статическое свойство)
+
+    Id: возвращает идентификатор текущей задачи
+
+    Exception: возвращает объект исключения, возникшего при выполнении задачи
+
+    Status: возвращает статус задачи. Представляет перечисление System.Threading.Tasks.TaskStatus, которое имеет следующие значения:
+
+        Canceled: задача отменена
+
+        Created: задача создана, но еще не запущена
+
+        Faulted: в процессе работы задачи произошло исключение
+
+        RanToCompletion: задача успешно завершена
+
+        Running: задача запущена, но еще не завершена
+
+        WaitingForActivation: задача ожидает активации и постановки в график выполнения
+
+        WaitingForChildrenToComplete: задача завершена и теперь ожидает завершения прикрепленных к ней дочерних задач
+
+        WaitingToRun: задача поставлена в график выполнения, но еще не начала свое выполнение
+
+    IsCompleted: возвращает true, если задача завершена
+
+    IsCanceled: возвращает true, если задача была отменена
+
+    IsFaulted: возвращает true, если задача завершилась при возникновении исключения
+
+    IsCompletedSuccessfully: возвращает true, если задача завершилась успешно
+
+Используем некоторые из этих свойств:
+
+*/
+
+static void FourEx()
+{
+        Task task1 = new Task(() =>
+    {
+        Console.WriteLine($"Task{Task.CurrentId} Starts");
+        Thread.Sleep(1000);
+        Console.WriteLine($"Task{Task.CurrentId} Ends");
+    });
+    task1.Start(); //запускаем задачу
+    
+    // получаем информацию о задаче
+    Console.WriteLine($"task1 Id: {task1.Id}");
+    Console.WriteLine($"task1 is Completed: {task1.IsCompleted}");
+    Console.WriteLine($"task1 Status: {task1.Status}");
+    
+    task1.Wait(); // ожидаем завершения задачи
+}
+
+FourEx();
+
+/*
+
+Пример консольного вывода:
+
+task1 Id: 1
+Task1 Starts
+task1 is Completed: False
+task1 Status: Running
+Task1 Ends
+
+
+*/
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
