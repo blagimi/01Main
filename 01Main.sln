@@ -277,6 +277,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ЗадачиПродолж�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "КлассParallel", "КлассParallel\КлассParallel.csproj", "{29875263-305B-4C32-832C-D8158D92AA97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ОтменаЗадачИПараллельныхОпераций", "ОтменаЗадачИПараллельныхОпераций\ОтменаЗадачИПараллельныхОпераций.csproj", "{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1763,6 +1765,18 @@ Global
 		{29875263-305B-4C32-832C-D8158D92AA97}.Release|x64.Build.0 = Release|Any CPU
 		{29875263-305B-4C32-832C-D8158D92AA97}.Release|x86.ActiveCfg = Release|Any CPU
 		{29875263-305B-4C32-832C-D8158D92AA97}.Release|x86.Build.0 = Release|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Debug|x64.Build.0 = Debug|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Debug|x86.Build.0 = Debug|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Release|x64.ActiveCfg = Release|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Release|x64.Build.0 = Release|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Release|x86.ActiveCfg = Release|Any CPU
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1891,6 +1905,7 @@ Global
 		{03D051F0-AFB8-4721-935D-6597FC753D9F} = {3129AC60-0758-483A-9B0F-E368EDF90731}
 		{272A29E4-4DC1-44A6-A349-12288BA5CAD3} = {3129AC60-0758-483A-9B0F-E368EDF90731}
 		{29875263-305B-4C32-832C-D8158D92AA97} = {3129AC60-0758-483A-9B0F-E368EDF90731}
+		{D88E9D85-BB81-416E-95F6-5FA8F111D7B7} = {3129AC60-0758-483A-9B0F-E368EDF90731}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
