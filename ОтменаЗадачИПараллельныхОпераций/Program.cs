@@ -55,6 +55,94 @@
 
 #endregion
 
+
+#region Мягкий выход из задачи без исключения OperationCanceledException
+
+/*
+
+Сначала рассмотрим первый - "мягкий" вариант завершения:
+
+*/
+
+static void Exemple ()
+{
+    CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
+    CancellationToken token = cancelTokenSource.Token;
+    
+    // задача вычисляет квадраты чисел
+    Task task = new Task(() =>
+    {
+        for (int i = 1; i < 10; i++)
+        {
+            if (token.IsCancellationRequested)  // проверяем наличие сигнала отмены задачи
+            {
+                Console.WriteLine("Операция прервана");
+                return;     //  выходим из метода и тем самым завершаем задачу
+            }
+            Console.WriteLine($"Квадрат числа {i} равен {i * i}");
+            Thread.Sleep(200);
+        }
+    }, token);
+    task.Start();
+    
+    Thread.Sleep(1000);
+    // после задержки по времени отменяем выполнение задачи
+    cancelTokenSource.Cancel();
+    // ожидаем завершения задачи
+    Thread.Sleep(1000);
+    //  проверяем статус задачи
+    Console.WriteLine($"Task Status: {task.Status}");
+    cancelTokenSource.Dispose(); // освобождаем ресурсы
+}
+
+Exemple();
+
+/*
+В данном случае задача task вычисляет и выводит на консоль квадраты чисел от 1 до 9. Для 
+отмены задачи нам надо создать и использовать токен. Вначале создается объект CancellationTokenSource:
+
+CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
+Затем из него получаем сам токен:
+
+CancellationToken token = cancelTokenSource.Token;
+Чтобы отменить операцию, необходимо вызвать метод Cancel() у объекта CancellationTokenSource:
+
+cancelTokenSource.Cancel();
+В данном случае отмена задачи вызывается через секунду, чтобы задача произвела некоторые действия.
+
+В самом методе задачи в цикле мы можем отловить сигнал отмены с помощью проверки свойства 
+token.IsCancellationRequested:
+
+if (token.IsCancellationRequested)
+{
+    Console.WriteLine("Операция прервана");
+    return;
+}
+Если был вызван метод cancelTokenSource.Cancel(), то выражение token.IsCancellationRequested 
+возвращает true.
+
+После завершения задачи проверяем ее статус:
+
+Console.WriteLine($"Task Status: {task.Status}");
+Поскольку задача успешно завершена, у задачи должен быть статус RanToCompletion
+
+И в конце у объекта CancellationTokenSource вызываем метод Dispose:
+
+cancelTokenSource.Dispose();
+Консольный вывод программы:
+
+Квадрат числа 1 равен 1
+Квадрат числа 2 равен 4
+Квадрат числа 3 равен 9
+Квадрат числа 4 равен 16
+Квадрат числа 5 равен 25
+Операция прервана
+Task Status: RanToCompletion
+
+*/
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
