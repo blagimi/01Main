@@ -1,10 +1,8 @@
 ﻿/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-#region 
+#region Отмена задач и параллельных операций. CancellationToken
 
 /*
-
-Отмена задач и параллельных операций. CancellationToken
 
 Параллельное выполнение задач может занимать много времени. И иногда может возникнуть необходимость прервать 
 выполняемую задачу. Для этого платформа .NET предоставляет структуру CancellationToken из пространства 
@@ -138,6 +136,163 @@ cancelTokenSource.Dispose();
 Квадрат числа 5 равен 25
 Операция прервана
 Task Status: RanToCompletion
+
+*/
+
+#endregion
+
+#region Отмена задачи с помощью генерации исключения
+
+/*
+
+Второй способ завершения задачи представляет генерация исключения OperationCanceledException. Для этого 
+применяется метод ThrowIfCancellationRequested() объекта CancellationToken:
+*/
+
+static void ExempleTwo1()
+{
+    CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
+    CancellationToken token = cancelTokenSource.Token;
+    
+    Task task = new Task(() =>
+    {
+        for (int i = 1; i < 10; i++)
+        {
+            if (token.IsCancellationRequested)
+                token.ThrowIfCancellationRequested(); // генерируем исключение
+    
+            Console.WriteLine($"Квадрат числа {i} равен {i * i}");
+            Thread.Sleep(200);
+        }
+    }, token);
+    try
+    {
+        task.Start();
+        Thread.Sleep(1000);
+        // после задержки по времени отменяем выполнение задачи
+        cancelTokenSource.Cancel();
+    
+        task.Wait(); // ожидаем завершения задачи
+    }
+    catch (AggregateException ae)
+    {
+        foreach (Exception e in ae.InnerExceptions)
+        {
+            if (e is TaskCanceledException)
+                Console.WriteLine("Операция прервана");
+            else
+                Console.WriteLine(e.Message);
+        }
+    }
+    finally
+    {
+        cancelTokenSource.Dispose();
+    }
+    
+    //  проверяем статус задачи
+    Console.WriteLine($"Task Status: {task.Status}");
+}
+
+ExempleTwo1();
+
+/*
+Здесь опять же проверяем значение свойства IsCancellationRequested, и если оно равно true, генерируем 
+исключение:
+
+if (token.IsCancellationRequested)
+    token.ThrowIfCancellationRequested(); // генерируем исключение
+Чтобы обработать исключение, помещаем весь код работы с задачей в конструкцию try..catch и также с 
+помощью вызова cancelTokenSource.Cancel() посылаем сообщение об отмене задачи.
+
+Стоит отметить, что генерируемое исключение будет спрятано в объекте AggregateException, который по 
+сути представляет набор исключений. Если причина исключения состояла в отмене задачи, то мы можем 
+найти в этом наборе исключений исключение типа TaskCanceledException
+
+catch (AggregateException ae)
+{
+    foreach (Exception e in ae.InnerExceptions)
+    {
+        if (e is TaskCanceledException)
+            Console.WriteLine("Операция прервана");
+        else
+            Console.WriteLine(e.Message);
+    }
+}
+Класс TaskCanceledException является производным от OperationCanceledException. Исключение типа 
+TaskCanceledException возникает, если для задачи устанавливается статус Canceled.
+
+Консольный вывод программы:
+
+Квадрат числа 1 равен 1
+Квадрат числа 2 равен 4
+Квадрат числа 3 равен 9
+Квадрат числа 4 равен 16
+Квадрат числа 5 равен 25
+Операция прервана
+Task Status: Canceled
+
+Стоит отметить, что исключение возникает только тогда, когда мы останавливаем текущий поток и ожидаем 
+завершения задачи с помощью методов Wait или WaitAll. Если эти методы не используются для ожидания 
+задачи, то для нее просто устанавливается состояние Canceled. Например, в следующем случае 
+исключение не возникнет:
+*/
+
+static void ExempleTwo2()
+{
+    CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
+    CancellationToken token = cancelTokenSource.Token;
+    
+    Task task = new Task(() =>
+    {
+        for (int i = 1; i < 10; i++)
+        {
+            if (token.IsCancellationRequested)
+                token.ThrowIfCancellationRequested(); // генерируем исключение
+    
+            Console.WriteLine($"Квадрат числа {i} равен {i * i}");
+            Thread.Sleep(200);
+        }
+    }, token);
+    try
+    {
+        task.Start();
+        Thread.Sleep(1000);
+        // после задержки по времени отменяем выполнение задачи
+        cancelTokenSource.Cancel();
+    
+        // ожидаем завершения задачи
+        Thread.Sleep(1000);
+    }
+    catch (AggregateException ae)
+    {
+        foreach (Exception e in ae.InnerExceptions)
+        {
+            if (e is TaskCanceledException)
+                Console.WriteLine("Операция прервана");
+            else
+                Console.WriteLine(e.Message);
+        }
+    }
+    finally
+    {
+        cancelTokenSource.Dispose();
+    }
+    
+    //  проверяем статус задачи
+    Console.WriteLine($"Task Status: {task.Status}");
+}
+
+ExempleTwo2();
+
+/*
+Консольный вывод программы:
+
+Квадрат числа 1 равен 1
+Квадрат числа 2 равен 4
+Квадрат числа 3 равен 9
+Квадрат числа 4 равен 16
+Квадрат числа 5 равен 25
+Task Status: Canceled
 
 */
 
