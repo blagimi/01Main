@@ -298,6 +298,64 @@ Task Status: Canceled
 
 #endregion
 
+#region Регистрация обработчика отмены задачи
+
+/*
+
+Выше для проверки сигнала отмены применялось свойство IsCancellationRequested. Но есть и другой способ узнать
+о том, что был послан сигнал отмены задачи. Метод Register() позволяет зарегистрировать обработчик отмены 
+задачи в виде делегата Action:
+*/
+
+static void ExampleThree()
+{
+    CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
+    CancellationToken token = cancelTokenSource.Token;
+    
+    // задача вычисляет квадраты чисел
+    Task task = new Task(() =>
+    {
+        int i = 1;
+        token.Register(() => 
+        { 
+            Console.WriteLine("Операция прервана"); 
+            i = 10; 
+        });
+        for (; i < 10; i++)
+        {
+            Console.WriteLine($"Квадрат числа {i} равен {i * i}");
+            Thread.Sleep(400);
+        }
+    }, token);
+    task.Start();
+    
+    Thread.Sleep(1000);
+    // после задержки по времени отменяем выполнение задачи
+    cancelTokenSource.Cancel();
+    // ожидаем завершения задачи
+    Thread.Sleep(1000);
+    //  проверяем статус задачи
+    Console.WriteLine($"Task Status: {task.Status}");
+    cancelTokenSource.Dispose(); // освобождаем ресурсы
+}
+
+
+/*
+Здесь обработчик отмены представлен лямбда-выражением:
+
+token.Register(() => 
+{ 
+    Console.WriteLine("Операция прервана"); 
+    i = 10; 
+});
+Поскольку действие задачи представляет цикл, который выполняется при значении i меньше 10, то установка этой 
+переменной в обработчике отмены приведет к выходу из цикла и соответственно завершению задачи.
+
+*/
+
+#endregion
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
