@@ -355,6 +355,59 @@ token.Register(() =>
 
 #endregion
 
+#region Отмена параллельных операций Parallel
+
+/*
+
+Для отмены выполнения параллельных операций, запущенных с помощью методов Parallel.For() и 
+Parallel.ForEach(), можно использовать перегруженные версии данных методов, которые принимают 
+в качестве параметра объект ParallelOptions. Данный объект позволяет установить токен:
+
+*/
+static void ExampleFour()
+{
+    CancellationTokenSource cancelTokenSource = new CancellationTokenSource();
+    CancellationToken token = cancelTokenSource.Token;
+    
+    // в другой задаче посылаем сигнал отмены
+    new Task(() =>
+    {
+        Thread.Sleep(400);
+        cancelTokenSource.Cancel();
+    }).Start();
+    
+    try
+    {
+        Parallel.ForEach<int>(new List<int>() { 1, 2, 3, 4, 5},
+                                    new ParallelOptions { CancellationToken = token }, Square);
+        // или так
+        //Parallel.For(1, 5, new ParallelOptions { CancellationToken = token }, Square);
+    }
+    catch (OperationCanceledException)
+    {
+        Console.WriteLine("Операция прервана");
+    }
+    finally
+    {
+        cancelTokenSource.Dispose();
+    }
+    
+    void Square(int n)
+    {
+        Thread.Sleep(3000);
+        Console.WriteLine($"Квадрат числа {n} равен {n * n}");
+    }
+}
+
+ExampleFour();
+/*
+В параллельной запущенной задаче через 400 миллисекунд происходит вызов cancelTokenSource.Cancel(), в 
+результате программа выбрасывает исключение OperationCanceledException, и выполнение параллельных 
+операций прекращается.
+
+*/
+
+#endregion
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
