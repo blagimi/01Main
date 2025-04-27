@@ -130,6 +130,42 @@ Console.WriteLine("Начало метода PrintAsync"); // выполняет
 
 #endregion
 
+#region Асинхронный метод Main
+
+/*
+
+Стоит учитывать, что оператор await можно применять только в методе, который имеет модификатор async. И если мы 
+в методе Main используем оператор await, то метод Main тоже должен быть определен как асинхронный. То есть 
+предыдущий пример фактически будет аналогичен следующему:
+
+class Program
+{
+    async static Task Main(string[] args)
+    {
+        await PrintAsync();   // вызов асинхронного метода
+        Console.WriteLine("Некоторые действия в методе Main");
+ 
+ 
+        void Print()
+        {
+            Thread.Sleep(3000);     // имитация продолжительной работы
+            Console.WriteLine("Hello METANIT.COM");
+        }
+ 
+        // определение асинхронного метода
+        async Task PrintAsync()
+        {
+            Console.WriteLine("Начало метода PrintAsync"); // выполняется синхронно
+            await Task.Run(Print);                // выполняется асинхронно
+            Console.WriteLine("Конец метода PrintAsync");
+        }
+    }
+}
+
+*/
+
+#endregion
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
