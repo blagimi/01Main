@@ -55,7 +55,7 @@ ValueTask<T>
 
 */
 
-async static void Exemple()
+async static void Example()
 {
     await PrintAsync();   // вызов асинхронного метода
     Console.WriteLine("Некоторые действия в методе Main");
@@ -75,7 +75,7 @@ async static void Exemple()
     }   
 }
 
-Exemple();
+Example();
 
 /*
 
@@ -176,7 +176,7 @@ class Program
 
 */
 
-async static void Exemple2()
+async static void Example2()
 {
     await PrintAsync();   // вызов асинхронного метода
     Console.WriteLine("Некоторые действия в методе Main");
@@ -191,7 +191,7 @@ async static void Exemple2()
     }   
 }
 
-Exemple2();
+Example2();
 
 /*
 
@@ -201,6 +201,89 @@ Exemple2();
 
 #endregion
 
+#region Преимущества асинхронности
+
+/*
+
+Выше приведенные примеры являются упрощением, и вряд ли их можно считать показательным. Рассмотрим другой пример:
+
+*/
+
+static void Example3()
+{
+    PrintName("Tom");
+    PrintName("Bob");
+    PrintName("Sam");
+    
+    void PrintName(string name)
+    {
+        Thread.Sleep(3000);     // имитация продолжительной работы
+        Console.WriteLine(name);
+    }
+}
+
+Example3();
+
+/*
+
+Данный код является синхронным и выполняет последовательно три вызова метода PrintName. Поскольку для имитации 
+продолжительной работы в методе установлена задержка на три секунды, то общее выполнение программы займет не 
+менее 9 секунд. Так как каждый последующий вызов PrintName будет ждать пока завершится предыдущий.
+
+Изменим в программе синхронный метод PrintName на асинхронный:
+
+*/
+
+async static void Example4()
+{
+    await PrintNameAsync("Tom");
+    await PrintNameAsync("Bob");
+    await PrintNameAsync("Sam");
+    
+    // определение асинхронного метода
+    async Task PrintNameAsync(string name)
+    {
+        await Task.Delay(3000);     // имитация продолжительной работы
+        Console.WriteLine(name);
+    }
+}
+
+Example4();
+
+/*
+
+В данном случае задачи фактически запускаются при определении. А оператор await применяется лишь тогда, когда 
+нам нужно дождаться завершения асинхронных операций - то есть в конце программы. И в этом случае общее 
+выполнение программы займет не менее 3 секунд, но гораздо меньше 9 секунд.
+
+*/
+
+#endregion
+
+#region Определение асинхронного лямбда-выражения
+
+/*
+
+Асинхронную операцию можно определить не только с помощью отдельного метода, но и с помощью лямбда-выражения:
+
+*/
+
+async static void Example5()
+{
+    // асинхронное лямбда-выражение
+    Func<string, Task> printer = async (message) =>
+    {
+        await Task.Delay(1000);
+        Console.WriteLine(message);
+    };
+    
+    await printer("Hello World");
+    await printer("Hello METANIT.COM");
+}
+
+Example5();
+
+#endregion
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
