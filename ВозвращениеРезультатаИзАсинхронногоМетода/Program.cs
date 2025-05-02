@@ -73,6 +73,59 @@ Example2();
 
 #endregion
 
+#region Task
+
+/*
+
+Возвращение объекта типа Task:
+
+*/
+
+async static void Example3()
+{
+    await PrintAsync("Hello Metanit.com");
+    
+    // определение асинхронного метода
+    async Task PrintAsync(string message)
+    {
+        await Task.Delay(1000);     // имитация продолжительной работы
+        Console.WriteLine(message);
+    }
+}
+
+Example3();
+
+/*
+
+Здесь формально метод PrintAsync не использует оператор return для возвращения результата. Однако если в 
+асинхронном методе выполняется в выражении await асинхронная операция, то мы можем возвращать из метода 
+объект Task.
+
+Для ожидания завершения асинхронной задачи можно применить оператор await. Причем его необязательно 
+использовать непосредственно при вызове задачи. Его можно применить лишь там, где нам нужно гарантировано 
+получить результат задачи или удостовериться, что задача завершена.
+
+*/
+
+async static void Example4()
+{
+    var task = PrintAsync("Hello Metanit.com"); // задача начинает выполняться
+    Console.WriteLine("Main Works");
+    
+    await task; // ожидаем завершения задачи
+    
+    // определение асинхронного метода
+    async Task PrintAsync(string message)
+    {
+        await Task.Delay(0);
+        Console.WriteLine(message);
+    }
+}
+
+Example4();
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
