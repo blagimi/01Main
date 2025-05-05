@@ -126,8 +126,104 @@ Example4();
 
 #endregion
 
+#region Task<T>
+
+/*
+
+Метод может возвращать некоторое значение. Тогда возвращаемое значение оборачивается в объект Task, а 
+возвращаемым типом является Task<T>:
+
+*/
+
+async static void Example5()
+{
+    int n1 = await SquareAsync(5);
+    int n2 = await SquareAsync(6);
+    Console.WriteLine($"n1={n1}  n2={n2}"); // n1=25  n2=36
+    
+    async Task<int> SquareAsync(int n)
+    {
+        await Task.Delay(0);
+        return n * n;
+    }
+}
+
+Example5();
+
+/*
+
+В данном случае метод Square возвращает значение типа int - квадрат числа. Поэтому возвращаемым типом в 
+данном случае является типа Task<int>.
+
+Чтобы получить результат асинхронного метода применяем оператор await при вызове SquareAsync:
+
+int n1 = await SquareAsync(5);
+Подобным образом можно получать данные других типов:
+
+*/
+
+async static void Example6()
+{
+    Person person = await GetPersonAsync("Tom");
+    Console.WriteLine(person.Name); // Tom
+    // определение асинхронного метода
+    async Task<Person> GetPersonAsync(string name)
+    {
+        await Task.Delay(0);
+        return new Person(name);
+    }
+
+}
+
+Example6();
+
+
+/*
+
+Опять же получение непосредственных результатов асинхронной задачи можно отложить до того момента, когда они 
+непосредственно нужны:
+
+*/
+
+async static void Example7()
+{
+    var square5 = SquareAsync(5);
+    var square6 = SquareAsync(6);
+    
+    Console.WriteLine("Остальные действия в методе Main");
+    
+    int n1 = await square5;
+    int n2 = await square6;
+    Console.WriteLine($"n1={n1}  n2={n2}"); // n1=25  n2=36
+    
+    async Task<int> SquareAsync(int n)
+    {
+        await Task.Delay(0);
+        var result = n * n;
+        Console.WriteLine($"Квадрат числа {n} равен {result}");
+        return result;
+    }
+}
+
+Example7();
+
+/*
+
+Пример работы программы (ввывод не детерминирован):
+
+Квадрат числа 5 равен 25
+Квадрат числа 6 равен 36
+Остальные действия в методе Main
+n1=25  n2=36
+
+*/
+
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+record class Person(string Name);
