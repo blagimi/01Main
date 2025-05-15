@@ -109,6 +109,49 @@ async static void Example3()
 
 Example3();
 
+#region Исследование исключения
+
+/*
+
+При возникновении ошибки у объекта Task, представляющего асинхронную задачу, в которой произошла ошибка, 
+свойство IsFaulted имеет значение true. Кроме того, свойство Exception объекта Task содержит всю информацию 
+об ошибке. Проинспектируем данное свойство:
+
+*/
+
+async static void Example4()
+{
+    var task = PrintAsync("Hi");
+    try
+    {
+        await task;
+    }
+    catch
+    {
+        Console.WriteLine(task.Exception?.InnerException?.Message); // Invalid string length: 2
+        Console.WriteLine($"IsFaulted: {task.IsFaulted}");  // IsFaulted: True
+        Console.WriteLine($"Status: {task.Status}");        // Status: Faulted
+    }
+    
+    async Task PrintAsync(string message)
+    {
+        // если длина строки меньше 3 символов, генерируем исключение
+        if (message.Length < 3)
+            throw new ArgumentException($"Invalid string length: {message.Length}");
+        await Task.Delay(1000);     // имитация продолжительной операции
+        Console.WriteLine(message);
+    }
+}
+
+Example4();
+
+/*
+
+И если мы передадим в метод строку с длиной меньше 3 символов, то task.IsFaulted будет равно true.
+
+*/
+
+#endregion
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
