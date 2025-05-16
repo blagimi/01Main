@@ -152,6 +152,72 @@ Example4();
 */
 
 #endregion
+
+
+#region Обработка нескольких исключений. WhenAll
+
+/*
+
+Если мы ожидаем выполнения сразу нескольких задач, например, с помощью Task.WhenAll, то мы можем получить сразу 
+несколько исключений одномоментно для каждой выполняемой задачи. В этом случае мы можем получить все исключения 
+из свойства Exception.InnerExceptions:
+
+*/
+
+async static void Example5()
+{
+    // определяем и запускаем задачи
+    var task1 = PrintAsync("H");
+    var task2 = PrintAsync("Hi");
+    var allTasks = Task.WhenAll(task1, task2);
+    try
+    {
+        await allTasks;
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"Exception: {ex.Message}");
+        Console.WriteLine($"IsFaulted: {allTasks.IsFaulted}");
+        if(allTasks.Exception is not null)
+        {
+            foreach (var exception in allTasks.Exception.InnerExceptions)
+            {
+                Console.WriteLine($"InnerException: {exception.Message}");
+            }
+        }
+    }
+    
+    async Task PrintAsync(string message)
+    {
+        // если длина строки меньше 3 символов, генерируем исключение
+        if (message.Length < 3)
+            throw new ArgumentException($"Invalid string: {message}");
+        await Task.Delay(1000);     // имитация продолжительной операции
+        Console.WriteLine(message);
+    }
+}
+
+Example5();
+
+/*
+
+Здесь в два вызова метода PrintAsync передаются заведомо некорректные значения. Таким образом, при обоих 
+вызовах будет сгенерирована ошибка.
+
+Хотя блок catch через переменную Exception ex будет получать одно перехваченное исключение, но с помощью 
+коллекции Exception.InnerExceptions мы сможем получить информацию обо всех возникших исключениях.
+
+В итоге при выполнении этого метода мы получим следующий консольный вывод:
+
+Exception: Invalid string: H
+IsFaulted: True
+InnerException: Invalid string: H
+InnerException: Invalid string: Hi
+
+*/
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
