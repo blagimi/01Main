@@ -110,6 +110,48 @@ var personel = people.Select(p => new
 
 #endregion
 
+#region Переменые в запросах и оператор let
+
+/*
+
+Иногда возникает необходимость произвести в запросах LINQ какие-то дополнительные промежуточные вычисления. 
+Для этих целей мы можем задать в запросах свои переменные с помощью оператора let:
+
+*/
+
+static void Example4()
+{
+    var people = new List<Person>
+    {
+        new Person ("Tom", 23),
+        new Person ("Bob", 27)
+    };
+    
+    var personnel = from p in people
+                let name = $"Mr. {p.Name}"
+                let year = DateTime.Now.Year - p.Age
+                select new
+                {
+                    Name = name,
+                    Year = year
+                };
+    
+    foreach (var p in personnel)
+        Console.WriteLine($"{p.Name} - {p.Year}");   
+}
+
+Example4();
+
+/*
+В данном случае создаются две переменных. Переменная name, значение которой равно $"Mr. {p.Name}".
+
+Возможность определения переменных наверное одно из главных преимуществ операторов LINQ по сравнению с 
+методами расширения.
+
+*/
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
