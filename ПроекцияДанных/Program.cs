@@ -152,6 +152,51 @@ Example4();
 
 #endregion
 
+#region Выборка из нескольких источников
+
+/*
+
+В LINQ можно выбирать объекты не только из одного, но и из большего количества источников. 
+Например, возьмем классы:
+
+record class Course(string Title);  // учебный курс
+record class Student(string Name);  // студент
+Класс Course представляет учебный курс и хранит его название. Класс Student представляет 
+студента и хранит его имя.
+
+Допустим, нам надо из списка курсов и списка студентов получить набор пар студент-курс 
+(условно говоря сущность, которая представляет учебу студента на данном курсе):
+
+*/
+static void Example5()
+{
+    var courses = new List<Course> { new Course("C#"), new Course("Java") };
+    var students = new List<Student> { new Student("Tom"), new Student("Bob") };
+    
+    var enrollments = from course in courses    //  выбираем по одному курсу
+                from student in students       //  выбираем по одному студенту
+                select new { Student = student.Name, Course = course.Title};   // соединяем каждого студента с каждым курсом
+    
+    foreach (var enrollment in enrollments)
+        Console.WriteLine($"{enrollment.Student} - {enrollment.Course}");
+
+    }
+Example5();
+
+/*
+Консольный вывод:
+
+Tom - C#
+Bob - C#
+Tom - Java
+Bob - Java
+Таким образом, при выборке из двух источников каждый элемент из первого источника будет 
+сопоставляться с каждым элементом из второго источника. То есть получиться 4 пары.
+
+*/
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
@@ -159,3 +204,5 @@ Console.ReadLine();
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 record class Person(string Name, int Age);
+record class Course(string Title);  // учебный курс
+record class Student(string Name);  // студент
