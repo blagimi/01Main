@@ -197,6 +197,129 @@ Bob - Java
 
 #endregion
 
+#region SelectMany и сведение объектов
+
+/*
+
+Метод SelectMany позволяет свести набор коллекций в одну коллекцию. Он имеет ряд перегруженных версий. Возьмем 
+одну из них:
+
+SelectMany(Func<TSource, IEnumerable<TResult>> selector);
+SelectMany(Func<TSource, IEnumerable<TCollection>> collectionSelector, Func<TSource,TCollection,TResult> resultSelector);
+Первая версия метода принимает функцию преобразования в виде делегата Func<TSource,IEnumerable<TResult>>. 
+Функция преобразования получает каждый объект выборки типа TSource и с его помощью создает набор объектов 
+TResult. Метод SelectMany возвращает коллекцию преобразованных объектов.
+
+Вторая версия принимает функцию преобразования в виде делегата Func<TSource,IEnumerable<TResult>>. 
+Функция преобразования получает каждый объект выборки типа TSource и возвращает некоторую промежуточную 
+коллекцию типа TCollection. Второй параметр - то же функция функция преобразования в виде делегата 
+Func<TSource,TCollection,TResult>, которая получает два параметра - каждый элемент текущей выборки и каждый
+элемент промежуточной коллекции и на их основе создает некоторый объект типа TResult.
+
+Рассмотрим следующий пример:
+
+*/
+
+static void Example6()
+{
+        var companies = new List<Company>
+    {
+        new Company("Microsoft", new List<Person2> {new Person2("Tom"), new Person2("Bob")}),
+        new Company("Google", new List<Person2> {new Person2("Sam"), new Person2("Mike")}),
+    };
+    var employees = companies.SelectMany(c => c.Staff);
+    
+    foreach (var emp in employees)
+        Console.WriteLine($"{emp.Name}");
+
+}
+
+Example6();
+/*
+Здесь нам дан список компаний, в каждой компании имеет набор сотрудников в виде списка объектов Person.
+И на выходе мы получаем список сотрудников всех компаний, то есть по сути коллекцию объектов Person. 
+Консольный вывод:
+
+Tom
+Bob
+Sam
+Mike
+Аналогичный пример с помощью операторов LINQ:
+*/
+
+static void Example7()
+{
+    var companies = new List<Company>
+    {
+        new Company("Microsoft", new List<Person2> {new Person2("Tom"), new Person2("Bob")}),
+        new Company("Google", new List<Person2> {new Person2("Sam"), new Person2("Mike")}),
+    };
+    var employees = from c in companies
+                    from emp in c.Staff
+                    select emp;
+    
+    foreach (var emp in employees)
+        Console.WriteLine($"{emp.Name}");
+
+}
+
+Example7();
+
+/*
+
+Теперь добавим к сотрудникам их компанию:
+
+*/
+
+static void Example8()
+{
+    var companies = new List<Company>
+    {
+        new Company("Microsoft", new List<Person2> {new Person2("Tom"), new Person2("Bob")}),
+        new Company("Google", new List<Person2> {new Person2("Sam"), new Person2("Mike")}),
+    };
+    
+    var employees = companies.SelectMany(c => c.Staff,
+                                        (c, emp)=> new { Name = emp.Name, Company = c.Name });
+    
+    foreach (var emp in employees)
+        Console.WriteLine($"{emp.Name} - {emp.Company}");
+
+}
+
+Example8();
+
+/*
+Здесь применяется другая версия метода SelectMany. Первый делегат в виде c => c.Staff создает промежуточную коллекцию - фактически просто возвращаем набор сотрудников каждой компании. Второй делегат - (c, emp)=> new { Name = emp.Name, Company = c.Name } получает каждую компанию и каждый элемент промежуточной коллекции - объект Person и на их основе создает анонимный объект с двумя свойствами Name и Company. Консольный вывод программы:
+
+Tom - Microsoft
+Bob - Microsoft
+Sam - Google
+Mike - Google
+Аналогичный пример с помощью операторов запросов:
+
+*/
+
+static void Example9()
+{
+    var companies = new List<Company>
+    {
+        new Company("Microsoft", new List<Person2> {new Person2("Tom"), new Person2("Bob")}),
+        new Company("Google", new List<Person2> {new Person2("Sam"), new Person2("Mike")}),
+    };
+    var employees = from c in companies
+                from emp in c.Staff
+                select new { Name = emp.Name, Company = c.Name };
+    
+    foreach (var emp in employees)
+        Console.WriteLine($"{emp.Name} - {emp.Company}");
+    
+}
+
+Example9();
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
@@ -206,3 +329,6 @@ Console.ReadLine();
 record class Person(string Name, int Age);
 record class Course(string Title);  // учебный курс
 record class Student(string Name);  // студент
+
+record class Person2(string Name);
+record class Company(string Name, List<Person2> Staff);
