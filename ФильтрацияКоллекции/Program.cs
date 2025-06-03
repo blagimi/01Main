@@ -69,10 +69,56 @@ Example3();
 
 #endregion
 
+#region Выборка сложных объектов
 
+/*
+
+Допустим, у нас есть класс пользователя:
+
+record class Person(string Name, int Age, List<string> Languages);
+Свойство Name представляет имя, свойство Age - возраст пользователя, а список Languages - список языков, которыми владеет пользователь.
+
+Создадим набор пользователей и выберем из них тех, которым больше 25 лет:
+
+*/
+
+static void Example4()
+{
+    var people = new List<Person>
+    {
+        new Person ("Tom", 23, new List<string> {"english", "german"}),
+        new Person ("Bob", 27, new List<string> {"english", "french" }),
+        new Person ("Sam", 29, new List<string>  { "english", "spanish" }),
+        new Person ("Alice", 24, new List<string> {"spanish", "german" })
+    };
+    
+    var selectedPeople = from p in people
+                        where p.Age > 25
+                        select p;
+    
+    foreach (Person person in selectedPeople)
+        Console.WriteLine($"{person.Name} - {person.Age}");
+}
+
+Example4();
+
+/*
+Консольный вывод:
+
+Bob - 27
+Sam - 29
+Аналогичный запрос с помощью метода расширения Where:
+
+var selectedPeople = people.Where(p=> p.Age > 25);
+
+*/
+
+#endregion
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+record class Person(string Name, int Age, List<string> Languages);
