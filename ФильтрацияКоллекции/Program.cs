@@ -149,6 +149,41 @@ var selectedPeople = people.SelectMany(u => u.Languages,
 
 #endregion
 
+#region Фильтрация по типу данных
+
+/*
+
+Дополнительный метод расширения - OfType() позволяет отфильтровать данные коллекции по определенному типу:
+
+*/
+
+static void Example5()
+{
+    var people= new List<Person2>
+    {
+        new Student("Tom"),
+        new Person2("Sam"),
+        new Student("Bob"),
+        new Employee("Mike")
+    };
+    
+    var students = people.OfType<Student>();
+    
+    foreach (var student in students)
+        Console.WriteLine(student.Name);
+}
+
+Example5();
+
+/*
+В данном случае список people содержит объекты трех типов - класса Person и производных типов Student и Employee. И в примере производится фильтрация данных типа Student - для этого метод OfType() типизируется типом Student. Консольный вывод:
+
+Tom
+Bob
+
+*/
+
+#endregion
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
@@ -156,3 +191,6 @@ Console.ReadLine();
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 record class Person(string Name, int Age, List<string> Languages);
+record class Person2(string Name);
+record class Student(string Name): Person2(Name);
+record class Employee(string Name) : Person2(Name);
