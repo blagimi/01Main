@@ -71,8 +71,49 @@ Example3();
 
 #endregion
 
+#region Сортировка сложных объектов
+
+/*
+
+Возьмем посложнее пример. Допустим, надо отсортировать выборку сложных объектов. Тогда в качестве критерия мы 
+можем указать свойство класса объекта:
+
+*/
+
+static void Example4()
+{
+    var people = new List<Person>
+    {
+        new Person("Tom", 37),
+        new Person("Sam", 28),
+        new Person("Tom", 22),
+        new Person("Bob", 41),
+    };
+    // с помощью оператора orderby
+    var sortedPeople1 = from p in people
+                    orderby p.Name
+                    select p;
+    
+    foreach (var p in sortedPeople1)
+        Console.WriteLine($"{p.Name} - {p.Age}");
+    
+    // с помощью метода OrderBy
+    var sortedPeople2 = people.OrderBy(p => p.Name);
+    
+    foreach (var p in sortedPeople2)
+        Console.WriteLine($"{p.Name} - {p.Age}"); 
+}
+
+Example4();
+
+
+#endregion
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+record class Person(string Name, int Age);
