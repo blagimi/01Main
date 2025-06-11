@@ -109,6 +109,44 @@ Example4();
 
 #endregion
 
+#region Сортировка по возрастанию и убыванию
+
+/*
+
+По умолчанию оператор orderby и метод OrderBy производят сортировку по возрастанию. С помощью ключевых слов ascending (сортировка по возрастанию) и descending (сортировка по убыванию) для оператора orderby можно явным образом указать направление сортировки. Например, отсортируем массив чисел по убыванию:
+
+*/
+
+static void Example5()
+{
+    int[] numbers = { 3, 12, 4, 10 };
+    var orderedNumbers = from i in numbers
+                        orderby i descending
+                        select i;
+    foreach (int i in orderedNumbers)
+        Console.WriteLine(i);   // 12 10 4 3
+}
+
+Example5();
+
+/*
+Для сортировки по убыванию можно применять метод OrderByDescending(), который работает аналогично OrderBy за исключением направления сортировки:
+
+*/
+
+static void Example6()
+{
+    int[] numbers = { 3, 12, 4, 10 };
+    var orderedNumbers = numbers.OrderByDescending(n => n);
+    foreach (int i in orderedNumbers)
+        Console.WriteLine(i);   // 12 10 4 3
+}
+
+Example6();
+
+
+#endregion
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
