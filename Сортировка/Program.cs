@@ -147,6 +147,58 @@ Example6();
 
 #endregion
 
+#region Множественные критерии сортировки
+
+/*
+
+В наборах сложных объектов иногда встает ситуация, когда надо отсортировать не по одному, а сразу по 
+нескольким полям. Для этого в запросе LINQ все критерии указываются в порядке приоритета через запятую:
+
+*/
+
+static void Example7()
+{
+    var people = new List<Person>
+    {
+        new Person("Tom", 37),
+        new Person("Sam", 28),
+        new Person("Tom", 22),
+        new Person("Bob", 41),
+    };
+    // с помощью оператора orderby
+    var sortedPeople1 = from p in people
+                    orderby p.Name, p.Age
+                    select p;
+    
+    foreach (var p in sortedPeople1)
+        Console.WriteLine($"{p.Name} - {p.Age}");
+}
+
+Example7();
+
+/*
+
+Результат программы:
+
+Bob - 41
+Sam - 28
+Tom - 22
+Tom - 37
+Для разных критериев сортировки можно установить направление:
+
+// с помощью оператора orderby
+var sortedPeople1 = from p in people
+                  orderby p.Name, p.Age descending  // сортировка по возрасту по убыванию
+                  select p;
+С помощью методов расширения то же самое можно сделать через метод ThenBy()(для сортировки по возрастанию) 
+и ThenByDescending() (для сортировки по убыванию):
+
+var sortedPeople2 = people.OrderBy(p => p.Name).ThenByDescending(p=>p.Age);
+Результат будет аналогичен предыдущему.
+
+*/
+
+#endregion
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
