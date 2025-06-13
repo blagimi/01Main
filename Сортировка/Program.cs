@@ -200,6 +200,44 @@ var sortedPeople2 = people.OrderBy(p => p.Name).ThenByDescending(p=>p.Age);
 
 #endregion
 
+#region Переопределение критерия сортировки
+
+/*
+
+С помощью реализации IComparer мы можем переопределить критерии сортировки, если они нас не устраивают. Например, строки по умолчанию сортируются в алфавитном порядке. Но что, если мы хотим сортировать строки исходя из их длины? Решим данную задачу:
+
+*/
+
+static void Example8()
+{
+    string[] people = new[]{"Kate", "Tom", "Sam", "Mike", "Alice"};
+    var sortedPeople = people.OrderBy(p => p, new CustomStringComparer());
+    
+    foreach (var p in sortedPeople)
+        Console.WriteLine(p);
+
+    // сравнение по длине строки  
+}
+
+Example8();
+
+/*
+Интерфейс IComparer типизируется типов сортируемых данных (в данном случае типом String). Для реализации этого интерфейса необходимо определить метод Compare. Он возвращает число: если первый параметр больше второго, то число больше 0, если меньше - то число меньше 0. Если оба параметра равны, то возвращается 0.
+
+В данном случае, если параметр равен null, будем считать что длина строки равна 0. И с помощью разницы длин строк из обоих параметров определяем, какой из них больше.
+
+Результат программы:
+
+Tom
+Sam
+Kate
+Mike
+Alice
+
+*/
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
@@ -207,3 +245,13 @@ Console.ReadLine();
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 record class Person(string Name, int Age);
+
+class CustomStringComparer : IComparer<String>
+    {
+        public int Compare(string? x, string? y)
+        {
+            int xLength = x?.Length ?? 0; // если x равно null, то длина 0
+            int yLength = y?.Length ?? 0;
+            return xLength - yLength;
+        }
+    }
