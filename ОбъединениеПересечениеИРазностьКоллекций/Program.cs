@@ -140,8 +140,60 @@ var result = soft.Concat(hard);
 
 #endregion
 
+#region Работа со сложными объектами
+
+/*
+
+Для сравнения объектов в последовательностях применяются реализации методов GetHeshCode() и Equals(). 
+Поэтому если мы хотим работать с последовательностями, которые содержат объекты своих классов и структур, 
+то нам необходимо определить для них подобные методы:
+
+*/
+
+static void Example5()
+{
+    Person[] students = { new Person("Tom"), new Person("Bob"), new Person("Sam") };
+    Person[] employees = { new Person("Tom"), new Person("Bob"), new Person("Mike") };
+    
+    // объединение последовательностей
+    var people = students.Union(employees);
+    
+    foreach (Person person in people)
+        Console.WriteLine(person.Name);
+}
+
+Example5();
+
+/*
+
+Здесь объекты Person сравниваются исходя из значения их свойства Name - если имена равны, то и объекты 
+Person равны. Консольный вывод:
+
+Tom
+Bob
+Sam
+Mike
+
+
+*/
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+class Person
+{
+    public string Name { get;}
+    public Person(string name) => Name = name;
+ 
+    public override bool Equals(object? obj)
+    {
+        if (obj is Person person) return Name == person.Name;
+        return false;
+    }
+    public override int GetHashCode() => Name.GetHashCode();
+}
