@@ -48,6 +48,38 @@ Console.WriteLine(sentence);  // Text: Gaudeamus igitur Juvenes dum sumus
 
 #endregion
 
+#region Получение размера выборки. Метод Count
+
+/*
+Для получения числа элементов в выборке используется метод Count():
+*/
+
+static void Example2()
+{
+    int[] numbers = { 1, 2, 3, 4, 10, 34, 55, 66, 77, 88 };
+    int size = numbers.Count();  // 10
+    Console.WriteLine(size);
+}
+
+Example2();
+
+/*
+Метод Count() в одной из версий также может принимать лямбда-выражение, которое устанавливает 
+условие выборки. Поэтому мы можем в данном случае не использовать выражение Where:
+*/
+
+static void Example3()
+{
+    int[] numbers = { 1, 2, 3, 4, 10, 34, 55, 66, 77, 88 };
+    //  количество четных чисел, которые больше 10
+    int size = numbers.Count(i => i % 2 == 0 && i > 10);
+    Console.WriteLine(size);    // 3
+}
+
+Example3();
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
