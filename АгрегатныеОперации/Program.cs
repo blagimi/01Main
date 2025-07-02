@@ -118,6 +118,57 @@ Example5();
 
 #endregion
 
+#region Максимальное, минимальное и среднее значения
+
+/*
+Для нахождения минимального значения применяется метод Min(), для получения максимального - метод Max(), 
+а для нахождения среднего значения - метод Average(). Их действие похоже на методы Sum и Count:
+*/
+
+
+static void Example6()
+{
+    int[] numbers = { 1, 2, 3, 4, 10, 34, 55, 66, 77, 88 };
+    
+    int min = numbers.Min();
+    int max = numbers.Max();
+    double average = numbers.Average();
+    
+    Console.WriteLine($"Min: {min}");           // Min: 1
+    Console.WriteLine($"Max: {max}");           // Max: 88
+    Console.WriteLine($"Average: {average}");   // Average: 34
+}
+
+Example6();
+
+/*
+Если мы работаем со сложными объектами, то в эти методы передается делегат, который принимает 
+свойство, применяемое в вычислениях:
+*/
+
+static void Example7()
+{
+    Person[] people = { new Person("Tom", 37), new Person("Sam", 28), new Person("Bob", 41) };
+    
+    int minAge = people.Min(p => p.Age); // минимальный возраст
+    int maxAge = people.Max(p => p.Age); // максимальный возраст
+    double averageAge = people.Average(p => p.Age); //средний возраст
+    
+    Console.WriteLine($"Min Age: {minAge}");           // Min Age: 28
+    Console.WriteLine($"Max Age: {maxAge}");           // Max Age: 41
+    Console.WriteLine($"Average Age: {averageAge}");   // Average Age: 35,33
+}
+
+Example7();
+ 
+/*
+
+В данном случае для вычислений применяется свойство Age, то есть вычисляется минимальный, максимальный и средний возраст.
+
+*/
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
