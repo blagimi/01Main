@@ -100,6 +100,44 @@ Bob
 
 #endregion
 
+#region Take
+
+/*
+Метод Take() извлекает определенное число элементов. Количество извлекаемых элементов передается в 
+метод в качестве параметра. Например, извлечем три первых элемента:
+
+*/
+
+static void Example4()
+{
+    string[] people = { "Tom", "Sam", "Mike", "Kate", "Bob" };
+    // извлекаем первые 3 элемента
+    var result = people.Take(3);    // "Tom", "Sam", "Mike"
+    
+    foreach (var person in result)
+        Console.WriteLine(person);
+}
+
+Example4();
+
+/*
+Метод TakeLast() извлекает определенное количество элементов с конце коллекции:
+*/
+
+static void Example5()
+{
+    string[] people = { "Tom", "Sam", "Mike", "Kate", "Bob" };
+    // извлекаем последние 3 элемента
+    var result = people.TakeLast(3);    // "Mike", "Kate", "Bob"
+    
+    foreach (var person in result)
+        Console.WriteLine(person);
+}
+
+Example5();
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
