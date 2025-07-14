@@ -79,7 +79,46 @@ Kate
 
 #endregion
 
+#region GroupBy
 
+/*
+
+В качестве альтернативы можно использовать метод расширения GroupBy. Он имеет ряд перегрузок, 
+возьмем самую простую из них:
+
+GroupBy<TSource,TKey> (Func<TSource,TKey> keySelector);
+Данная версия получает делегат, которые в качестве параметра принимает каждый элемент 
+коллекции и возвращает критерий группировки.
+
+Перепишем предыдущий пример с помощью метода GroupBy:
+
+*/
+static void Example2()
+{
+    Person[] people =
+    {
+        new Person("Tom", "Microsoft"), new Person("Sam", "Google"),
+        new Person("Bob", "JetBrains"), new Person("Mike", "Microsoft"),
+        new Person("Kate", "JetBrains"), new Person("Alice", "Microsoft"),
+    };
+    
+    var companies = people.GroupBy(p => p.Company);
+    
+    foreach(var company in companies)
+    {
+        Console.WriteLine(company.Key);
+    
+        foreach(var person in company)
+        {
+            Console.WriteLine(person.Name);
+        }
+        Console.WriteLine(); // для разделения между группами
+    }
+}
+
+Example2();
+
+#endregion
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
