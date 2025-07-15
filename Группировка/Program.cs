@@ -120,6 +120,59 @@ Example2();
 
 #endregion
 
+#region Создание нового объекта при группировке
+
+/*
+Теперь изменим запрос и создадим из группы новый объект:
+
+*/
+
+static void Example3()
+{
+    Person[] people =
+    {
+        new Person("Tom", "Microsoft"), new Person("Sam", "Google"),
+        new Person("Bob", "JetBrains"), new Person("Mike", "Microsoft"),
+        new Person("Kate", "JetBrains"), new Person("Alice", "Microsoft"),
+    };
+    
+    var companies = from person in people
+                    group person by person.Company into g
+                    select new { Name = g.Key, Count = g.Count() }; ;
+    
+    foreach(var company in companies)
+    {
+        Console.WriteLine($"{company.Name} : {company.Count}");
+    }
+}
+
+Example3();
+
+/*
+Выражение
+
+group person by person.Company into g
+определяет переменную g, которая будет содержать группу. С помощью этой переменной мы можем 
+затем создать новый объект анонимного типа (хотя также можно под данную задачу определить новый класс):
+
+select new { Name = g.Key, Count = g.Count() }
+Теперь результат запроса LINQ будет представлять набор объектов таких анонимных типов, у которых 
+два свойства Name и Count.
+
+Результат программы:
+
+Microsoft : 3
+Google : 1
+JetBrains : 2
+Аналогичная операция с помощью метода GroupBy():
+
+var companies = people
+                    .GroupBy(p=>p.Company)
+                    .Select(g => new { Name = g.Key, Count = g.Count() });
+
+*/
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
