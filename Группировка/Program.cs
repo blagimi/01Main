@@ -173,6 +173,74 @@ var companies = people
 */
 #endregion
 
+#region Вложенные запросы
+
+/*
+
+Также мы можем осуществлять вложенные запросы:
+*/
+
+static void Example4()
+{
+    Person[] people =
+    {
+        new Person("Tom", "Microsoft"), new Person("Sam", "Google"),
+        new Person("Bob", "JetBrains"), new Person("Mike", "Microsoft"),
+        new Person("Kate", "JetBrains"), new Person("Alice", "Microsoft"),
+    };
+    var companies = from person in people
+                    group person by person.Company into g
+                    select new
+                    {
+                        Name = g.Key,
+                        Count = g.Count(),
+                        Employees = from p in g select p
+                    };
+    
+    foreach (var company in companies)
+    {
+        Console.WriteLine($"{company.Name} : {company.Count}");
+        foreach(var employee in company.Employees)
+        {
+            Console.WriteLine(employee.Name);
+        }
+        Console.WriteLine(); // для разделения компаний
+    }
+}
+
+Example4();
+
+/*
+
+Здесь свойство Employees каждой группы формируется с помощью дополнительного запроса, который выбирает всех пользователей в этой группе. Консольный вывод программы:
+
+Microsoft : 3
+Tom
+Mike
+Alice
+
+Google : 1
+Sam
+
+JetBrains : 2
+Bob
+Kate
+Аналогичный запрос с помощью метода GroupBy:
+
+var companies = people
+                    .GroupBy(p=>p.Company)
+                    .Select(g => new
+                    {
+                        Name = g.Key,
+                        Count = g.Count(),
+                        Employees = g.Select(p=> p) 
+                    });
+
+*/
+
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
