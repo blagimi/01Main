@@ -68,6 +68,56 @@ Mike - Microsoft (C#)
 
 #endregion
 
+#region Метод Join
+
+/*
+В качестве альтернативы можно было бы использовать метод Join():
+
+Join(IEnumerable<TInner> inner, 
+    Func<TOuter,TKey> outerKeySelector, 
+    Func<TInner,TKey> innerKeySelector, 
+    Func<TOuter,TInner,TResult> resultSelector);
+Метод Join() принимает четыре параметра:
+
+второй список, который соединяем с текущим
+
+делегат, который определяет свойство объекта из текущего списка, по которому идет соединение
+
+делегат, который определяет свойство объекта из второго списка, по которому идет соединение
+
+делегат, который определяет новый объект в результате соединения
+
+Перепишим предыдущий пример с использованием метода Join:
+
+*/
+
+static void Example2()
+
+{
+    Person[] people =
+    {
+        new Person("Tom", "Microsoft"), new Person("Sam", "Google"),
+        new Person("Bob", "JetBrains"), new Person("Mike", "Microsoft"),
+    };
+    Company[] companies =
+    {
+        new Company("Microsoft", "C#"),
+        new Company("Google", "Go"),
+        new Company("Oracle", "Java")
+    };
+    var employees = people.Join(companies, // второй набор
+                p => p.Company, // свойство-селектор объекта из первого набора
+                c => c.Title, // свойство-селектор объекта из второго набора
+                (p, c) => new { Name = p.Name, Company = c.Title, Language = c.Language }); // результат
+    
+    foreach (var emp in employees)
+        Console.WriteLine($"{emp.Name} - {emp.Company} ({emp.Language})");
+}
+
+Example2();
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
