@@ -118,6 +118,95 @@ Example2();
 
 #endregion
 
+#region GroupJoin
+/*
+Метод GroupJoin() кроме соединения последовательностей также выполняет и группировку.
+
+GroupJoin(IEnumerable<TInner> inner, 
+        Func<TOuter,TKey> outerKeySelector, 
+        Func<TInner,TKey> innerKeySelector, 
+        Func<TOuter, IEnumerable<TInner>,TResult> resultSelector);
+Метод GroupJoin()
+
+принимает четыре параметра:
+
+второй список, который соединяем с текущим
+
+делегат, который определяет свойство объекта из текущей коллекции, по которому идет соединение и по которому будет идти группировка
+
+делегат, который определяет свойство объекта из второй коллекции, по которому идет соединение
+
+делегат, который определяет новый объект в результате соединения. Этот делегат получает группу - объект текущей коллекции, по которому шла группировка, и набор объектов из второй коллекции, которые сооставляют группу
+
+Например, возьмем выше определенные массивы people и companies и сгуппируем всех пользователей по компаниям:
+
+*/
+
+static void Example3()
+{
+    Person[] people =
+    {
+        new Person("Tom", "Microsoft"), new Person("Sam", "Google"),
+        new Person("Bob", "JetBrains"), new Person("Mike", "Microsoft"),
+    };
+    Company[] companies =
+    {
+        new Company("Microsoft", "C#"),
+        new Company("Google", "Go"),
+        new Company("Oracle", "Java")
+    };
+    var personnel = companies.GroupJoin(people, // второй набор
+                c => c.Title, // свойство-селектор объекта из первого набора
+                p => p.Company, // свойство-селектор объекта из второго набора
+                (c, employees) => new   // результат
+                {
+                    Title = c.Title,
+                    Employees = employees
+                });
+    
+    foreach (var company in personnel)
+    {
+        Console.WriteLine(company.Title);
+        foreach(var emp in company.Employees)
+        {
+            Console.WriteLine(emp.Name);
+        }
+        Console.WriteLine();
+    }
+}
+
+Example3();
+ 
+/*
+Результатом выполнения программы будет следующий вывод:
+
+Microsoft
+Tom
+Mike
+
+Google
+Sam
+
+Oracle
+Метод GroupJoin, также как и метод Join, принимает все те же параметры. Только теперь в последний параметр - делегат передаются объект компании и набор пользователей этой компании.
+
+Обратите внимание, что для компании "Oracle" в массиве people нет пользователей, хотя для нее также создается группа.
+
+Аналогичного результата можно добитьс и с помощью оператора join:
+
+var personnel = from c in companies
+                join p in people on c.Title equals p.Company into g
+                select new   // результат
+                {
+                    Title = c.Title,
+                    Employees = g
+                };
+
+
+*/
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
