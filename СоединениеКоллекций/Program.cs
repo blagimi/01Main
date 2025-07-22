@@ -176,7 +176,7 @@ static void Example3()
 }
 
 Example3();
- 
+
 /*
 Результатом выполнения программы будет следующий вывод:
 
@@ -207,6 +207,40 @@ var personnel = from c in companies
 
 #endregion
 
+#region Метод Zip
+/*
+Метод Zip() последовательно объединяет соответствующие элементы текущей последовательности со второй 
+последовательностью, которая передается в метод в качестве параметра. То есть первый элемент из первой 
+последовательности объединяется с первым элементом из второй последовательности, второй элемент из 
+первой последовательности соединяется со вторым элементом из второй последовательности и так далее. 
+Результатом метода является коллекция кортежей, где каждый кортеж хранит пару соответствующих элементов 
+из обоих последовательностей:
+*/
+
+static void Example4()
+{
+    var courses = new List<Course> { new Course("C#"), new Course("Java") };
+    var students = new List<Student> { new Student("Tom"), new Student("Bob") };
+    
+    var enrollments = courses.Zip(students);
+    
+    foreach (var enrollment in enrollments)
+        Console.WriteLine($"{enrollment.First} - {enrollment.Second}");
+}
+
+Example4();
+
+/*
+
+Здесь метод Zip объединяет соответствующие элементы из списков courses и students. В результате создается новая коллекция, которая хранит набор кортежей. Каждый кортеж в ней имеет два элемента. Первый элемент из свойства First представляет объект текущей коллекции (в данном случае объект Course), а второй элемент (в свойстве Second) хранит объект второй последовательности (в данном случае объект Student). Консольный вывод:
+
+Course { Title = C# } - Student { Name = Tom }
+Course { Title = Java } - Student { Name = Bob }
+
+*/
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
@@ -215,3 +249,6 @@ Console.ReadLine();
 
 record class Person(string Name, string Company);
 record class Company(string Title, string Language);
+
+record class Course(string Title);  // учебный курс
+record class Student(string Name);  // студент
