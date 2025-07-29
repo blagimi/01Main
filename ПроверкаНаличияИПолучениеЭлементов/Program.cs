@@ -163,6 +163,61 @@ Example6();
 
 #endregion
 
+#region First/FirstOrdefault
+
+/*
+Метод First() возвращает первый элемент последовательности:
+*/
+
+static void Example7()
+{
+    string[] people = { "Tom", "Bob", "Tim", "Sam" };
+
+    // проверяем, есть ли строка Tom
+    var first = people.First();  // Tom
+    Console.WriteLine(first);
+}
+
+Example7();
+
+/*
+Также в метод First можно передать метод, который представляет условие. В этом случае метод возвращает первый элемент, который соответствует условию:
+*/
+
+static void Example8()
+{
+    string[] people = { "Tom", "Bob", "Kate", "Tim", "Mike", "Sam" };
+
+    // первая строка, длина которой равна 4 символам
+    var firstWith4Chars = people.First(s => s.Length == 4);  // Kate
+    Console.WriteLine(firstWith4Chars);
+}
+
+Example8();
+
+/*
+Здесь выбираем первый элемент, длина которого - 4 символа.
+
+Стоит учитывать, что если коллекция пуста или в коллекции нет элементов, который соответствуют условию, 
+то будет сгенерировано исключение.
+*/
+
+static void Example9()
+{
+    string[] people = { "Tom", "Bob", "Kate", "Tim", "Mike", "Sam" };
+
+    // первая строка, длина которой равна 5 символам
+    var firstWith5Chars = people.First(s => s.Length == 5);  // ! исключение
+    Console.WriteLine(firstWith5Chars);
+
+    var first = new string[] { }.First();  // ! исключение
+    Console.WriteLine(first);
+}
+
+Example9();
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
