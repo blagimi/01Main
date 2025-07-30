@@ -218,6 +218,56 @@ Example9();
 
 #endregion
 
+#region Last и LastOrDefault
+
+/*
+Метод Last() аналогичен по работе методу First, только возвращает последний элемент. Если коллекция не 
+содержит элемент, который соответствуют условию, или вообще пуста, то метод генерирует исключение.
+*/
+
+static void Example10()
+{
+    string[] people = { "Tom", "Bob", "Kate", "Tim", "Mike", "Sam" };
+
+    string last = people.Last();
+    Console.WriteLine(last); // Sam
+
+    string lastWith4Chars = people.Last(s => s.Length == 4);
+    Console.WriteLine(lastWith4Chars); // Mike
+}
+
+Example10();
+
+/*
+Метод LastOrDefault() возвращает последний элемент или значение по умолчанию, если коллекция не 
+содержит элемент, который соответствуют условию, или вообще пуста:
+*/
+
+static void Example11()
+{
+    string[] people = { "Tom", "Bob", "Kate", "Tim", "Mike", "Sam" };
+
+    string? last = people.LastOrDefault();
+    Console.WriteLine(last); // Sam
+
+    string? lastWith4Chars = people.LastOrDefault(s => s.Length == 4);
+    Console.WriteLine(lastWith4Chars); // Mike
+
+    string? lastWith5Chars = people.LastOrDefault(s => s.Length == 5);
+    Console.WriteLine(lastWith5Chars); // null
+
+    string? lastWith5CharsOrDefault = people.LastOrDefault(s => s.Length == 5, "Undefined");
+    Console.WriteLine(lastWith5CharsOrDefault); // Undefined
+
+    // первый элемент из пустой коллекции строк
+    string? lastOrDefault = new string[] { }.LastOrDefault("hello");
+    Console.WriteLine(lastOrDefault);  // hello
+}
+
+Example11();
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
