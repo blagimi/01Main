@@ -313,6 +313,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СоединениеКол�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ПроверкаНаличияИПолучениеЭлементов", "ПроверкаНаличияИПолучениеЭлементов\ПроверкаНаличияИПолучениеЭлементов.csproj", "{47FF7F41-32BF-43BC-B3D4-999CED9DAF30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ОтложенноеИНемедленноеВыполнениеLINQ", "ОтложенноеИНемедленноеВыполнениеLINQ\ОтложенноеИНемедленноеВыполнениеLINQ.csproj", "{E97265FB-CBA4-423F-B281-0BB446001D21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1991,6 +1993,18 @@ Global
 		{47FF7F41-32BF-43BC-B3D4-999CED9DAF30}.Release|x64.Build.0 = Release|Any CPU
 		{47FF7F41-32BF-43BC-B3D4-999CED9DAF30}.Release|x86.ActiveCfg = Release|Any CPU
 		{47FF7F41-32BF-43BC-B3D4-999CED9DAF30}.Release|x86.Build.0 = Release|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Debug|x64.Build.0 = Debug|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Debug|x86.Build.0 = Debug|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Release|x64.ActiveCfg = Release|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Release|x64.Build.0 = Release|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Release|x86.ActiveCfg = Release|Any CPU
+		{E97265FB-CBA4-423F-B281-0BB446001D21}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2135,6 +2149,7 @@ Global
 		{F1FF8CE8-E108-4C97-B4FA-30B0E0AFA4A1} = {AE13C4DC-B0F8-A5A4-9880-43D058AB50CF}
 		{BAD53C82-9BCB-41AF-87A3-C8F508F7E016} = {AE13C4DC-B0F8-A5A4-9880-43D058AB50CF}
 		{47FF7F41-32BF-43BC-B3D4-999CED9DAF30} = {AE13C4DC-B0F8-A5A4-9880-43D058AB50CF}
+		{E97265FB-CBA4-423F-B281-0BB446001D21} = {AE13C4DC-B0F8-A5A4-9880-43D058AB50CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
