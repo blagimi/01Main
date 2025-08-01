@@ -129,6 +129,129 @@ Example2();
 
 #endregion
 
+#region Немедленное выполнение запроса
+
+/*
+С помощью ряда методов мы можем применить немедленное выполнение запроса. Это методы, которые возвращают 
+одно атомарное значение или один элемент или данные типов Array, List и Dictionary. Полный список подобных 
+операций в LINQ:
+
+Aggregate
+
+All
+
+Any
+
+Average
+
+Contains
+
+Count
+
+ElementAt
+
+ElementAtOrDefault
+
+Empty
+
+First
+
+FirstOrDefault
+
+Last
+
+LastOrDefault
+
+LongCount
+
+Max
+
+Min
+
+SequenceEqual
+
+Single
+
+SingleOrDefault
+
+Sum
+
+ToArray
+
+ToDictionary
+
+ToList
+
+ToLookup
+
+Рассмотрим пример с методом Count(), который возвращает число элементов последовательности:
+*/
+
+static void Example3()
+{
+    string[] people = { "Tom", "Sam", "Bob" };
+    // определение и выполнение LINQ-запроса
+    var count = people.Where(s => s.Length == 3).OrderBy(s => s).Count();
+
+    Console.WriteLine(count);   // 3 - до изменения коллекции
+
+    people[2] = "Mike";
+    Console.WriteLine(count);   // 3 - после изменения коллекции
+}
+
+Example3();
+/*
+Результатом метода Count будет объект int, поэтому сработает немедленное выполнение.
+
+Сначала создается запрос: people.Where(s=>s.Length == 3).OrderBy(s=>s). Далее к нему применяется метод Count(), 
+который выполняет запрос, неявно выполняет перебор по последовательности элементов, генерируемой этим запросом, 
+и возвращает число элементов в этой последовательности.
+
+Также мы можем изменить код таким образом, чтобы метод Count() учитывал изменения и выполнялся отдельно от 
+определения запроса:
+*/
+
+static void Example4()
+{
+    string[] people = { "Tom", "Sam", "Bob" };
+    // определение LINQ-запроса
+    var selectedPeople = people.Where(s => s.Length == 3).OrderBy(s => s);
+    // выполнение запроса
+    Console.WriteLine(selectedPeople.Count());   // 3 - до изменения коллекции
+
+    people[2] = "Mike";
+    // выполнение запроса
+    Console.WriteLine(selectedPeople.Count());   // 2 - после изменения коллекции
+
+    /*
+    Также для немедленного выполнения LINQ-запроса и кэширования его результатов мы можем применять методы 
+    преобразования ToArray<T>(), ToList<T>(), ToDictionary() и т.д.. Эти методы получают результат запроса в 
+    виде объектов Array, List и Dictionary соответственно. Например:
+    */
+
+}
+
+Example4();
+
+static void Example5()
+{
+    string[] people = { "Tom", "Sam", "Bob" };
+
+    // определение и выполнение LINQ-запроса
+    var selectedPeople = people.Where(s => s.Length == 3).OrderBy(s => s).ToList();
+
+    // изменение массива никак не затронет список selectedPeople
+    people[2] = "Mike";
+
+    // выполнение запроса
+    foreach (string s in selectedPeople)
+        Console.WriteLine(s);
+}
+
+Example5();
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
