@@ -28,7 +28,6 @@
 
 #endregion
 
-
 #region Метод AsParallel
 
 /*
