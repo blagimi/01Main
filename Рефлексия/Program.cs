@@ -163,7 +163,7 @@ Console.WriteLine($"Full Name: {myType7.FullName}");     // получаем п�
 Console.WriteLine($"Namespace: {myType7.Namespace}");    // получаем пространство имен типа
 Console.WriteLine($"Is struct: {myType7.IsValueType}");  // является ли тип структурой
 Console.WriteLine($"Is class: {myType7.IsClass}");       // является ли тип классом
- 
+
 /*
 Консольный вывод:
 
@@ -178,6 +178,50 @@ Is class: True
 
 #endregion
 
+#region Поиск реализованных интерфейсов
+
+/*
+
+Чтобы получить все реализованные типом интерфейсы, надо использовать метод GetInterfaces(), который 
+возвращает массив объектов Type:
+
+*/
+
+Type myType8 = typeof(Person);
+ 
+Console.WriteLine("Реализованные интерфейсы:");
+foreach (Type i in myType8.GetInterfaces())
+{
+    Console.WriteLine(i.Name);
+}
+
+/* 
+public class Person : IEater, IMovable
+{
+    public string Name { get; }
+    public Person(string name) => Name = name;
+    public void Eat() => Console.WriteLine($"{Name} eats");
+
+    public void Move() => Console.WriteLine($"{Name} moves");
+}
+interface IEater
+{
+    void Eat();
+}
+interface IMovable
+{
+    void Move();
+}
+
+Так как каждый интерфейс представляет объект Type, то для каждого полученного интерфейса можно также 
+применить выше рассмотренные методы для извлечения информации о свойствах и методах
+
+Но пока все примеры выше никак не использовали рефлексию. В следующих темах рассмотрим, как можно с помощью 
+рефлексии получать компоненты типа и обращаться к ним, например, изменять значения приватных полей класса.
+
+*/
+
+#endregion
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -186,17 +230,29 @@ Console.ReadLine();
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 
-public class Person
-{
-    public string Name { get; }
-    public Person(string name) => Name = name;
-}
 
 namespace PeopleTypes
 {
     public class Person
     {
-        public string Name { get;}
+        public string Name { get; }
         public Person(string name) => Name = name;
     }
+}
+
+public class Person : IEater, IMovable
+{
+    public string Name { get;}
+    public Person(string name) => Name = name;
+    public void Eat() => Console.WriteLine($"{Name} eats");
+ 
+    public void Move()=> Console.WriteLine($"{Name} moves");
+}
+interface IEater
+{
+    void Eat();
+}
+interface IMovable
+{
+    void Move();
 }
