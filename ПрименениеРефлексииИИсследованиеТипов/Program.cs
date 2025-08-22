@@ -65,7 +65,51 @@ Person Property Age
 
 #endregion
 
+#region BindingFlags
 
+/*
+
+В примере выше использовалась простая форма метода GetMembers(), которая извлекает все общедоступные публичные методы. Но мы можем использовать и другую форму метода: MembersInfo[] GetMembers(BindingFlags). Перечисление BindingFlags может принимать различные значения:
+
+DeclaredOnly: получает только методы непосредственно данного класса, унаследованные методы не извлекаются
+
+Instance: получает только методы экземпляра
+
+NonPublic: извлекает не публичные методы
+
+Public: получает только публичные методы
+
+Static: получает только статические методы
+
+Объединяя данные значения с помощью побитовой операции ИЛИ можно комбинировать вывод. Например, получим только компоненты непосредственно самого класса без унаследованных, как публичные, так и все остальные:
+
+
+using System.Reflection;     // подключаем функционал рефлексии
+
+*/
+
+Type myType2 = typeof(Person);
+ 
+foreach (MemberInfo member in myType2.GetMembers(BindingFlags.DeclaredOnly
+            | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public))
+{
+    Console.WriteLine($"{member.DeclaringType} {member.MemberType} {member.Name}");
+}
+ 
+/*
+И в данном случае мы получим несколько другой вывод:
+
+Person Method get_Age
+Person Method set_Age
+Person Method Print
+Person Constructor .ctor
+Person Property Age
+Person Field name
+Person Field <Age>k__BackingField
+
+*/
+
+#endregion
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
