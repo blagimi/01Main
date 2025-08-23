@@ -95,7 +95,7 @@ foreach (MemberInfo member in myType2.GetMembers(BindingFlags.DeclaredOnly
 {
     Console.WriteLine($"{member.DeclaringType} {member.MemberType} {member.Name}");
 }
- 
+
 /*
 И в данном случае мы получим несколько другой вывод:
 
@@ -107,6 +107,26 @@ Person Property Age
 Person Field name
 Person Field <Age>k__BackingField
 
+*/
+
+#endregion
+
+#region Получение одного компонента по имени
+/*
+Для получения одного компонента можно использовать метод GetMember(), в который передается имя компонента. И опционально можно передать флаги BindingFlags.
+*/
+
+Type myType3 = typeof(Person);
+ 
+// получаем метод print
+MemberInfo[] print = myType3.GetMember("Print", BindingFlags.Instance | BindingFlags.Public);
+foreach (MemberInfo member in print)
+{
+    Console.WriteLine($"{member.MemberType} {member.Name}");
+}
+
+/*
+Стоит отметить, что при получении одного члена типа опять же возвращается массив MemberInfo[], поскольку в классе может быть несколько элементов с одним именем, например, несколько перегруженных версий метода Print.
 */
 
 #endregion
