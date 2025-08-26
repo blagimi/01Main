@@ -86,6 +86,49 @@ foreach (MethodInfo method in myType.GetMethods()
 
 #endregion
 
+#region BindingFlags
+
+/*
+
+В примере выше использовалась простая форма метода GetMethods(), которая извлекает все 
+общедоступные публичные методы. Но мы можем использовать и другую форму метода: 
+MethodInfo[] GetMethods(BindingFlags). Объединяя значения BindingFlags можно 
+комбинировать вывод. Например, получим только методы самого класса без унаследованных, 
+как публичные, так и все остальные:
+
+*/
+
+Type myType2 = typeof(Printer);
+ 
+Console.WriteLine("Методы:");
+foreach (MethodInfo method in myType2.GetMethods(BindingFlags.DeclaredOnly
+            | BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public))
+{
+    Console.WriteLine($"{method.ReturnType.Name} {method.Name} ()");
+}
+
+/*
+
+Теперь метод Print в классе Person является приватным, а метод SayMessage имеет 
+модификатор protected internal.
+
+Для получения всех непубличных методов в метод GetMethods() передается набор флагов 
+BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public, то есть получаем 
+все методы экземпляра, как публичные, так и непубличные, но исключаем статические.
+Соответственно теперь получим следующий вывод:
+
+Методы:
+String get_DefaultMessage ()
+Void set_DefaultMessage ()
+Void PrintMessage ()
+String CreateMessage ()
+
+*/
+
+
+#endregion
+
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
