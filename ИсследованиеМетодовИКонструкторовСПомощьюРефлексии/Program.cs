@@ -128,6 +128,74 @@ String CreateMessage ()
 
 #endregion
 
+#region Исследование параметров
+
+/*
+
+С помощью метода GetParameters() можно получить все параметры метода в виде массива 
+объектов ParameterInfo. Отметим некоторые из свойств ParameterInfo, которые позволяют 
+получить информацию о параметрах:
+
+Attributes: возвращает атрибуты параметра
+
+DefaultValue: возвращает значение параметра по умолчанию
+
+HasDefaultValue: возвращает true, если параметр имеет значение по умолчанию
+
+IsIn: возвращает true, если параметр имеет модификатор in
+
+IsOptional: возвращает true, если параметр является необязательным
+
+IsOut: возвращает true, если параметр является выходным, то есть имеет модификатор out
+
+Name: возвращает имя параметра
+
+ParameterType: возвращает тип параметра
+
+Используем тип ParameterInfo для исследования параметров:
+
+*/
+
+foreach (MethodInfo method in typeof(Printer).GetMethods())
+{
+    Console.Write($"{method.ReturnType.Name} {method.Name} (");
+    //получаем все параметры
+    ParameterInfo[] parameters = method.GetParameters();
+    for (int i = 0; i < parameters.Length; i++)
+    {
+        var param = parameters[i];
+        // получаем модификаторы параметра
+         string modificator = "";
+        if (param.IsIn) modificator = "in";
+        else if (param.IsOut) modificator = "out";
+ 
+        Console.Write($"{param.ParameterType.Name} {modificator} {param.Name}");
+        // если параметр имеет значение по умолчанию
+        if (param.HasDefaultValue) Console.Write($"={param.DefaultValue}");
+        // если не последний параметр, добавляем запятую
+        if (i < parameters.Length - 1) Console.Write(", ");
+    }
+    Console.WriteLine(")");
+}
+
+/*
+
+Консольный вывод:
+
+Void PrintMessage (String  message, Int32  times=1)
+Void CreateMessage (String& out message)
+Type GetType ()
+String ToString ()
+Boolean Equals (Object  obj)
+Int32 GetHashCode ()
+
+Стоит отметить, что если параметр имеет модификатор ref, in, out, то в конце названия 
+типа добавляется амперсанд - String&.
+
+*/
+
+#endregion
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
