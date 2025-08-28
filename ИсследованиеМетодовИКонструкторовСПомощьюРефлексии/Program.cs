@@ -196,6 +196,84 @@ Int32 GetHashCode ()
 
 #endregion
 
+#region Получение конструкторов
+
+/*
+
+Для получения конструкторов применяется метод GetConstructors(), который возвращает массив объектов класса ConstructorInfo. Этот класс во многом похож на MethodInfo и имеет ряд общей функциональности. Некоторые основные свойства и методы:
+
+Свойство IsFamily: возвращает true, если конструктор имеет модификатор доступа protected
+
+Свойство IsFamilyAndAssembly: возвращает true, если конструктор имеет модификатор доступа private protected
+
+Свойство IsFamilyOrAssembly: возвращает true, если конструктор имеет модификатор доступа protected internal
+
+Свойство IsAssembly: возвращает true, если конструктор имеет модификатор доступа internal
+
+Свойство IsPrivate: возвращает true, если конструктор имеет модификатор доступа private
+
+Свойство IsPublic: возвращает true, если конструктор имеет модификатор доступа public
+
+Метод GetMethodBody(): возвращает тело конструктора в виде объекта MethodBody
+
+Метод GetParameters(): возвращает массив параметров, где каждый параметр представлен объектом типа ParameterInfo
+
+Метод Invoke(): вызывает конструктор
+
+Исследуем конструкторы
+
+*/
+
+Type myType3 = typeof(Person);
+ 
+Console.WriteLine("Конструкторы:");
+foreach (ConstructorInfo ctor in myType3.GetConstructors(
+    BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public))
+{
+    string modificator = "";
+ 
+    // получаем модификатор доступа
+    if (ctor.IsPublic)
+        modificator += "public";
+    else if (ctor.IsPrivate)
+        modificator += "private";
+    else if (ctor.IsAssembly)
+        modificator += "internal";
+    else if (ctor.IsFamily)
+        modificator += "protected";
+    else if (ctor.IsFamilyAndAssembly)
+        modificator += "private protected";
+    else if (ctor.IsFamilyOrAssembly)
+        modificator += "protected internal";
+ 
+    Console.Write($"{modificator} {myType.Name}(");
+    // получаем параметры конструктора
+    ParameterInfo[] parameters = ctor.GetParameters();
+    for (int i = 0; i < parameters.Length; i++)
+    {
+        var param = parameters[i];
+        Console.Write($"{param.ParameterType.Name} {param.Name}");
+        if (i < parameters.Length - 1) Console.Write(", ");
+    }
+    Console.WriteLine(")");
+}
+
+/*
+
+В данном случае исследуем конструкторы класса Person, один из которых является приватным. 
+Консольный вывод:
+
+Конструкторы:
+public Person(String name, Int32 age)
+public Person(String name)
+private Person()
+
+*/
+
+
+#endregion
+
+
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -211,4 +289,15 @@ class Printer
         while (times-- > 0) Console.WriteLine(message);
     }
     public string CreateMessage() => DefaultMessage;
+}
+class Person
+{
+    public string Name { get; }
+    public int Age { get; }
+    public Person(string name, int age)
+    {
+        Name = name; Age = age;
+    }
+    public Person(string name) : this(name, 1) { }
+    private Person() : this("Tom") { }
 }
