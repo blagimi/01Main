@@ -196,6 +196,105 @@ Int32 GetHashCode ()
 
 #endregion
 
+#region Вызов методов
+
+/*
+
+С помощью метода Invoke() можно вызвать метод:
+
+public object? Invoke (object? obj, object?[]? parameters);
+Первый параметр представляет объект, для которого вызывается метод. Второй объект представляет массив значений, которые передаются параметрам метода. И также метод может возвращать результат в виде значения object?.
+
+Вызов метода:
+*/
+
+var myPrinter = new Printer2("Hello");
+ 
+// получаем метод Print
+var print = typeof(Printer).GetMethod("Print");
+// вызываем метод Print
+print?.Invoke(myPrinter, parameters: null); // Hello
+
+
+/*
+
+Метод GetMethod() возвращает метод, который имеет определенное имя - в данном случае 
+метод Print. Далее используя полученный метод, его можно вызвать. Здесь при вызове в 
+качестве первого параметра передается объект, для которого вызывается метод 
+Print - объект myPrinter. И поскольку метод Print не принимает параметров, параметру 
+parameters передается значение null.
+
+Если метод непубличный, то для получения метода мы можем передать флаги в вызов GetMethod:
+
+*/
+
+var myPrinter2 = new Printer2("Hello Alex");
+ 
+// получаем метод Print
+var print2 = typeof(Printer2).GetMethod("Print",
+            BindingFlags.Instance |
+            BindingFlags.Public |
+            BindingFlags.NonPublic);
+// вызываем метод Print
+print?.Invoke(myPrinter, parameters: null); // Hello Alex
+
+/*
+
+Получение результата:
+
+*/
+
+
+var myPrinter3 = new Printer3();
+// получаем метод CreateMessage
+var createMessage = typeof(Printer3).GetMethod("CreateMessage");
+// вызываем метод CreateMessage и получаем его результат
+var result = createMessage?.Invoke(myPrinter, parameters: null);
+Console.WriteLine(result);  // Hello 
+
+/*
+
+Стоит отметить, что результат метода представляет тип object?, соответственно при 
+необходимости может потребоваться выполнить приведение типов.
+
+Передача параметров:
+
+*/
+
+var myPrinter4 = new Printer3();
+// получаем метод PrintMessage
+var printMessage = typeof(Printer3).GetMethod("PrintMessage");
+// вызываем метод PrintMessage, передавая ему два аргумента
+printMessage?.Invoke(myPrinter, new object[] {"Hi world", 3});
+
+/*
+
+Здесь метод PrintMessage имеет два параметра - messsage (некоторое соощение) и times 
+(сколько раз надо вывести сообщение на консоль). И для этих параметров передаем массив 
+аргументов new object[] {"Hi world", 3}. Таким образом, метод три раза выведет строку 
+"Hi world".
+
+Вызов обобщенного метода:
+
+*/
+
+var myPrinter5 = new Printer4();
+// получаем метод PrintValue
+var printValue = typeof(Printer4).GetMethod("PrintValue");
+// получаем обобщенную версию метода для типа string
+var printStringValue = printValue?.MakeGenericMethod(typeof(string));
+// вызываем метод PrintValue, передавая ему строку
+printStringValue?.Invoke(myPrinter, new object[] {"Hello world"});
+
+/*
+
+Для получения обобщенной версии метода, которая типизирована определенным типом, у 
+объекта MethodInfo вызывается метод MakeGenericMethod - в него передает тип, которым 
+типизируется метод.
+*/ 
+
+#endregion
+
 #region Получение конструкторов
 
 /*
@@ -290,6 +389,27 @@ class Printer
     }
     public string CreateMessage() => DefaultMessage;
 }
+
+class Printer2
+{
+    public string Text { get;}
+    public Printer2(string text) => Text = text;
+    public void Print() => Console.WriteLine(Text);
+}
+
+class Printer3
+{
+    public string CreateMessage() => "Hello Alex";
+}
+
+class Printer4
+{
+    public void PrintValue<T>(T value)
+    {
+        Console.WriteLine(value);
+    }
+}
+
 class Person
 {
     public string Name { get; }
