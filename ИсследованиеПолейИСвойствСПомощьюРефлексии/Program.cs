@@ -79,6 +79,37 @@ private static Int32 minAge
 #endregion
 
 
+#region Получение и изменение значения поля
+
+/*
+
+Для получения одного поля по имени применяется метод GetField(), в который передается имя поля:
+
+1
+var name = myType.GetField("name", BindingFlags.Instance | BindingFlags.NonPublic);
+В качестве второго необязательного параметра передается набор флагов.
+
+Причем рефлексия позволяет получать значения и изменять их даже у приватных полей. Например, получим и изменим значение поля name:
+
+*/
+
+Type myType2 = typeof(Person);
+Person tom = new Person("Tom", 37);
+ 
+// получаем приватное поле name
+var name = myType.GetField("name", BindingFlags.Instance | BindingFlags.NonPublic);
+ 
+// получаем значение поля name
+var value =name?.GetValue(tom);
+Console.WriteLine(value);   // Tom
+ 
+// изменяем значение поля name
+name?.SetValue(tom, "Bob");
+tom.Print();    // Bob - 37
+
+
+#endregion
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
