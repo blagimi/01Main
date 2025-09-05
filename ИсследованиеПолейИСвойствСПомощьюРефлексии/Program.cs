@@ -110,6 +110,80 @@ tom.Print();    // Bob - 37
 
 #endregion
 
+#region Свойства
+
+/*
+
+Для извлечения всех свойств типа применяется соответственно метод GetProperties(),
+который возвращает массив объектов PropertyInfo. Для получения одного свойства по 
+имени применяется метод GetProperty(), в который передается название свойства и который 
+возвращает объект PropertyInfo?.
+
+Некоторый основной функционал класса PropertyInfo:
+
+Свойство Attributes: возвращает коллекцию атрибутов свойства
+
+Свойство CanRead: возвращает true, если свойство доступно для чтения
+
+Свойство CanWrite: возвращает true, если свойство доступно для записи
+
+Свойство GetMethod: возвращает get-акссесор в виде объекта MethodInfo?
+
+Свойство SetMethod: возвращает set-акссесор в виде объекта MethodInfo?
+
+Свойство PropertyType: возвращает тип свойства
+
+Метод GetValue(): возвращает значение свойства
+
+Метод SetValue(): устанавливает значение свойства
+
+Используем некоторые свойства PropertyInfo для получения информации о свойствах:
+
+*/
+
+Type myType3 = typeof(Person);
+foreach (PropertyInfo prop in myType3.GetProperties(
+    BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Static))
+{
+    Console.Write($"{prop.PropertyType} {prop.Name} {{");
+ 
+    // если свойство доступно для чтения
+    if (prop.CanRead) Console.Write("get;");
+    // если свойство доступно для записи
+    if (prop.CanWrite) Console.Write("set;");
+    Console.WriteLine("}");
+}
+
+/*
+
+System.String Name {get;}
+System.Int32 Age {get;set;}
+С помощью методов PropertyInfo можно манипулировать значением свойства. Например, получим и изменим значение свойства:
+
+*/
+
+Type myType4 = typeof(Person);
+Person tom2 = new Person("Tom", 37);
+// получаем свойство Age
+var ageProp = myType4.GetProperty("Age");
+// получаем значение свойства Age у объекта tom
+var age = ageProp?.GetValue(tom2);
+Console.WriteLine(age); // 37
+// устанавливаем новое значение для свойства Age объекта tom
+ageProp?.SetValue(tom2, 22);
+tom2.Print();    // Tom - 22
+
+#endregion
+
+/*
+
+Для получения значения свойства в метод GetValue() объекта PropertyInfo передается 
+объект, у которого вызывается свойства. Результатом метода является значение свойства. 
+Для установки значения в метод SetValue() объекта PropertyInfo передается объект, у 
+которого устанавливается свойство, и собственно новое значение свойства.
+
+*/
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 Console.ReadLine();
