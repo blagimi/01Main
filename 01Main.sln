@@ -347,6 +347,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicObjectИExpandoObjec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Использование IronPython", "Использование IronPython\Использование IronPython.csproj", "{7CE522E6-0A04-4A13-A7FF-6F915278E983}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Глава21", "Глава21", "{C57DEDE9-E55A-461B-6F07-155EFD7ED95E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СборщикМусора", "СборщикМусора\СборщикМусора.csproj", "{35266DF2-3D62-4508-826F-01B9D8C30D9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2193,6 +2197,18 @@ Global
 		{7CE522E6-0A04-4A13-A7FF-6F915278E983}.Release|x64.Build.0 = Release|Any CPU
 		{7CE522E6-0A04-4A13-A7FF-6F915278E983}.Release|x86.ActiveCfg = Release|Any CPU
 		{7CE522E6-0A04-4A13-A7FF-6F915278E983}.Release|x86.Build.0 = Release|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Debug|x64.Build.0 = Debug|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Debug|x86.Build.0 = Debug|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Release|x64.ActiveCfg = Release|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Release|x64.Build.0 = Release|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Release|x86.ActiveCfg = Release|Any CPU
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2351,6 +2367,7 @@ Global
 		{56E159A5-1431-49CC-B8E9-BD5AC0674B77} = {42AF106C-460A-62BD-1869-A77CAB4B91E8}
 		{BBEB27B0-B30D-4D2B-9CCC-A50E8489FDD3} = {42AF106C-460A-62BD-1869-A77CAB4B91E8}
 		{7CE522E6-0A04-4A13-A7FF-6F915278E983} = {42AF106C-460A-62BD-1869-A77CAB4B91E8}
+		{35266DF2-3D62-4508-826F-01B9D8C30D9B} = {C57DEDE9-E55A-461B-6F07-155EFD7ED95E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
