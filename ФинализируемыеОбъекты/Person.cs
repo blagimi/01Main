@@ -2,7 +2,7 @@ using System;
 
 namespace ФинализируемыеОбъекты;
 
-public class Person
+public class Person : IDisposable
 {
     public string? Name  {get;}
     public Person(string name) => Name = name;
@@ -10,6 +10,11 @@ public class Person
     ~Person()
     {
         System.Console.WriteLine($"{Name} has deleted");
+    }
+
+    public void Dispose()
+    {
+        Console.WriteLine($"{Name} has been disposed");
     }
 
 }
