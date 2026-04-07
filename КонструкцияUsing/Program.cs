@@ -115,6 +115,93 @@ con.Open(new Socket()); // открываем условный сокет для
 
 #endregion
 
+#region Абстрагирование завершения using
+
+/*
+Как уже говорилось выше, при завершении конструкции using вызывается метод Dispose(), и в примерах 
+выше мы рассмотрели его автоматический вызов. Однако мы можем абстрагироваться от конкретных 
+классов и делегировать вызов нужных нам действий внешним классам. Например:
+
+// создаем подключение
+var con = new Connection();
+ 
+using var closeSocket = new ScopeExit(() => 
+{
+    con.Close();
+    Console.WriteLine("Сокет свободен");
+});
+ 
+ 
+con.Open(new Socket()); // открываем условный сокет для взаимодействия по сети
+ 
+// класс сокета
+class Socket
+{
+    public bool IsOpened {get;set;}     // открыт ли сокет
+}
+// класс сетевого подключения
+class Connection
+{
+    Socket? activeSocket = null;
+ 
+    // для открытия сетевого подключения передаем сокет
+    public void Open(Socket? socket)
+    {
+        if(activeSocket != socket)  // проверяем сокет
+        {
+            Close();    // закрываем сокет, если ранее был установлен другой сокет
+            activeSocket = socket;
+            activeSocket?.IsOpened = true;  // открываем новый сокет
+            Console.WriteLine("Подключение открыто. Можно посылать пакеты по сети");
+        }
+    }
+    // закрываем сокет
+    public void Close()
+    {
+        if(activeSocket is not null)
+        {
+            activeSocket?.IsOpened = false;
+            Console.WriteLine("Подключение закрыто...");
+        }
+    }
+}
+ 
+public ref struct ScopeExit
+{
+    public ScopeExit(Action action)
+    {
+        this.action = action;
+    }
+ 
+    public void Dispose()
+    {
+        action.Invoke();
+    }
+ 
+    Action action;
+}
+*/
+
+/*
+
+Здесь у нас те же классы Connection и Socket, и также после завершения работы объект Connection 
+должен закрывать используемый сокет. Но теперь класс Connection НЕ реализует метод Dispose. Теперь 
+ресурсом, который используется в конструкции using, представляет ссылочную структуру ScopeExit. 
+Через конструктор она принимает некотрое действие в виде объекта Action и вызовает его в методе 
+Dispose().
+
+ПРи определении конструкции using создаем экземпляр этой структуры и через конструктор передаем 
+ей действие, в котором объект Connection вызывает метод Close и тем самым закрывает сокет. В итоге 
+мы получим следующий консольный вывод:
+
+Подключение открыто. Можно посылать пакеты по сети
+Подключение закрыто...
+Сокет свободен
+
+*/
+
+#endregion
+
 void Test()
 {
     Person? tom = null;
