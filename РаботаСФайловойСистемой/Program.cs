@@ -74,5 +74,3 @@ foreach (DriveInfo drive in drives)
 */
 
 #endregion
-
-Console.ReadLine();
