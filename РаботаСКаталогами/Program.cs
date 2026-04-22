@@ -106,4 +106,57 @@ Directory. Если необходимо выполнить последоват
 
 #endregion
 
+#region Получение списка файлов и подкаталогов
+
+string dirName = "C:\\";
+// если папка существует
+if (Directory.Exists(dirName))
+{
+    Console.WriteLine("Подкаталоги:");
+    string[] dirs = Directory.GetDirectories(dirName);
+    foreach (string s in dirs)
+    {
+        Console.WriteLine(s);
+    }
+    Console.WriteLine();
+    Console.WriteLine("Файлы:");
+    string[] files = Directory.GetFiles(dirName);
+    foreach (string s in files)
+    {
+        Console.WriteLine(s);
+    }
+}
+
+/*
+
+Обратите внимание на использование слешей в именах файлов. Либо мы используем двойной слеш: 
+"C:\\", либо одинарный, но тогда перед всем путем ставим знак @: @"C:\Program Files"
+
+Аналогичный пример с DirectoryInfo:
+
+*/
+
+string dirName2 = @"C:\";
+ 
+var directory = new DirectoryInfo(dirName2);
+ 
+if (directory.Exists)
+{
+    Console.WriteLine("Подкаталоги:");
+    DirectoryInfo[] dirs = directory.GetDirectories();
+    foreach (DirectoryInfo dir in dirs)
+    {
+        Console.WriteLine(dir.FullName);
+    }
+    Console.WriteLine();
+    Console.WriteLine("Файлы:");
+    FileInfo[] files = directory.GetFiles();
+    foreach (FileInfo file in files)
+    {
+        Console.WriteLine(file.FullName);
+    }
+}
+
+#endregion
+
 Console.ReadLine();
