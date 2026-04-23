@@ -120,8 +120,8 @@ if (Directory.Exists(dirName))
     }
     Console.WriteLine();
     Console.WriteLine("Файлы:");
-    string[] files = Directory.GetFiles(dirName);
-    foreach (string s in files)
+    string[] files3 = Directory.GetFiles(dirName);
+    foreach (string s in files3)
     {
         Console.WriteLine(s);
     }
@@ -150,13 +150,35 @@ if (directory.Exists)
     }
     Console.WriteLine();
     Console.WriteLine("Файлы:");
-    FileInfo[] files = directory.GetFiles();
-    foreach (FileInfo file in files)
+    FileInfo[] files2 = directory.GetFiles();
+    foreach (FileInfo file in files2)
     {
         Console.WriteLine(file.FullName);
     }
 }
 
 #endregion
+
+#region Фильтрация папок и файлов
+
+/*
+
+Методы получения папок и файлов позволяют выполнять фильтрацию. В качестве фильтра в эти методы передается 
+шаблон, который может содержать два плейсхолдера: * или символ-звездочка (соответствует любому количеству 
+символов) и ? или вопросительный знак (соответствует одному символу)
+
+Например, найдем все папки, которые начинаются на "books":
+
+*/
+
+// класс Directory
+string[] dirs2 = Directory.GetDirectories(dirName, "books*.");
+
+// класс Directory
+string[] files = Directory.GetFiles(dirName, "*.exe");
+
+
+#endregion
+
 
 Console.ReadLine();
