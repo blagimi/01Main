@@ -143,8 +143,8 @@ var directory = new DirectoryInfo(dirName2);
 if (directory.Exists)
 {
     Console.WriteLine("Подкаталоги:");
-    DirectoryInfo[] dirs = directory.GetDirectories();
-    foreach (DirectoryInfo dir in dirs)
+    DirectoryInfo[] dirs3 = directory.GetDirectories();
+    foreach (DirectoryInfo dir in dirs3)
     {
         Console.WriteLine(dir.FullName);
     }
@@ -177,8 +177,52 @@ string[] dirs2 = Directory.GetDirectories(dirName, "books*.");
 // класс Directory
 string[] files = Directory.GetFiles(dirName, "*.exe");
 
+/*
+Или получим все файлы с расширением ".exe":
+*/
+
+// класс DirectoryInfo
+var directory2 = new DirectoryInfo(dirName);
+DirectoryInfo[] dirs5 = directory2.GetDirectories("books*.");
+
+// класс DirectoryInfo
+var directory3 = new DirectoryInfo(dirName);
+FileInfo[] files4 = directory3.GetFiles("*.exe");
 
 #endregion
 
+#region Создание каталога
+
+/*
+
+Класс DirectoryInfo
+
+*/
+
+string path = @"C:\ExternalSoft";
+string subpath = @"program\test";
+DirectoryInfo dirInfo = new DirectoryInfo(path);
+if (!dirInfo.Exists)
+{
+    dirInfo.Create();
+}
+dirInfo.CreateSubdirectory(subpath);
+
+/*
+Вначале проверяем, существует ли создаваемый каталог, и если он не существует, то создаем его. 
+В итоге у нас получится следующий путь: "C:\SomeDir\program\avalon"
+
+Аналогичный пример с классом Directory:
+*/
+
+string path2 = @"C:\ExternalSoft";
+string subpath2 = @"program\test";
+if (!Directory.Exists(path2))
+{
+    Directory.CreateDirectory(path2);
+}
+Directory.CreateDirectory($"{path2}/{subpath2}");
+
+#endregion
 
 Console.ReadLine();
