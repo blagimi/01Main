@@ -199,7 +199,7 @@ FileInfo[] files4 = directory3.GetFiles("*.exe");
 
 */
 
-string path = @"C:\ExternalSoft";
+string path = @"C:\Test";
 string subpath = @"program\test";
 DirectoryInfo dirInfo = new DirectoryInfo(path);
 if (!dirInfo.Exists)
@@ -215,13 +215,72 @@ dirInfo.CreateSubdirectory(subpath);
 Аналогичный пример с классом Directory:
 */
 
-string path2 = @"C:\ExternalSoft";
+string path2 = @"C:\Test";
 string subpath2 = @"program\test";
 if (!Directory.Exists(path2))
 {
     Directory.CreateDirectory(path2);
 }
 Directory.CreateDirectory($"{path2}/{subpath2}");
+
+#endregion
+
+#region Получение информации о каталоге
+
+
+string dirName3 = "C:\\Program Files";
+ 
+DirectoryInfo dirInfo3 = new DirectoryInfo(dirName3);
+ 
+Console.WriteLine($"Название каталога: {dirInfo.Name}");
+Console.WriteLine($"Полное название каталога: {dirInfo.FullName}");
+Console.WriteLine($"Время создания каталога: {dirInfo.CreationTime}");
+Console.WriteLine($"Корневой каталог: {dirInfo.Root}");
+
+#endregion
+
+#region Удаление каталога
+
+/*
+
+Если мы просто применим метод Delete к непустой папке, в которой есть какие-нибудь файлы или подкаталоги, то приложение нам выбросит ошибку. 
+Поэтому нам надо передать в метод Delete дополнительный параметр булевого типа, который укажет, что папку надо удалять со всем содержимым. 
+Кроме того, перед удалением следует проверить наличие удаляемой папки, иначе приложение выбросит исключение:
+
+*/
+
+System.Console.WriteLine($"\n Удаление каталогов \n");
+
+string dirName4 = @"C:\Test";
+ 
+DirectoryInfo dirInfo4 = new DirectoryInfo(dirName4);
+if (dirInfo.Exists)
+{
+    dirInfo.Delete(true);
+    Console.WriteLine("Каталог удален");
+}
+else
+{
+    Console.WriteLine("Каталог не существует");
+}
+
+/*
+или так
+*/
+
+System.Console.WriteLine($"\n Удаление каталогов альтернатива");
+
+string dirName5 = @"C:\Test\program";
+if (Directory.Exists(dirName5))
+{
+    Directory.Delete(dirName5, true);
+    Console.WriteLine("Каталог удален");
+}
+else
+{
+    Console.WriteLine("Каталог не существует");
+}
+
 
 #endregion
 
