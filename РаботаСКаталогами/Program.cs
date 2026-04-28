@@ -284,4 +284,26 @@ else
 
 #endregion
 
+#region Перемещение каталога
+
+/*
+При перемещении надо учитывать, что новый каталог, в который мы хотим перемесить все содержимое старого каталога, не должен существовать.
+*/
+
+string oldPath = @"C:\SomeFolder";
+string newPath = @"C:\SomeDir";
+DirectoryInfo dirInfo6 = new DirectoryInfo(oldPath);
+if (dirInfo6.Exists && !Directory.Exists(newPath))
+{
+    dirInfo.MoveTo(newPath);
+    // или так
+    // Directory.Move(oldPath, newPath);
+}
+else
+{
+    System.Console.WriteLine("Отсутсвует каталог в директории либо каталог уже создан");
+}
+
+#endregion
+
 Console.ReadLine();
