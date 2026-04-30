@@ -59,3 +59,42 @@ Exists(file): определяет, существует ли файл
 */
 
 #endregion
+
+#region Пути к файлам
+
+/*
+
+Для работы с файлами можно применять как абсолютные, так и относительные пути:
+
+*/
+
+// абсолютные пути
+string path1 = @"C:\Users\blagi\Documents\content.txt";  // для Windows
+string path2 = "C:\\Users\\blagi\\Documents\\content.txt";  // для Windows
+//string path3 = "/Users/blagi/Documents/content.txt";  // для MacOS/Linux
+ 
+// относительные пути
+string path4 = "MyDir\\content.txt";  // для Windows
+//string path5 = "MyDir/content.txt";  // для MacOS/Linux
+
+#endregion
+
+#region Получение информации о файле
+
+string path = @"C:\Users\blagi\Documents\content.txt";
+// string path = "/Users/blagi/Documents/content.txt";  // для MacOS/Linux
+FileInfo fileInfo = new FileInfo(path);
+if (fileInfo.Exists)
+{
+    Console.WriteLine($"Имя файла: {fileInfo.Name}");
+    Console.WriteLine($"Время создания: {fileInfo.CreationTime}");
+    Console.WriteLine($"Размер: {fileInfo.Length}");
+}
+else
+{
+    System.Console.WriteLine("Файл не найден");
+}
+
+#endregion
+
+Console.ReadLine();
