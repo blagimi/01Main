@@ -97,4 +97,56 @@ else
 
 #endregion
 
+#region Удаление файла
+
+string path3 = @"C:\Soft\content.txt";
+FileInfo fileInf = new FileInfo(path3);
+if (fileInf.Exists)
+{
+   fileInf.Delete();
+   // альтернатива с помощью класса File
+   // File.Delete(path);
+}
+else
+{
+    System.Console.WriteLine("Файл не найден");
+}
+
+#endregion
+
+#region Перемещение файла
+
+string path5 =  @"C:\Soft\content.txt";
+string newPath = @"C:\Soft\index.txt";
+FileInfo fileInf2 = new FileInfo(path5);
+if (fileInf2.Exists)
+{
+   fileInf.MoveTo(newPath);       
+   // альтернатива с помощью класса File
+   // File.Move(path, newPath);
+}
+else
+{
+    Console.WriteLine("Файл не найден");
+}
+
+/*
+Если файл по новому пути уже существует, то с помощью дополнительного параметра можно указать, 
+надо ли перезаписать файл (при значении true файл перезаписывается)
+
+
+string path =  @"C:\OldDir\content.txt";
+string newPath = @"C:\NewDir\index.txt";
+FileInfo fileInf = new FileInfo(path);
+if (fileInf.Exists)
+{
+   fileInf.MoveTo(newPath, true);       
+   // альтернатива с помощью класса File
+   // File.Move(path, newPath, true);
+}
+
+*/
+
+#endregion
+
 Console.ReadLine();
