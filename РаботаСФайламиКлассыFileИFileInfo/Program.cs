@@ -149,4 +149,36 @@ if (fileInf.Exists)
 
 #endregion
 
+#region Копирование файла
+
+static void TCopy()
+{
+    string path =  @"C:\Soft\content.txt";
+    string newPath = @"C:\Soft\index2.txt";
+    FileInfo fileInf = new FileInfo(path);
+    if (fileInf.Exists)
+    {
+    fileInf.CopyTo(newPath, true);      
+    // альтернатива с помощью класса File
+    // File.Copy(path, newPath, true);
+    }
+    else
+    {
+        Console.WriteLine("Файл не найден");
+    }
+}
+
+TCopy();
+
+/*
+Метод CopyTo класса FileInfo принимает два параметра: путь, по которому файл будет копироваться, 
+и булевое значение, которое указывает, надо ли при копировании перезаписывать файл (если true, 
+как в случае выше, файл при копировании перезаписывается). Если же в качестве последнего параметра 
+передать значение false, то если такой файл уже существует, приложение выдаст ошибку.
+
+Метод Copy класса File принимает три параметра: путь к исходному файлу, путь, по которому файл 
+будет копироваться, и булевое значение, указывающее, будет ли файл перезаписываться.
+*/
+
+#endregion
 Console.ReadLine();
