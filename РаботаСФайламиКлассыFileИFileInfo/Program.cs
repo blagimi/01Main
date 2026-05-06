@@ -1,4 +1,6 @@
-﻿#region Работа с файлами. Классы File и FileInfo  
+﻿using System.Text;
+
+#region Работа с файлами. Классы File и FileInfo  
 
 /*
 Подобно паре Directory/DirectoryInfo для работы с файлами предназначена пара классов 
@@ -276,6 +278,56 @@ await File.WriteAllLinesAsync(path, new[] { "Hello", "Hello work" });
 Аналогично при чтении файла если мы хотим каждую строку файла считать отдельно, то вместо 
 ReadAllText / ReadAllTextAsync применяется ReadAllLines / ReadAllLinesAsync.
 */
+
+#endregion
+
+#region Кодировка
+
+/*
+В качестве дополнительного параметра методы чтения-записи текстовых файлов позволяют установить
+кодировку в виде объекта System.Text.Encoding:
+*/
+
+static async void TCode()
+{
+   
+ 
+string path = @"c:\Soft\content.txt";
+ 
+string originalText = "Привет ";
+// запись строки
+await File.WriteAllTextAsync(path, originalText, Encoding.Unicode);
+// дозапись в конец файла
+await File.AppendAllTextAsync(path, "\nПривет мир", Encoding.Unicode);
+ 
+// чтение файла
+string fileText = await File.ReadAllTextAsync(path, Encoding.Unicode);
+Console.WriteLine(fileText);
+}
+
+TCode();
+
+/*
+Для установки кодировки при записи и чтении здесь применяется встроенное значение 
+Encoding.Unicode. Также можно указать название кодировки, единственное следует удостовериться,
+что текущая операционная система поддерживает выбранную кодировку:*/
+
+static async void TCode2()
+{
+string path = @"c:\Soft\content.txt";
+ 
+string originalText = "Hello";
+// запись строки
+await File.WriteAllTextAsync(path, originalText, Encoding.GetEncoding("iso-8859-1"));
+// дозапись в конец файла
+await File.AppendAllTextAsync(path, "\nHello code", Encoding.GetEncoding("iso-8859-1"));
+ 
+// чтение файла
+string fileText = await File.ReadAllTextAsync(path, Encoding.GetEncoding("iso-8859-1"));
+Console.WriteLine(fileText);
+}
+
+TCode();
 
 #endregion
 
