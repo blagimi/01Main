@@ -79,6 +79,8 @@ string path2 = "C:\\Users\\blagi\\Documents\\content.txt";  // для Windows
 string path4 = "MyDir\\content.txt";  // для Windows
 //string path5 = "MyDir/content.txt";  // для MacOS/Linux
 
+System.Console.WriteLine(path1,path2,path4);
+
 #endregion
 
 #region Получение информации о файле
@@ -327,7 +329,7 @@ string fileText = await File.ReadAllTextAsync(path, Encoding.GetEncoding("iso-88
 Console.WriteLine(fileText);
 }
 
-TCode();
+TCode2();
 
 #endregion
 
