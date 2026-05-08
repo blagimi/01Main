@@ -42,3 +42,42 @@ FileStream File.OpenWrite(string file);
 */
 
 #endregion
+
+#region Закрытие потока
+
+/*
+Класс FileStream для освобождения всех реусрсов, связанных с файлом, реализует интерфейс IDisposable. Соответственно после завершения работы с FileStream необходимо освободить связанный с ним файл вызовом метода Dispose. Для корректного закрытия можно вызвать метод Close(), который вызывает метод Dispose:
+
+*/
+
+static async void TStream()
+{
+    FileStream? fstream = null;
+    try
+    {
+        fstream = new FileStream("note3.dat", FileMode.OpenOrCreate);
+        // операции с fstream
+    }
+    catch(Exception ex)
+    {
+        Console.WriteLine(ex);
+    }
+    finally
+    {
+        fstream?.Close();
+    }
+}
+TStream();
+/*
+Либо можно использовать конструкцию using, которая автоматически освободит все связанные с FileStream ресурсы:
+
+using (FileStream fstream = new FileStream("note3.dat", FileMode.OpenOrCreate))
+{
+    // операции с fstream
+}
+*/
+
+#endregion
+
+
+System.Console.ReadLine();
