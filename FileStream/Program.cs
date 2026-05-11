@@ -79,5 +79,51 @@ using (FileStream fstream = new FileStream("note3.dat", FileMode.OpenOrCreate))
 
 #endregion
 
+#region Свойства и методы FileStream
+
+/*
+Рассмотрим наиболее важные свойства класса FileStream:
+
+Свойство Length: возвращает длину потока в байтах
+
+Свойство Position: возвращает текущую позицию в потоке
+
+Свойство Name: возвращает абсолютный путь к файлу, открытому в FileStream
+
+Для чтения/записи файлов можно применять следующие методы класса FileStream:
+
+void CopyTo(Stream destination): копирует данные из текущего потока в поток destination
+
+Task CopyToAsync(Stream destination): асинхронная версия метода CopyTo
+
+void Flush(): сбрасывает содержимое буфера в файл
+
+Task FlushAsync(): асинхронная версия метода Flush
+
+int Read(byte[] array, int offset, int count): считывает данные из файла в массив байтов и возвращает количество успешно считанных байтов. Принимает три параметра:
+
+array - массив байтов, куда будут помещены считываемые из файла данные
+
+offset представляет смещение в байтах в массиве array, в который считанные байты будут помещены
+
+count - максимальное число байтов, предназначенных для чтения. Если в файле находится меньшее количество байтов, то все они будут считаны.
+
+Task<int> ReadAsync(byte[] array, int offset, int count): асинхронная версия метода Read
+
+long Seek(long offset, SeekOrigin origin): устанавливает позицию в потоке со смещением на количество байт, указанных в параметре offset.
+
+void Write(byte[] array, int offset, int count): записывает в файл данные из массива байтов. Принимает три параметра:
+
+array - массив байтов, откуда данные будут записываться в файл
+
+offset - смещение в байтах в массиве array, откуда начинается запись байтов в поток
+
+count - максимальное число байтов, предназначенных для записи
+
+Task WriteAsync(byte[] array, int offset, int count): асинхронная версия метода Write
+*/
+
+#endregion
+
 
 System.Console.ReadLine();
