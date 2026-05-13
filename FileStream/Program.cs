@@ -202,4 +202,131 @@ fstream.WriteByte(103);
 */
 #endregion
 
+#region Произвольный доступ к файлам
+
+/*
+Нередко бинарные файлы представляют определенную структуру. И, зная эту структуру, мы можем взять 
+из файла нужную порцию информации или наоброт записать в определенном месте файла определенный 
+набор байтов. Например, в wav-файлах непосредственно звуковые данные начинаются с 44 байта, а до 
+44 байта идут различные метаданные - количество каналов аудио, частота дискретизации и т.д.
+
+С помощью метода Seek() мы можем управлять положением курсора потока, начиная с которого 
+производится считывание или запись в файл. Этот метод принимает два параметра: offset (смещение) 
+и позиция в файле. Позиция в файле описывается тремя значениями:
+
+SeekOrigin.Begin: начало файла
+
+SeekOrigin.End: конец файла
+
+SeekOrigin.Current: текущая позиция в файле
+
+Курсор потока, с которого начинается чтение или запись, смещается вперед на значение offset 
+относительно позиции, указанной в качестве второго параметра. Смещение может быть отрицательным, 
+тогда курсор сдвигается назад, если положительное - то вперед.
+
+Рассмотрим простой пример:
+*/
+
+static async void AFile()
+{
+    string path = "note.dat";
+ 
+    string text = "hello world";
+ 
+    using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+    {
+        // преобразуем строку в байты
+        byte[] input = Encoding.Default.GetBytes(text);
+        // запись массива байтов в файл
+        fstream.Write(input, 0, input.Length);
+        Console.WriteLine("Текст записан в файл");
+    }
+    // чтение части файла
+    using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+    { 
+        // перемещаем указатель в конец файла, до конца файла- пять байт
+        fstream.Seek(-5, SeekOrigin.End); // минус 5 символов с конца потока
+    
+        // считываем четыре символов с текущей позиции
+        byte[] output = new byte[5];
+        int v = await fstream.ReadAsync(output, 0, output.Length);
+        // декодируем байты в строку
+        string textFromFile = Encoding.Default.GetString(output);
+        Console.WriteLine($"Текст из файла: {textFromFile}"); // world
+    }
+}
+
+AFile();
+
+/*
+
+Вначале записываем в файл текст "hello world". Затем снова обращаемся к файла для считывания. 
+Сначала перемещаем курсор на пять символов назад относительно конца файлового потока:
+
+fstream.Seek(-5, SeekOrigin.End)
+чтение и запись файлов через FileStream в C#
+То есть после выполнения этого вызова курсор будет стоять на позиции символа "w".
+
+После этого считываем пять байт начиная с символа "w". В кодировке по умолчанию 1 символ будет 
+представлять 1 байт. Поэтому чтение 5 байт будет эквивалентно чтению пяти сиволов: "world".
+
+Соответственно мы получим следующий консольный вывод:
+
+Текст записан в файл
+Текст из файла: world
+Рассмотрим чуть более сложный пример - с записью начиная с некоторой позиции:
+
+*/
+
+static async void AFile2()
+{
+    string path = "note2.dat";
+ 
+    string text = "hello world";
+    
+    // запись в файл
+    using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+    {
+        // преобразуем строку в байты
+        byte[] input = Encoding.Default.GetBytes(text);
+        // запись массива байтов в файл
+        fstream.Write(input, 0, input.Length);
+        Console.WriteLine("Текст записан в файл");
+    }
+    using (FileStream fstream = new FileStream(path, FileMode.OpenOrCreate))
+    { 
+        // заменим в файле слово world на слово house
+        string replaceText = "house";
+        fstream.Seek(-5, SeekOrigin.End); // минус 5 символов с конца потока
+        byte[] input = Encoding.Default.GetBytes(replaceText);
+        await fstream.WriteAsync(input, 0, input.Length);
+    
+        // считываем весь файл
+        // возвращаем указатель в начало файла
+        fstream.Seek(0, SeekOrigin.Begin);
+        byte[] output = new byte[fstream.Length];
+        int v = await fstream.ReadAsync(output, 0, output.Length);
+        // декодируем байты в строку
+        string textFromFile = Encoding.Default.GetString(output);
+        Console.WriteLine($"Текст из файла: {textFromFile}"); // hello house
+    }
+}
+
+AFile2();
+
+/*
+Здесь также вначале записываем в файл строку "hello world". Затем также открываем файл и опять же перемещаемся в конец файла, не доходя до конца пять символов (то есть опять же с позиции символа "w"), и осуществляем запись строки "house". Таким образом, строка "house" заменяет строку "world".
+
+Чтобы после этого считать весь файл, сдвигаем курсор на самое начало
+
+fstream.Seek(0, SeekOrigin.Begin);
+Консольный вывод программы:
+
+Текст записан в файл
+Текст из файла: hello house
+*/
+
+#endregion
+
+
 System.Console.ReadLine();
