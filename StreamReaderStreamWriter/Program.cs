@@ -64,6 +64,8 @@ static async void WStream()
     }
 }
 
+WStream();
+
 /*
 В данном случае два раза создаем объект StreamWriter. В первом случае если файл существует, 
 то он будет перезаписан. Если не существует, он будет создан. И в нее будет записан текст из 
@@ -132,10 +134,10 @@ using (StreamReader reader = new StreamReader(path))
 
 //Считаем текст из файла построчно:
 
-string path = "/Users/blagi/Documents/app/note1.txt";
+string path2 = "/Users/blagi/Documents/app/note1.txt";
  
 // асинхронное чтение
-using (StreamReader reader = new StreamReader(path))
+using (StreamReader reader = new StreamReader(path2))
 {
     string? line;
     while ((line = await reader.ReadLineAsync()) != null)
