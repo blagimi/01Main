@@ -1,4 +1,5 @@
 {
     "dotnet.defaultSolution": "01Main.sln",
-    "csharp.debug.console": "externalTerminal"
+    "csharp.debug.console": "externalTerminal",
+    "chat.disableAIFeatures": true
 }

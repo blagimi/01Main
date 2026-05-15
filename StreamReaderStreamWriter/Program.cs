@@ -88,5 +88,69 @@ using (StreamWriter writer = new StreamWriter(path, true, System.Text.Encoding.D
 
 #endregion
 
+#region Чтение из файла и StreamReader
+
+/*
+Класс StreamReader позволяет нам легко считывать весь текст или отдельные строки из текстового файла.
+
+Некоторые из конструкторов класса StreamReader:
+
+StreamReader(string path): через параметр path передается путь к считываемому файлу
+
+StreamReader(string path, System.Text.Encoding encoding): параметр encoding задает кодировку для чтения файла
+
+Среди методов StreamReader можно выделить следующие:
+
+void Close(): закрывает считываемый файл и освобождает все ресурсы
+
+int Peek(): возвращает следующий доступный символ, если символов больше нет, то возвращает -1
+
+int Read(): считывает и возвращает следующий символ в численном представлении. Имеет перегруженную версию: Read(char[] array, int index, int count), 
+где array - массив, куда считываются символы, index - индекс в массиве array, начиная с которого записываются считываемые символы, и count - 
+максимальное количество считываемых символов
+
+Task<int> ReadAsync(): асинхронная версия метода Read
+
+string ReadLine(): считывает одну строку в файле
+
+string ReadLineAsync(): асинхронная версия метода ReadLine
+
+string ReadToEnd(): считывает весь текст из файла
+
+string ReadToEndAsync(): асинхронная версия метода ReadToEnd
+
+Сначала считаем текст полностью из ранее записанного файла:
+*/
+
+string path = "note1.txt";
+// асинхронное чтение
+using (StreamReader reader = new StreamReader(path))
+{
+    string text = await reader.ReadToEndAsync();
+    Console.WriteLine(text);
+}
+
+//Считаем текст из файла построчно:
+
+string path = "/Users/blagi/Documents/app/note1.txt";
+ 
+// асинхронное чтение
+using (StreamReader reader = new StreamReader(path))
+{
+    string? line;
+    while ((line = await reader.ReadLineAsync()) != null)
+    {
+        Console.WriteLine(line);
+    }
+}
+
+/*
+В данном случае считываем построчно через цикл while: while ((line = await reader.ReadLineAsync()) != null)
+- сначала присваиваем переменной line результат функции reader.ReadLineAsync(), а затем проверяем, не равна 
+ли она null. Когда объект sr дойдет до конца файла и больше строк не останется, то метод reader.ReadLineAsync() 
+будет возвращать null.
+*/
+
+#endregion
 
 Console.ReadLine();
