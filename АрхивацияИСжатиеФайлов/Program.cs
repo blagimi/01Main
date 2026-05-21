@@ -1,4 +1,6 @@
-﻿#region Архивация и сжатие файлов
+﻿using System.IO.Compression;
+
+#region Архивация и сжатие файлов
 
 /*
  * Кроме классов чтения-записи .NET предоставляет классы, которые позволяют сжимать файлы, а также затем восстанавливать их в исходное состояние.
@@ -60,6 +62,65 @@ count - максимальное число байтов, предназначе
 Task WriteAsync(byte[] array, int offset, int count): асинхронная версия метода Write
 
 Рассмотрим применение класса GZipStream на примере:
+ */
+
+string sourceFile = "book.pdf"; // исходный файл
+string compressedFile = "book.gz"; // сжатый файл
+string targetFile = "book_new.pdf"; // восстановленный файл
+
+// создание сжатого файла
+await CompressAsync(sourceFile, compressedFile);
+// чтение из сжатого файла
+await DecompressAsync(compressedFile, targetFile);
+
+async Task CompressAsync(string sourceFile, string compressedFile)
+{
+    // поток для чтения исходного файла
+    using FileStream sourceStream = new FileStream(sourceFile, FileMode.OpenOrCreate);
+    // поток для записи сжатого файла
+    using FileStream targetStream = File.Create(compressedFile);
+
+    // поток архивации
+    using GZipStream compressionStream = new GZipStream(targetStream, CompressionMode.Compress);
+    await sourceStream.CopyToAsync(compressionStream); // копируем байты из одного потока в другой
+
+    Console.WriteLine($"Сжатие файла {sourceFile} завершено.");
+    Console.WriteLine($"Исходный размер: {sourceStream.Length}  сжатый размер: {targetStream.Length}");
+}
+
+async Task DecompressAsync(string compressedFile, string targetFile)
+{
+    // поток для чтения из сжатого файла
+    using FileStream sourceStream = new FileStream(compressedFile, FileMode.OpenOrCreate);
+    // поток для записи восстановленного файла
+    using FileStream targetStream = File.Create(targetFile);
+    // поток разархивации
+    using GZipStream decompressionStream = new GZipStream(sourceStream, CompressionMode.Decompress);
+    await decompressionStream.CopyToAsync(targetStream);
+    Console.WriteLine($"Восстановлен файл: {targetFile}");
+}
+
+/*
+ * В данном случае подразумевается, что в папке с программой располагается файл book.pdf, который собственно и будет архивироваться.
+
+Метод CompressAsync получает название исходного файла, который надо архивировать, и название будущего сжатого файла.
+
+Сначала создается поток для чтения из исходного файла - FileStream sourceStream. Затем создается поток для записи в сжатый файл - FileStream targetStream. Поток архивации GZipStream compressionStream инициализируется потоком targetStream и с помощью метода CopyToAsync() получает данные от потока sourceStream.
+
+Метод DecompressAsync производит обратную операцию по восстановлению сжатого файла в исходное состояние. Он принимает в качестве параметров пути к сжатому файлу и будущему восстановленному файлу.
+
+Здесь в начале создается поток для чтения из сжатого файла FileStream sourceStream, затем поток для записи в восстанавливаемый файл FileStream targetStream. В конце создается поток GZipStream decompressionStream, который с помощью метода CopyToAsync() копирует восстановленные данные в поток targetStream.
+
+Чтобы указать потоку GZipStream, для чего именно он предназначен - сжатия или восстановления - ему в конструктор передается параметр CompressionMode, принимающий два значения: Compress и Decompress.
+
+Пример консольного вывода программы:
+
+Сжатие файла book.pdf завершено.
+Исходный размер: 3235353  сжатый размер: 2574401
+Восстановлен файл: book_new.pdf
+Если бы захотели бы использовать другой класс сжатия - DeflateStream, то мы могли бы просто заменить в коде упоминания GZipStream на DeflateStream, без изменения остального кода. Их использование идентично.
+
+В то же время при использовании этих классов есть некоторые ограничения, в частности, мы можем сжимать только один файл. Для архивации группы файлы лучше выбрать другие инструменты, например, ZipFile.
  */
 
 #endregion
