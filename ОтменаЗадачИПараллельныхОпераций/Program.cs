@@ -339,6 +339,7 @@ static void ExampleThree()
     cancelTokenSource.Dispose(); // освобождаем ресурсы
 }
 
+ExampleThree();
 
 /*
 Здесь обработчик отмены представлен лямбда-выражением:

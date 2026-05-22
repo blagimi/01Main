@@ -193,7 +193,7 @@ Console.ReadLine();
 
 class Person
 {
-    static int minAge = 0;
+    //static int minAge = 0;
     string name;
     int age;
     public Person(string name, int age)
