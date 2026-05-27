@@ -41,13 +41,15 @@ ValueTask<T?> DeserializeAsync<T>(Stream utf8Json, JsonSerializerOptions options
 Рассмотрим применение класса на простом примере. Сериализуем и десериализуем простейший объект:
  */
 
-
-Person tom = new Person("Tom", 27);
-string json = JsonSerializer.Serialize(tom);
-Console.WriteLine(json);
-Person? restoredPerson = JsonSerializer.Deserialize<Person>(json);
-Console.WriteLine(restoredPerson?.Name); // Tom
-
+static async void FirstEx()
+{
+    Person tom = new Person("Tom", 27);
+    string json = JsonSerializer.Serialize(tom);
+    Console.WriteLine(json);
+    Person? restoredPerson = JsonSerializer.Deserialize<Person>(json);
+    Console.WriteLine(restoredPerson?.Name); // Tom
+}
+FirstEx();
 /*
  * Здесь вначале сериализуем с помощью метода JsonSerializer.Serialize() объект типа Person в стоку с кодом json.
  * Затем обратно получаем из этой строки объект Person посредством метода JsonSerializer.Deserialize().
@@ -139,6 +141,49 @@ Console.WriteLine(restoredPerson?.Name);
 }
 
 Ex();
+
+/*
+Консольный вывод:
+
+{
+	"Name": "Tom",
+	"Age":  37
+}
+Tom
+Еще одно полезное свойство, которое надо отметить - это Encoder или кодировщик. 
+В частности, этот свойство может помочь при работе с различными наборами кодовых точек. 
+Приведу простейший пример:
+*/
+
+static async void Ex2()
+{
+    Person tom = new Person("Евгений", 41);
+    
+    var options = new JsonSerializerOptions {WriteIndented = true};
+    string json = JsonSerializer.Serialize<Person>(tom, options);
+    Console.WriteLine(json);
+    Person? restoredPerson = JsonSerializer.Deserialize<Person>(json);
+    Console.WriteLine(restoredPerson?.Name);
+}
+
+Ex2();
+
+/*
+Здесь пример аналогичен предыдущему, только имя указано кириллицей. Посмотрим на консольный вывод:
+
+{
+  "Name": "\u0415\u0432\u0433\u0435\u043D\u0438\u0439",
+  "Age": 41
+}
+Евгений
+И по выводу мы видим, что хотя имя и корректно было восстановлено, но при сериализации 
+строки с кириллицей сохраняются в набор кодов символов Unicode. Причем это касается и сериализации 
+в файл. И, возможно, это не самое предпочтительное поведение. Но с помощью свойства Encoder можно 
+указать необходимые кодировки. В частности, класс JavaScriptEncoder имеет статический метод-фабрика Create(), который принимает набор применяемых наборов символов в виде массива UnicodeRange и возвращает объект кодировщика:
+
+public static JavaScriptEncoder Create(params System.Text.Unicode.UnicodeRange[] allowedRanges);
+Так, изменим код следующим образом:
+*/
 
 #endregion
 
