@@ -187,4 +187,39 @@ public static JavaScriptEncoder Create(params System.Text.Unicode.UnicodeRange[]
 
 #endregion
 
+#region Настройка сериализации с помощью атрибутов
+
+/*
+По умолчанию сериализации подлежат все публичные свойства. Кроме того, в выходном объекте json 
+все названия свойств соответствуют названиям свойств объекта C#. Однако с помощью атрибутов 
+JsonIgnore и JsonPropertyName.
+
+Атрибут JsonIgnore позволяет исключить из сериализации определенное свойство. А JsonPropertyName 
+позволяет замещать оригинальное название свойства. Пример использования:
+*/
+
+static async void Ex3()
+{
+Person2 tom = new Person2("Tom", 37);
+ 
+string json = JsonSerializer.Serialize<Person2>(tom);
+Console.WriteLine(json);
+Person2? person = JsonSerializer.Deserialize<Person2>(json);
+Console.WriteLine($"Name: {person?.Name}  Age: {person?.Age}");
+}
+
+Ex3();
+
+/*
+В данном случае свойство Age будет игнорироваться, а для свойства Name будет 
+использоваться псевдоним "firstname". Консольный вывод:
+
+{"firstname":"Tom"}
+Name: Tom   Age: 0
+Обратите внимание, что, поскольку свойство Age не было сериализовано, то при 
+десериализации для него используется значение по умолчанию.
+*/
+
+#endregion
+
 Console.ReadLine();
