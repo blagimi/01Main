@@ -103,3 +103,16 @@ xDoc.Save("people.xml");
  */
 
 #endregion
+
+
+#region Удаление узлов
+
+/*
+ * Удалим первый ухел xml-документа
+ */
+
+XmlNode? firstNode = xRoot?.FirstChild;
+if (firstNode is not null) xRoot?.RemoveChild(firstNode);
+xDoc.Save("People.xml");
+
+#endregion
