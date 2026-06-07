@@ -74,4 +74,27 @@ SelectNodes(): выборка по запросу коллекции узлов 
 Теперь выберем все узлы корневого элемента, то есть все элементы person:
  */
 
+XmlDocument xDoc = new XmlDocument();
+xDoc.Load("people.xml");
+XmlElement? xRoot = xDoc.DocumentElement;
+
+// выбор всех дочерних узлов
+XmlNodeList? nodes = xRoot?.SelectNodes("*");
+if (nodes is not null)
+{
+    foreach (XmlNode node in nodes)
+        Console.WriteLine(node.OuterXml);
+}
+
+/*
+ * Консольный вывод:
+
+<person name="Tom"><company>Microsoft</company><age>37</age></person>
+<person name="Bob"><company>Google</company><age>41</age></person>
+Выберем все узлы <person>:
+
+XmlNodeList? personNodes = xRoot?.SelectNodes("person");
+Выведем на консоль значения атрибутов name у элементов person:
+ */
+
 #endregion
