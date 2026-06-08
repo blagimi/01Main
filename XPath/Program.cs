@@ -97,4 +97,37 @@ XmlNodeList? personNodes = xRoot?.SelectNodes("person");
 Выведем на консоль значения атрибутов name у элементов person:
  */
 
+Console.WriteLine("");
+XmlNodeList? personNodes = xRoot?.SelectNodes("person");
+if (personNodes is not null)
+{
+    foreach (XmlNode node in personNodes)
+        Console.WriteLine(node.SelectSingleNode("@name")?.Value);
+}
+
+/*
+ * Результатом выполнения будет следующий вывод:
+
+Tom
+Bob
+Выберем узел, у которого атрибут name имеет значение "Tom":
+ */
+
+Console.WriteLine("");
+XmlNode? tomNode = xRoot?.SelectSingleNode("person[@name='Tom']");
+Console.WriteLine(tomNode?.OuterXml);
+
+/*
+ * Допустим, нам надо получить только компании. Для этого надо осуществить выборку вниз по иерархии элементов:
+ */
+
+Console.WriteLine("");
+XmlNodeList? companyNodes = xRoot?.SelectNodes("//person/company");
+if (companyNodes is not null)
+{
+    foreach (XmlNode node in companyNodes)
+        Console.WriteLine(node.InnerText);
+}
+
+
 #endregion
