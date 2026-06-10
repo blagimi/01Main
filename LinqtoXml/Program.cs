@@ -63,4 +63,48 @@ xdoc.Save("people.xml");
 
 Console.WriteLine("Data saved");
 
+/*
+ * Чтобы создать документ, нам нужно создать объект класса XDocument. Это объект самого верхнего уровня в хml-документе.
+
+Элементы создаются с помощью конструктора класса XElement. Конструктор имеет ряд перегруженных версий. Первый параметр конструктора передает название элемента, например, person. Второй параметр передает значение этого элемента.
+
+Создание атрибута аналогично созданию элемента. Затем все атрибуты и элементы добавляются в элементы person с помощью метода Add().
+
+Так как документ xml должен иметь один корневой элемент, то затем все элементы person добавляются в один контейнер - элемент people.
+
+В конце корневой элемент добавляется в объект XDocument, и этот объект сохраняется на диске в xml-файл с помощью метода Save().
+
+Если мы откроем сохраненный файл people.xml, то увидим в нем следующее содержание:
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<people>
+  <person name="Tom">
+    <company>Microsoft</company>
+    <age>37</age>
+  </person>
+  <person name="Bob">
+    <company>Google</company>
+    <age>41</age>
+  </person>
+</people>
+Конструктор класса XElement позволяют задать набор объектов, которые будут входить в элемент. И предыдущий пример мы могли бы сократить следующим способом:
+ */
+
+static void async Ex2()
+    {
+        XDocument xdoc = new XDocument(new XElement("people",
+    new XElement("person",
+        new XAttribute("name", "Tom"),
+        new XElement("company", "Microsoft"),
+        new XElement("age", 37)),
+    new XElement("person",
+        new XAttribute("name", "Bob"),
+        new XElement("company", "Google"),
+        new XElement("age", 41))));
+xdoc.Save("people2.xml");
+
+Console.WriteLine("Data saved");
+    }
+
 #endregion
