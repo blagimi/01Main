@@ -91,8 +91,8 @@ Console.WriteLine("Data saved");
 Конструктор класса XElement позволяют задать набор объектов, которые будут входить в элемент. И предыдущий пример мы могли бы сократить следующим способом:
  */
 
-static void async Ex2()
-    {
+static async void Ex2()
+{
         XDocument xdoc = new XDocument(new XElement("people",
     new XElement("person",
         new XAttribute("name", "Tom"),
@@ -105,6 +105,8 @@ static void async Ex2()
 xdoc.Save("people2.xml");
 
 Console.WriteLine("Data saved");
-    }
+}
+
+Ex2();
 
 #endregion

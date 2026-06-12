@@ -391,6 +391,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPath", "XPath\XPath.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqtoXml", "LinqtoXml\LinqtoXml.csproj", "{60DCFDEE-F03D-4B33-AD34-986A4D2EECBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ВыборкаЭлементовВLINQtoXML", "ВыборкаЭлементовВLINQtoXML\ВыборкаЭлементовВLINQtoXML.csproj", "{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2453,6 +2455,18 @@ Global
 		{60DCFDEE-F03D-4B33-AD34-986A4D2EECBB}.Release|x64.Build.0 = Release|Any CPU
 		{60DCFDEE-F03D-4B33-AD34-986A4D2EECBB}.Release|x86.ActiveCfg = Release|Any CPU
 		{60DCFDEE-F03D-4B33-AD34-986A4D2EECBB}.Release|x86.Build.0 = Release|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Debug|x64.Build.0 = Debug|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Debug|x86.Build.0 = Debug|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Release|x64.ActiveCfg = Release|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Release|x64.Build.0 = Release|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Release|x86.ActiveCfg = Release|Any CPU
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2629,6 +2643,7 @@ Global
 		{0C334C51-4827-4667-B558-CB1DCCD71E45} = {A20E1C9C-41AE-4C42-99A2-9350020F151E}
 		{2E341C06-EA71-4228-8A84-620B08D67DBA} = {A20E1C9C-41AE-4C42-99A2-9350020F151E}
 		{60DCFDEE-F03D-4B33-AD34-986A4D2EECBB} = {A20E1C9C-41AE-4C42-99A2-9350020F151E}
+		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D} = {A20E1C9C-41AE-4C42-99A2-9350020F151E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
