@@ -70,4 +70,53 @@ string? companyValue = person.Element("company")?.Value;
 Сочетая операторы Linq и LINQ to XML можно довольно просто извлечь из документа данные и затем обработать их. Например:
  */
 
+static async void Ex2()
+{
+    XDocument xdoc = XDocument.Load("people.xml");
+
+    var microsoft = xdoc.Element("people")?   // получаем корневой узел people
+        .Elements("person")             // получаем все элементы person
+                                        // получаем все person, у которого company = Microsoft
+        .Where(p => p.Element("company")?.Value == "Microsoft")
+        .Select(p => new        // для каждого объекта создаем анонимный объект
+        {
+            name = p.Attribute("name")?.Value,
+            age = p.Element("age")?.Value,
+            company = p.Element("company")?.Value
+        });
+
+    if (microsoft is not null)
+    {
+        foreach (var person in microsoft)
+        {
+            Console.WriteLine($"Name: {person.name}  Age: {person.age}");
+        }
+    }
+}
+
+Ex2();
+
+/*
+ * В данном случае выбираем все элементы person, у которых вложенный элемент "company" равен "Microsoft". Далее на основе полученной выборке создаем набор анонимных объектов с тремя свойствами. Под вывод также можно было бы создать специально какой-нибудь класс или структуру и использовать их вместо анонимного объекта.
+
+Другой пример - выберем элемент person, в котором атрибут name равен "Tom":
+ */
+
+static async void Ex3()
+{
+    XDocument xdoc = XDocument.Load("people.xml");
+
+    var tom = xdoc.Element("people")?   // получаем корневой узел people
+        .Elements("person")             // получаем все элементы person
+        .FirstOrDefault(p => p.Attribute("name")?.Value == "Tom");
+
+    var name = tom?.Attribute("name")?.Value;
+    var age = tom?.Element("age")?.Value;
+    var company = tom?.Element("company")?.Value;
+
+    Console.WriteLine($"Name: {name}  Age: {age}  Company: {company}");
+}
+
+Ex3();
+
 #endregion
