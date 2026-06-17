@@ -70,30 +70,35 @@ Console.WriteLine(xdoc);
 
 //Для изменения данных в документ xml необходимо получить элемент, который надо изменить, и затем можно отредактировать значения его отдельных атрибутов или вложенных элементов. Изменим элемент person, в котором атрибут name = "Tom":
 
- 
-XDocument xdoc = XDocument.Load("people.xml");
-
-// получим элемент person с name = "Tom"
-var tom = xdoc.Element("people")?
-    .Elements("person")
-    .FirstOrDefault(p => p.Attribute("name")?.Value == "Tom");
-
-if (tom != null)
+static async void Ex2()
 {
-    //  меняем атрибут name
-    var name = tom.Attribute("name");
-    if (name != null) name.Value = "Tomas";
+    XDocument xdoc = XDocument.Load("people.xml");
+
+    // получим элемент person с name = "Tom"
+    var tom = xdoc.Element("people")?
+        .Elements("person")
+        .FirstOrDefault(p => p.Attribute("name")?.Value == "Tom");
+
+    if (tom != null)
+    {
+        //  меняем атрибут name
+        var name = tom.Attribute("name");
+        if (name != null) name.Value = "Tomas";
 
 
-    //  меняем вложенный элемент age
-    var age = tom.Element("age");
-    if (age != null) age.Value = "22";
+        //  меняем вложенный элемент age
+        var age = tom.Element("age");
+        if (age != null) age.Value = "22";
 
-    xdoc.Save("people.xml");
+        xdoc.Save("people.xml");
+    }
+
+    // выводим xml-документ на консоль
+    Console.WriteLine(xdoc);
+
 }
 
-// выводим xml-документ на консоль
-Console.WriteLine(xdoc);
+Ex2();
 /*
 В результате сформируется и сохранится на диск новый документ:
 
@@ -113,4 +118,4 @@ Console.WriteLine(xdoc);
 </ people >
 */
 
-#end region
+#endregion
