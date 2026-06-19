@@ -119,3 +119,52 @@ Ex2();
 */
 
 #endregion
+
+
+#region Удаление данных
+
+/*
+ * Для удаления данных в документе xml у удаляемого объекта XElement вызывается метод Remove(). Например, удалим элемент person, в котором атрибут name = "Bob":
+ */
+
+static async void Ex3()
+{
+    XDocument xdoc = XDocument.Load("people.xml");
+    XElement? root = xdoc.Element("people");
+
+    if (root != null)
+    {
+        // получим элемент person с name = "Bob"
+        var bob = root.Elements("person")
+            .FirstOrDefault(p => p.Attribute("name")?.Value == "Bob");
+        // и удалим его
+        if (bob != null)
+        {
+            bob.Remove();
+            xdoc.Save("people.xml");
+        }
+    }
+
+    // выводим xml-документ на консоль
+    Console.WriteLine(xdoc);
+}
+
+Ex3();
+
+/*
+ * В результате сформируется и сохранится на диск новый документ:
+
+<people>
+  <person name="Tomas">
+    <company>Microsoft</company>
+    <age>22</age>
+  </person>
+  <person name="Sam">
+    <company>JetBrains</company>
+    <age>28</age>
+  </person>
+</people>
+Соответственно, если необходимо удалить атрибут, то у удаляемого объекта XAttribute также вызывается метод Remove.
+ */
+
+#endregion
