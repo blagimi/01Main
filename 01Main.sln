@@ -395,6 +395,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ВыборкаЭлемен�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ИзменениеДокументаВLINQtoXML", "ИзменениеДокументаВLINQtoXML\ИзменениеДокументаВLINQtoXML.csproj", "{6CA3CF4B-B6EB-4F5B-95E8-E34703D2101E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "СериализацияВXMLXmlSerializer", "СериализацияВXMLXmlSerializer\СериализацияВXMLXmlSerializer.csproj", "{2C6CD256-C228-4DC5-BC58-0A511BCA6876}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2481,6 +2483,18 @@ Global
 		{6CA3CF4B-B6EB-4F5B-95E8-E34703D2101E}.Release|x64.Build.0 = Release|Any CPU
 		{6CA3CF4B-B6EB-4F5B-95E8-E34703D2101E}.Release|x86.ActiveCfg = Release|Any CPU
 		{6CA3CF4B-B6EB-4F5B-95E8-E34703D2101E}.Release|x86.Build.0 = Release|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Debug|x64.Build.0 = Debug|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Debug|x86.Build.0 = Debug|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Release|x64.ActiveCfg = Release|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Release|x64.Build.0 = Release|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Release|x86.ActiveCfg = Release|Any CPU
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2659,6 +2673,7 @@ Global
 		{60DCFDEE-F03D-4B33-AD34-986A4D2EECBB} = {A20E1C9C-41AE-4C42-99A2-9350020F151E}
 		{E0A83C81-1B08-408E-BE5A-3FBACFE83C0D} = {A20E1C9C-41AE-4C42-99A2-9350020F151E}
 		{6CA3CF4B-B6EB-4F5B-95E8-E34703D2101E} = {A20E1C9C-41AE-4C42-99A2-9350020F151E}
+		{2C6CD256-C228-4DC5-BC58-0A511BCA6876} = {A20E1C9C-41AE-4C42-99A2-9350020F151E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5025AB72-36E0-4CF5-8A47-FCC3BFB8A1B7}
