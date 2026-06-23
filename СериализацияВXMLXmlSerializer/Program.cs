@@ -22,3 +22,56 @@ class Person { }
  */
 
 #endregion
+
+#region Сериализация
+
+/*
+ * Для сериализации (то есть сохранения в форма xml) применяется метод Serialize(). Данный метод имеет ряд версий. Возьмем самую простую из них:
+
+void Serialize (Stream stream, object? o);
+В качестве первого параметра передается поток Stream (например, объект FileStream), в который будет идти сериализация. А второй параметр представляет собственно тот объект, который будет сохраняться в формат xml. Например:
+ */
+
+// объект для сериализации
+Person person = new Person("Tom", 37);
+
+// передаем в конструктор тип класса Person
+XmlSerializer xmlSerializer = new XmlSerializer(typeof(Person));
+
+// получаем поток, куда будем записывать сериализованный объект
+using (FileStream fs = new FileStream("person.xml", FileMode.OpenOrCreate))
+{
+xmlSerializer.Serialize(fs, person);
+
+Console.WriteLine("Object has been serialized");
+}
+
+//[Serializable]
+
+/*
+ * Итак, класс Person общедоступный, имеет общедоступные свойства и конструктор без параметров, поэтому объекты этого класса подлежат сериализации. При создании объекта XmlSerializer передаем в конструктор тип класса Person.
+
+В метод Serialize передается файловый поток для сохранения данных в файл person.xml и сохраняемый в этот файл объект Person. И если по завершению программы мы откроем файл person.xml, то увидим содержание нашего объекта:
+
+
+<?xml version="1.0"?>
+<Person xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Tom</Name>
+  <Age>37</Age>
+</Person>
+ */
+
+#endregion
+
+public class Person
+{
+    public string Name { get; set; } = "Undefined";
+    public int Age { get; set; } = 1;
+
+    public Person() { }
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+}
