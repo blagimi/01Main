@@ -63,6 +63,33 @@ Console.WriteLine("Object has been serialized");
 
 #endregion
 
+#region Десериализация
+
+/*
+ * Для десериализации данных xml в объект кода C# применяется метод Deserialize(). Отметим одну из версий этого метода:
+
+object? Deserialize (Stream stream);
+В качестве параметра в метод передается объект Stream, который содержит данные в формате xml. Результатом метода является десериализованный объект.
+
+Например, десериализуем данные из выше созданного файла person.xml:
+ */
+
+static async void Ex2()
+{
+    XmlSerializer xmlSerializer = new XmlSerializer(typeof(Person));
+
+    // десериализуем объект
+    using (FileStream fs = new FileStream("person.xml", FileMode.OpenOrCreate))
+    {
+        Person? person = xmlSerializer.Deserialize(fs) as Person;
+        Console.WriteLine($"Name: {person?.Name}  Age: {person?.Age}");
+    }
+}
+
+Ex2();
+
+#endregion
+
 public class Person
 {
     public string Name { get; set; } = "Undefined";
