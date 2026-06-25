@@ -90,6 +90,54 @@ Ex2();
 
 #endregion
 
+#region Сериализация и десериализация коллекций
+
+/*
+ * Подобным образом мы можем сериализовать массив или коллекцию объектов:
+ */
+
+static async void Ex3()
+{
+    Person[] people = new Person[]
+{
+    new Person("Tom", 37),
+    new Person("Bob", 41)
+};
+
+    XmlSerializer formatter = new XmlSerializer(typeof(Person[]));
+    // сохранение массива в файл
+    using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
+    {
+        formatter.Serialize(fs, people);
+    }
+    // восстановление массива из файла
+    using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
+    {
+        Person[]? newpeople = formatter.Deserialize(fs) as Person[];
+
+        if (newpeople != null)
+        {
+            foreach (Person person in newpeople)
+            {
+                Console.WriteLine($"Name: {person.Name} --- Age: {person.Age}");
+            }
+        }
+    }
+
+}
+
+Ex3();
+
+/*
+ * Консольный вывод:
+
+Name: Tom --- Age: 37
+Name: Bob --- Age: 41
+Но это был простой объект. Однако с более сложными по составу объектами работать так же просто. Например:
+ */
+
+#endregion
+
 public class Person
 {
     public string Name { get; set; } = "Undefined";
