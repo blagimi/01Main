@@ -136,17 +136,93 @@ Name: Bob --- Age: 41
 Но это был простой объект. Однако с более сложными по составу объектами работать так же просто. Например:
  */
 
+static async void Ex4()
+{
+    var microsoft = new Company("Microsoft");
+    var google = new Company("Google");
+
+    Person[] people = new Person[]
+    {
+    new Person("Tom", 37, microsoft),
+    new Person("Bob", 41, google)
+    };
+
+    XmlSerializer formatter = new XmlSerializer(typeof(Person[]));
+
+    using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
+    {
+        formatter.Serialize(fs, people);
+    }
+
+    using (FileStream fs = new FileStream("people.xml", FileMode.OpenOrCreate))
+    {
+        Person[]? newpeople = formatter.Deserialize(fs) as Person[];
+
+        if (newpeople != null)
+        {
+            foreach (Person person in newpeople)
+            {
+                Console.WriteLine($"Name: {person.Name}");
+                Console.WriteLine($"Age: {person.Age}");
+                Console.WriteLine($"Company: {person.Company.Name}");
+            }
+        }
+    }
+}
+
+Ex4();
+
+/*
+ * Класс Person содержит свойство Company, которое будет хранить объект класса Company. Члены класса Company объявляются с модификатором public, кроме того также присутствует стандартный конструктор без параметров. В итоге после сериализации мы получим следующий xml-документ:
+
+<?xml version="1.0"?>
+<ArrayOfPerson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Person>
+    <Name>Tom</Name>
+    <Age>37</Age>
+    <Company>
+      <Name>Microsoft</Name>
+    </Company>
+  </Person>
+  <Person>
+    <Name>Bob</Name>
+    <Age>41</Age>
+    <Company>
+      <Name>Google</Name>
+    </Company>
+  </Person>
+</ArrayOfPerson>
+ */
+
 #endregion
+
+public class Company
+{
+    public string Name { get; set; } = "Undefined";
+
+    // стандартный конструктор без параметров
+    public Company() { }
+
+    public Company(string name) => Name = name;
+}
 
 public class Person
 {
     public string Name { get; set; } = "Undefined";
     public int Age { get; set; } = 1;
 
+    public Company Company { get; set; } = new Company();
+
     public Person() { }
     public Person(string name, int age)
     {
         Name = name;
         Age = age;
+    }
+    public Person(string name, int age, Company company)
+    {
+        Name = name;
+        Age = age;
+        Company = company;
     }
 }
