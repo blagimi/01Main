@@ -79,3 +79,39 @@ static async void Ex3()
 Ex3();
 
 #endregion
+
+#region Потоки процесса
+
+/*
+ * Свойство Threads представляет коллекцию потоков процесса - объект ProcessThreadCollection, каждый поток в которой является объектом ProcessThread. В данном классе можно выделить следующие свойства:
+
+CurrentPriority: возвращает текущий приоритет потока
+
+Id: идентификатор потока
+
+IdealProcessor: позволяет установить процессор для обработки потока
+
+PriorityLevel: уровень приоритета потока
+
+StartAddress: адрес в памяти функции, запустившей поток
+
+StartTime: время запуска потока (поддерживается только на Windows и Linux)
+
+Например, получим все потоки процесса Visual Studio:
+ */
+
+static async void Ex4()
+{
+    Process proc = Process.GetProcessesByName("devenv")[0];  // Windows
+                                                             // Process proc = Process.GetProcessesByName("VisualStudio")[0];  // MacOS
+    ProcessThreadCollection processThreads = proc.Threads;
+
+    foreach (ProcessThread thread in processThreads)
+    {
+        Console.WriteLine($"ThreadId: {thread.Id}");
+    }
+}
+
+Ex4();
+
+#endregion
