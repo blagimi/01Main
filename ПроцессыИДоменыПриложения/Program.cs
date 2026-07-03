@@ -152,3 +152,38 @@ static async void Ex5()
 Ex5();
 
 #endregion
+
+#region Модули процесса
+
+/*
+ * Одно приложение может использовать набор различных сторонних библиотек и модулей. Для их получения класс Prosess имеет свойство Modules, которое представляет объект ProcessModuleCollection. Каждый отдельный модуль представлен классом ProcessModule, у которого можно выделить следующие свойства:
+
+BaseAddress: адрес модуля в памяти
+
+FileName: полный путь к файлу модуля
+
+EntryPointAddress: адрес функции в памяти, которая запустила модуль
+
+ModuleName: название модуля (краткое имя файла)
+
+ModuleMemorySize: возвращает объем памяти, необходимый для загрузки модуля
+
+Получим все модули, используемые Visual Studio:
+ */
+
+static async void Ex6()
+{
+    Process proc = Process.GetProcessesByName("devenv")[0]; // для Windows
+                                                            // Process proc = Process.GetProcessesByName("VisualStudio")[0]; // для MacOS
+    ProcessModuleCollection modules = proc.Modules;
+
+    foreach (ProcessModule module in modules)
+    {
+        Console.WriteLine($"Name: {module.ModuleName}  FileName: {module.FileName}");
+    }
+}
+
+Ex6();
+
+
+#endregion
