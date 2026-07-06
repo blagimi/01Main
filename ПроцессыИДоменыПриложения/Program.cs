@@ -185,5 +185,39 @@ static async void Ex6()
 
 Ex6();
 
+#region Запуск нового процесса
+
+/*
+ * С помощью статического метода Process.Start() можно запустить новый процесс. Например:
+
+1
+2
+3
+4
+// обращение к исполняемой программе
+Process.Start(@"C:\Program Files\Google\Chrome\Application\chrome");
+ 
+// Process.Start("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"); // на MacOS
+В данном случае запускается браузер Google Chrome
+
+При обращении к исполняемому файлу .NET запускает приложение.
+
+Однако при запуске некоторых программ может потребоваться передать им различные параметры. В этом случае можно использовать перегруженную версию метода, передавая в качестве второго параметра параметры:
+
+1
+Process.Start(@"C:\Program Files\Google\Chrome\Application\chrome", "https://ya.ru");
+Чтобы отделить настройку параметров запуска от самого запуска можно использовать класс ProcessStartInfo:
+
+
+ProcessStartInfo procInfo = new ProcessStartInfo();
+// исполняемый файл программы - браузер хром
+procInfo.FileName = @"C:\Program Files\Google\Chrome\Application\chrome";
+// аргументы запуска - адрес интернет-ресурса
+procInfo.Arguments = "https://ya.ru";
+Process.Start(procInfo);
+ */
+
+#endregion
+
 
 #endregion
