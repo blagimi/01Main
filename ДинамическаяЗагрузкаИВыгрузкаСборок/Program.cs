@@ -1,4 +1,7 @@
-﻿#region AssemblyLoadContext и динамическая загрузка и выгрузка сборок
+﻿using System.Reflection;
+using System.Runtime.Loader;
+
+#region AssemblyLoadContext и динамическая загрузка и выгрузка сборок
 
 /*
  * 
@@ -24,7 +27,6 @@ namespace MyApp
 
 Для создания объекта AssemblyLoadContext применяется следующий конструктор:
 
-1
 public AssemblyLoadContext (string? name, bool isCollectible = false);
 В конструкторе первый параметр устанавливает имя контекста - это может произвольная строка. Второй параметр - isCollectible устанавливает, можно ли загруженные сборки выгружать. Значение true указывает, что загруженные сборки можно выгружать.
 
@@ -43,5 +45,119 @@ Assembly LoadFromStream (System.IO.Stream stream): загружает опред
 Рассмотрим полный пример:
  * 
  */
+
+Square(8);
+// очистка памяти
+GC.Collect();
+GC.WaitForPendingFinalizers();
+
+Console.WriteLine();
+// смотрим, какие сборки после выгрузки
+foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies())
+    Console.WriteLine(asm.GetName().Name);
+
+
+void Square(int number)
+{
+    var context = new AssemblyLoadContext(name: "Square", isCollectible: true);
+    // установка обработчика выгрузки
+    context.Unloading += Context_Unloading;
+
+    // получаем путь к сборке MyApp
+    var assemblyPath = Path.Combine(Directory.GetCurrentDirectory(), "MyApp.dll");
+    // загружаем сборку
+    Assembly assembly = context.LoadFromAssemblyPath(assemblyPath);
+
+    // получаем тип Program из сборки MyApp.dll
+    var type = assembly.GetType("MyApp.Program");
+    if (type != null)
+    {
+        // получаем его метод Square
+        var squareMethod = type.GetMethod("Square", BindingFlags.Static | BindingFlags.NonPublic);
+        // вызываем метод
+        var result = squareMethod?.Invoke(null, new object[] { number });
+        if (result is int)
+        {
+            // выводим результат метода на консоль
+            Console.WriteLine($"Квадрат числа {number} равен {result}");
+        }
+    }
+
+    // смотим, какие сборки у нас загружены
+    foreach (Assembly asm in AppDomain.CurrentDomain.GetAssemblies())
+        Console.WriteLine(asm.GetName().Name);
+
+    // выгружаем контекст
+    context.Unload();
+}
+
+// обработчик выгрузки контекста
+void Context_Unloading(AssemblyLoadContext obj)
+{
+    Console.WriteLine("Библиотека MyApp выгружена");
+}
+
+/*
+ * Все эти действия оформляются в виде отдельного метода Square(). В качестве параметра он принимает число, квадрат которого надо вычислить.
+
+Вначале в методе создается объект AssemblyLoadContext:
+
+var context = new AssemblyLoadContext(name: "Square", isCollectible: true);
+Обратите внимание, что параметру isCollectible передается значение true, что позволит выгружать ранее загруженные сборки.
+
+Класс AssemblyLoadContext определяет событие Unloadig, благодаря чему мы можем повесить обработчик и определить момент выгрузки контекста.
+
+context.Unloading += Context_Unloading;
+Далее используется метод LoadFromAssemblyPath для загузки сборки MyApp.dll по абсолютному пути. В данном случае предполагается, что файл сборки находится в одной папке с текущим приложением.
+
+Assembly assembly = context.LoadFromAssemblyPath(assemblyPath);
+Получив сборку, с помощью рефлексии обращаемся к методу Square и получаем квадрат числа.
+
+Затем смотрим, какие сборки загружены в текущий домен. Среди них мы сможем найти и MyApp.dll. И в конце выгружаем контекст:
+
+context.Unload();
+Данный метод Square вызывается в методе Main:
+
+Square(8);
+// очистка
+GC.Collect();
+GC.WaitForPendingFinalizers();
+Но обратите внимание, что выгрузка контекста сама по себе не означает немедленной очистки памяти. Вызов метода Unload только инициирует процесс выгрузки, реальная выгрузка произойдет лишь тогда, когда в дело вступит автоматический сборщик мусора и удалит соответствующие объекты. Поэтому для более быстрой очистки в конце вызываются методы GC.Collect() и GC.WaitForPendingFinalizers().
+
+Консольный вывод:
+
+Квадрат числа 8 равен 64
+
+System.Private.CoreLib
+HelloApp
+System.Runtime
+Microsoft.Extensions.DotNetDeltaApplier
+System.IO.Pipes
+System.Linq
+System.Collections
+System.Console
+System.Runtime.Loader
+MyApp
+System.Collections.Concurrent
+System.Threading
+System.Text.Encoding.Extensions
+Библиотека MyApp выгружена
+
+System.Private.CoreLib
+HelloApp
+System.Runtime
+Microsoft.Extensions.DotNetDeltaApplier
+System.IO.Pipes
+System.Linq
+System.Collections
+System.Console
+System.Runtime.Loader
+System.Threading.Overlapped
+System.Collections.Concurrent
+System.Threading
+System.Text.Encoding.Extensions
+Как видно, после выгрузки контекста AssemblyLoadContext сборки MyApp в списке загруженных сборок больше не наблюдается.
+ */
+
 
 #endregion
