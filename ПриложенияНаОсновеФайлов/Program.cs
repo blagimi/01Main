@@ -27,3 +27,67 @@ alex@Alex:/dotnet/scripts$
  */
 
 #endregion
+
+
+#region Ключевые особенности и директивы
+
+/*
+ * Чтобы обеспечить функциональность, которая ранее требовала csproj-файла (например, ссылки на NuGet-пакеты), были введены специальные директивы на уровне файла:
+
+#:package <имя_пакета>[@<версия>]
+
+Позволяет ссылаться на пакеты NuGet. Например:
+
+#:package Microsoft.EntityFrameworkCore.Sqlite@10.0.0
+В данном случае подключается nuget-пакет "Microsoft.EntityFrameworkCore.Sqlite" версии "10.0.0".
+
+#:sdk <имя_SDK>
+
+Позволяет указать необходимый SDK (например, для веб-приложений). Например:
+
+#:sdk Microsoft.NET.Sdk.Web
+#:property <свойство>=<значение>
+
+Позволяет устанавливать свойства MSBuild
+
+Например, вот как может выглядеть минимальное веб-приложение (Minimal API), полностью содержащееся в одном файле app.cs:
+
+#:sdk Microsoft.NET.Sdk.Web
+ 
+var builder = WebApplication.CreateBuilder();
+var app = builder.Build();
+  
+app.MapGet("/", () => "Hello METANIT.COM!");
+  
+app.Run();
+Я не буду подробно вдаваться в данный код (кому интересено, может подробнее прочитать про веб-приложения в соответствующем руководстве в статье - Первое приложение на ASP.NET Core с .NET CLI). Сейчас же нас здесь будет интересовать только первая строка:
+
+#:sdk Microsoft.NET.Sdk.Web
+именно она подключает всю необходимую функциональность из SDK Microsoft.NET.Sdk.Web для создания веб-приложения. И теперь запустим это приложение командой dotnet run app.cs
+
+alex@Alex:/dotnet/scripts$ dotnet run app.cs
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /dotnet/scripts
+
+Из этого вывода мы видим, что приложение успешно запущено, и мы можем обратиться к нему по адресу "http://localhost:5000" (адрес по умолчанию). Обратимся по этому адресу в браузере:
+
+Однофайловые приложения в C# и .NET
+Сценарии использования
+Файловые приложения идеально подходят для следующих задач:
+
+Скриптинг и автоматизация: как замена скриптов на Bash, PowerShell или Python для операционных задач и автоматизации
+
+Прототипирование: для быстрого тестирования идеи или API-интерфейса
+
+Обучение: более низкий порог входа для новичков в C#, что позволяет писать и запускать код без сложной структуры проекта и необходимости ее понимания
+
+Утилиты CLI: для создания простых, самодостаточных утилит консоли/командной строки
+ */
+
+#endregion
